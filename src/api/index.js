@@ -2,7 +2,7 @@
 const express = require("express");
 const cors = require("cors");
 require("dotenv").config();
-const conn = require("../database/index");
+const conn = require("./database/index");
 
 // App 
 const app = express();
@@ -16,5 +16,5 @@ conn();
 const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log("Server running!");
+    console.log("Server is running!");
 });
