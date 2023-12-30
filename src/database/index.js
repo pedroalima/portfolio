@@ -1,12 +1,13 @@
-const mongoose = require("mongoose")
+/* eslint-disable @typescript-eslint/no-var-requires */
+const mongoose = require("mongoose");
 
 async function connectToDatabase() {
     try {
-        await mongoose.connect(process.env.MONGODB_URI)
-        console.log("Database connected successfully")
+        await mongoose.connect(process.env.MONGODB_URI);
+        console.log("Database connected successfully");
     } catch (error) {
-        console.log(error)
+        console.log(error);
     }
 }
 
-module.exports = connectToDatabase
+module.exports = connectToDatabase;

@@ -1,19 +1,20 @@
-const express = require("express")
-const cors = require("cors")
-require("dotenv").config()
+/* eslint-disable @typescript-eslint/no-var-requires */
+const express = require("express");
+const cors = require("cors");
+require("dotenv").config();
+const conn = require("../database/index");
 
 // App 
-const app = express()
-app.use(cors())
-app.use(express.json())
+const app = express();
+app.use(cors());
+app.use(express.json());
 
 // DB connection
-const conn = require("../database/index")
-conn()
+conn();
 
 // Server connection
-const PORT = process.env.PORT || 4000
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
-    console.log("Server running!")
-})
+    console.log("Server running!");
+});
