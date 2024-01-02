@@ -1,36 +1,157 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Portifólio
 
-## Getting Started
+<!-- Um protótipo inicial de uma plataforma SaaS que dispõe de um sistema de rotas privadas, com versões otimizadas para mobile e desktop.
 
-First, run the development server:
+O projeto é de minha autoria e foi inspirado em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, Next, TailwindCSS e CSS.
+
+## Índice
+
+- [Visão geral](#visao-geral)
+  - [O Desafio](#o-desafio)
+  - [Screenshot](#screenshot)
+- [Minha caminhada](#minha-caminhada)
+  - [Propriedades](#propriedades)
+  - [O que aprendi](#o-que-aprendi)
+  - [Recursos](#recursos)
+- [Autor](#autor)
+
+</br>
+
+## Screenshots
+
+![#](./public/section-desktop.png)
+
+</br>
+
+## 🎯 Objetivos
+
+O principal objetivo deste projeto foi elaborar um sistema de rotas privadas utilizando o framework Next. Secundariamente, busquei familiarizar-me com o framework de estilos Tailwind CSS.
+
+Os usuários têm a capacidade de:
+- Visualizar a aplicação de maneira independente, seja em dispositivos mobile ou desktop.
+- Navegar entre as páginas de login e dashboard, testando o sistema de rotas privadas. 
+
+> OBS - A rota privada do dashboard só poderá ser acessada se o usuário possuir o token, o qual é obtido ao clicar no botão 'Entrar' no formulário de login. Da mesma forma, a rota pública raiz, onde se encontra o formulário de login, só poderá ser acessada se o usuário não possuir o token. Para excluir o token, é necessário clicar no botão 'Sair' na barra de navegação do dashboard (na versão mobile, o botão está no menu).
+
+</br>
+
+## Minha caminhada
+
+- [x] Preparativos da pagina HTML e CSS para mobile
+- [x] Barra de navegação
+- [x] Layout versão mobile
+- [x] Layout versão desktop
+- [x] Menus de nagavegação
+- [x] Elementos JavaScript
+- [x] Estados de foco
+
+</br>
+
+## 🔧 Propriedades e Tecnologias
+
+- TypeScript
+- Next 
+- TailwindCSS
+- CSS
+- ESLint
+
+</br>
+
+## 🧠 Meu aprendizado
+
+O Next.js, oferece uma poderosa funcionalidade de sistema de rotas privadas através do uso de middlewares. Este recurso permite criar aplicações web seguras e controlar o acesso a determinadas rotas com facilidade. Ao implementar middlewares específicos, é possível adicionar camadas adicionais de autenticação, autorização e lógica personalizada às rotas privadas, garantindo que apenas usuários autorizados tenham acesso a determinados recursos.
+
+Conforme a documentação recomenda, é necessário criar o arquivo middleware.js/ts na raiz do seu projeto.
+
+```tsx
+import { NextResponse } from "next/server";
+import { NextRequest } from "next/server";
+ 
+export function middleware(request: NextRequest) {
+  // Busca e pega o valor do token
+  const token = request.cookies.get("auth_user")?.value;
+  // Se o token não existir
+  if (!token) {
+    // E se o usuário estiver na rota "/"
+    if (request.nextUrl.pathname == "/") {
+      // Prossiga sem encaminhar
+      return NextResponse.next();
+    }
+    // Encaminha o usuário para a rota "/"
+    return NextResponse.redirect(new URL("/", request.url));
+  }
+  //Se o token existir e o usuário quiser acessar a rota "/"
+  if (request.nextUrl.pathname == "/") {
+    // Encaminhe o usuário para a rota "dashboard"
+    return NextResponse.redirect(new URL("/dashboard", request.url));
+  }
+}
+
+export const config = {
+  // Rotas afetadas
+  matcher: ["/", "/dashboard/:path*"]
+};
+```
+
+O arquivo é composto pela função middleware e um objeto de configuração chamado "matcher".
+
+A função middleware recebe o parâmetro "request", que nos concede acesso aos cookies e componentes da URL da web. Isso nos permite instanciar o token para trabalhar com condições baseadas nele. Outro elemento crucial é o "NextResponse", o qual precisamos importar de "next/server". Ele nos possibilita direcionar as rotas para onde o usuário será encaminhado.
+
+O objeto "matcher" será responsável por definir quais rotas serão impactadas pela função middleware.
+
+> Para saber mais consulte a [documentação!](https://nextjs.org/docs/app/building-your-application/routing/middleware)
+
+</br>
+
+## 💻 Rodando o projeto
+
+![#](./public/mobile.gif)
+
+### Veja uma breve demonstração do sistema de rotas privadas [clicando aqui](https://drive.google.com/file/d/1UXNEAALbqShYOaO_wtxYMYjgMb9aVReU/view?usp=sharing)
+
+### Acesse a aplicação via web [aqui!](https://safeway-two.vercel.app/)
+
+### Ou instale na sua máquina
+
+Para conferir a versão final é só realizar os seguintes passos:
+
+#### 1 - Clonando o Projeto:
+Navegue até o diretório onde deseja clonar o projeto.
+
+Abra o terminal com o GitBash.
+
+Execute o comando:
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+Substitua URL_DO_REPOSITORIO pela URL do repositório deste projeto.
+
+#### 2 - Instalando Dependências:
+Navegue até o diretório "safeway".
+
+Execute o comando:
+
+```bash
+npm install
+```
+ou
+```bash
+yarn install
+```
+
+#### 3 - Executando o Projeto:
+Ainda no diretório "safeway".
+
+Execute o comando:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Isso iniciará o servidor de desenvolvimento Next.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</br> -->
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Autor
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- LinkedIn - [Pedro A. Lima](https://www.linkedin.com/in/pedroalima6/)
