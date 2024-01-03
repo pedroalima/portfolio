@@ -3,7 +3,8 @@ const router = require("express").Router();
 
 // Project Router
 const projectRouter = require("./project");
+const userRouter = require("./user");
 
-router.use("/", projectRouter);
+router.use("/", projectRouter, userRouter);
 
 module.exports = router;
