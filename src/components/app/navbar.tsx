@@ -6,9 +6,11 @@ export default function Navbar() {
             <h1>Pedro Lima</h1>
             <ul className="flex justify-between gap-10">
                 <li>Home</li>
+                <li>About</li>
                 <li>Projects</li>
                 <li>Experience</li>
-                <li>About</li>
+                <li>Education</li>
+                <li>Contact</li>
             </ul>
         </nav>
     );
