@@ -1,17 +1,17 @@
 
 export default function Home() {
     return (
-        <main className="min-h-dvh flex justify-center items-center">
-            <form className="bg-slate-300 py-10 px-8 w-full flex flex-col items-start gap-4">
+        <div className="min-h-dvh flex justify-center items-center">
+            <form className="bg-slate-300 py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
 
                 <label htmlFor="primary">Texto Principal</label>
-                <input type="text" name="primary" id="primary" />
+                <input type="text" name="primary" id="primary" className="rounded-md p-1" />
 
                 <label htmlFor="description">Descrição</label>
-                <input type="text" name="description" id="description" />
+                <input type="text" name="description" id="description" className="rounded-md p-1" />
 
-                <button type="submit">Adicionar</button>
+                <button type="submit" className="bg-blue-500 self-center p-2 rounded-md text-white">Adicionar</button>
             </form>
-        </main>
+        </div>
     );
 }
