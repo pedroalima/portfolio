@@ -8,7 +8,8 @@ export default function Admin() {
         <div className="h-dvh">
             <Navbar />
             
-            <Home /> 
+            <Home />
+            
             <About />
         </div>
     );

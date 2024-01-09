@@ -1,5 +1,10 @@
+import { getData } from "@/services";
 
 export default function Home() {
+    const data = getData("projects");
+
+    console.log(data);
+
     return (
         <div className="min-h-dvh flex justify-center items-center">
             <form className="bg-slate-300 py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
