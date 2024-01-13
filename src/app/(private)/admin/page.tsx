@@ -91,11 +91,14 @@ export default function Admin() {
                 </nav>
             </header>
             
-            <main className="bg-gray-100">
-                {menuItems && menuItems.map(
-                    (item) => item.id === currentSelectedTab && item.component
-                )}
-            </main>
+        
+            {menuItems && menuItems.map(
+                (item) => item.id === currentSelectedTab && (
+                    <main key={item.id} className="bg-gray-100">
+                        {item.component}
+                    </main>
+                )
+            )}
         </div>
     );
 }

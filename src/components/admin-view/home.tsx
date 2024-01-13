@@ -3,17 +3,17 @@ import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 
-const schema = z.object({
+const homeSchema = z.object({
     mainText: z.string(),
     description: z.string()
 });
 
-type FormData = z.infer<typeof schema>
+type HomeFormData = z.infer<typeof homeSchema>
 
 export default function Home() {
-    const { handleSubmit, register, formState : {errors} } = useForm<FormData>({
+    const { handleSubmit, register, formState : {errors} } = useForm<HomeFormData>({
         mode: "onBlur",
-        resolver: zodResolver(schema)
+        resolver: zodResolver(homeSchema)
     });
 
     console.log(errors);
