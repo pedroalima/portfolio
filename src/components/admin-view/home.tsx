@@ -1,5 +1,4 @@
-// import { getData } from "@/services";
-import { useState } from "react";
+import { Dispatch, SetStateAction } from "react";
 
 type ControlsTypes = [
     ControlsItemType,
@@ -15,34 +14,39 @@ interface ControlsItemType {
 
 const controls: ControlsTypes = [
     {
-        name: "heading",
-        placeholder: "Enter heading text",
+        name: "principal",
+        placeholder: "",
         type: "text",
-        label: "Enter heading text",
+        label: "Menssagem Principal",
     },
     {
-        name: "summary",
-        placeholder: "Enter Career summary",
+        name: "descricao",
+        placeholder: "",
         type: "text",
-        label: "Enter Career summary",
+        label: "Descrição",
     },
 ];
 
-export default function Home() {
-    const [ formData, setFormData ] = useState({});
+interface DataTypes {
+    formData: { principal: string; descricao: string },
+    setFormData: Dispatch<SetStateAction<{ principal: string; descricao: string }>>,
+    handleSaveData: () => void,
+}
 
-    const handleSaveData = () => {
-        
-    };
+export default function AdminHomeView({formData, setFormData, handleSaveData} : DataTypes) {
+    
 
     console.log(formData);
 
     return (
         <div className="min-h-dvh flex justify-center items-center">
-            <div className="bg-slate-300 py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                 {controls && controls.map(controlItem => (
                     <div key={controlItem.name}>
-                        <label htmlFor={controlItem.name}>{controlItem.label}</label>
+                        <label 
+                            htmlFor={controlItem.name}
+                            className="block mb-2 text-sm font-medium text-gray-900"
+                        >{controlItem.label}</label>
                         <input 
                             type={controlItem.type}
                             name={controlItem.name}
@@ -55,14 +59,14 @@ export default function Home() {
                                     }
                                 );
                             }}
-                            className="rounded-md p-1"
+                            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                         />
                     </div>
                 ))}
 
                 <button 
-                    onClick={() => handleSaveData} 
-                    className="bg-blue-500 self-center p-2 rounded-md text-white"
+                    onClick={handleSaveData}
+                    className="bg-blue-500 self-center py-1 px-4 rounded-md text-white"
                 >Adicionar</button>
             </div>
         </div>

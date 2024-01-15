@@ -1,59 +1,75 @@
 "use client";
-import About from "@/components/admin-view/about";
-import Contact from "@/components/admin-view/contact";
-import Education from "@/components/admin-view/education";
-import Experience from "@/components/admin-view/experience";
-import Home from "@/components/admin-view/home";
-import Projects from "@/components/admin-view/projects";
+import AdminHomeView from "@/components/admin-view/home";
+import AdminAboutView from "@/components/admin-view/about";
+import AdminContactView from "@/components/admin-view/contact";
+import AdminEducationView from "@/components/admin-view/education";
+import AdminExperienceView from "@/components/admin-view/experience";
+import AdminProjectsView from "@/components/admin-view/projects";
 import { useState } from "react";
 
-const menuItems = [
-    {
-        id: "home",
-        label: "Home",
-        component: (
-            <Home />
-        )
-    },
-    {
-        id: "about",
-        label: "About",
-        component: (
-            <About />
-        )
-    },
-    {
-        id: "projects",
-        label: "Projects",
-        component: (
-            <Projects />
-        )
-    },
-    {
-        id: "experience",
-        label: "Experience",
-        component: (
-            <Experience />
-        )
-    },
-    {
-        id: "education",
-        label: "Education",
-        component: (
-            <Education />
-        )
-    },
-    {
-        id: "contact",
-        label: "Contact",
-        component: (
-            <Contact />
-        )
-    }
-];
+const initialHomeViewFormData = {
+    principal: "",
+    descricao: ""
+};
+
 
 export default function Admin() {
     const [ currentSelectedTab, setCurrentSelectedTab ] = useState("home");
+    const [ homeViewFormData, setHomeViewFormData ] = useState(initialHomeViewFormData);
+
+    async function handleSaveData() {
+        console.log("Click!");
+    }
+
+    const menuItems = [
+        {
+            id: "home",
+            label: "Home",
+            component: (
+                <AdminHomeView
+                    formData={homeViewFormData}
+                    setFormData={setHomeViewFormData}
+                    handleSaveData={handleSaveData}
+                />
+            )
+        },
+        {
+            id: "about",
+            label: "About",
+            component: (
+                <AdminAboutView />
+            )
+        },
+        {
+            id: "projects",
+            label: "Projects",
+            component: (
+                <AdminProjectsView />
+            )
+        },
+        {
+            id: "experience",
+            label: "Experience",
+            component: (
+                <AdminExperienceView />
+            )
+        },
+        {
+            id: "education",
+            label: "Education",
+            component: (
+                <AdminEducationView />
+            )
+        },
+        {
+            id: "contact",
+            label: "Contact",
+            component: (
+                <AdminContactView />
+            )
+        }
+    ];
+
     return (
         <div className="h-dvh">
             <header className="fixed top-0 w-full z-30">
