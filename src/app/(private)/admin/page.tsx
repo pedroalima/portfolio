@@ -11,11 +11,37 @@ const initialHomeViewFormData = {
     principal: "",
     descricao: ""
 };
-
+const initialAboutViewFormData = {
+    updates: "",
+    projects: "",
+    experience: "",
+    skills: ""
+};
+const initialExperienceViewFormData = {
+    principal: "",
+    descricao: ""
+};
+const initialEducationViewFormData = {
+    principal: "",
+    descricao: ""
+};
+const initialProjectsViewFormData = {
+    principal: "",
+    descricao: ""
+};
+const initialContactViewFormData = {
+    principal: "",
+    descricao: ""
+};
 
 export default function Admin() {
     const [ currentSelectedTab, setCurrentSelectedTab ] = useState("home");
     const [ homeViewFormData, setHomeViewFormData ] = useState(initialHomeViewFormData);
+    const [ aboutViewFormData, setAboutViewFormData ] = useState(initialAboutViewFormData);
+    const [ experienceViewFormData, setExperienceViewFormData ] = useState(initialExperienceViewFormData);
+    const [ educationViewFormData, setEducationViewFormData ] = useState(initialEducationViewFormData);
+    const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
+    const [ contactViewFormData, setContactViewFormData ] = useState(initialContactViewFormData);
 
     async function handleSaveData() {
         console.log("Click!");
@@ -37,35 +63,55 @@ export default function Admin() {
             id: "about",
             label: "About",
             component: (
-                <AdminAboutView />
-            )
-        },
-        {
-            id: "projects",
-            label: "Projects",
-            component: (
-                <AdminProjectsView />
+                <AdminAboutView
+                    formData={aboutViewFormData}
+                    setFormData={setAboutViewFormData}
+                    handleSaveData={handleSaveData}
+                />
             )
         },
         {
             id: "experience",
             label: "Experience",
             component: (
-                <AdminExperienceView />
+                <AdminExperienceView 
+                    formData={experienceViewFormData}
+                    setFormData={setExperienceViewFormData}
+                    handleSaveData={handleSaveData}
+                />
             )
         },
         {
             id: "education",
             label: "Education",
             component: (
-                <AdminEducationView />
+                <AdminEducationView 
+                    formData={educationViewFormData}
+                    setFormData={setEducationViewFormData}
+                    handleSaveData={handleSaveData}
+                />
+            )
+        },
+        {
+            id: "projects",
+            label: "Projects",
+            component: (
+                <AdminProjectsView 
+                    formData={projectsViewFormData}
+                    setFormData={setProjectsViewFormData}
+                    handleSaveData={handleSaveData}
+                />
             )
         },
         {
             id: "contact",
             label: "Contact",
             component: (
-                <AdminContactView />
+                <AdminContactView 
+                    formData={contactViewFormData}
+                    setFormData={setContactViewFormData}
+                    handleSaveData={handleSaveData}
+                />
             )
         }
     ];

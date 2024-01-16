@@ -1,47 +1,66 @@
-// type InputsTypes = [
-//     ItemInputTypes,
-//     ItemInputTypes,
-//     ItemInputTypes,
-//     ItemInputTypes
-// ]
+import { Dispatch, SetStateAction } from "react";
+import FormControls from "./form-controls";
 
-// interface ItemInputTypes {
-//     htmlFor: string,
-//     label: string,
-//     type: string,
-//     placeholder: string,
-// }
+type ControlsTypes = [
+    ControlsItemType,
+    ControlsItemType,
+    ControlsItemType,
+    ControlsItemType
+]
 
-// const inputs: InputsTypes = [
-//     {
-//         htmlFor: "updates",
-//         label: "Texto de atualização",
-//         type: "text",
-//         placeholder: "",
-//     },
-//     {
-//         htmlFor: "projects",
-//         label: "Nº de projetos",
-//         type: "number",
-//         placeholder: "",
-//     },
-//     {
-//         htmlFor: "experience",
-//         label: "Tempo de experiência",
-//         type: "number",
-//         placeholder: "",
-//     },
-//     {
-//         htmlFor: "skills",
-//         label: "Skills",
-//         type: "text",
-//         placeholder: "",
-//     },
-// ];
+interface ControlsItemType {
+    name: string,
+    type: string,
+    label: string,
+}
 
-export default function AdminAboutView() {
+const controls: ControlsTypes = [
+    {
+        name: "updates",
+        type: "text",
+        label: "Texto de atualização",
+    },
+    {
+        name: "projects",
+        type: "number",
+        label: "Nº de projetos",
+    },
+    {
+        name: "experience",
+        type: "number",
+        label: "Tempo de experiência",
+    },
+    {
+        name: "skills",
+        type: "text",
+        label: "Skills",
+    },
+];
+
+interface DataTypes {
+    formData: { principal: string; descricao: string },
+    setFormData: Dispatch<SetStateAction<{ principal: string; descricao: string }>>,
+    handleSaveData: () => void,
+}
+
+export default function AdminAboutView({formData, setFormData, handleSaveData} : DataTypes) {
+    
+    console.log(formData);
 
     return (
-        <div>AdminAboutView</div>
+        <div className="min-h-dvh flex justify-center items-center">
+            <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+                <FormControls
+                    controls={controls}
+                    formData={formData}
+                    setFormData={setFormData}
+                />
+
+                <button 
+                    onClick={handleSaveData}
+                    className="bg-blue-500 self-center py-1 px-4 rounded-md text-white"
+                >Adicionar</button>
+            </div>
+        </div>
     );
 }
