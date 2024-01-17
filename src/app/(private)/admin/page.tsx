@@ -7,31 +7,40 @@ import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
 import { useState } from "react";
 
-const initialHomeViewFormData = {
+export type FormDataTypes = {
+    [key: string]: string
+}
+
+const initialHomeViewFormData: FormDataTypes = {
     principal: "",
     descricao: ""
 };
-const initialAboutViewFormData = {
+
+const initialAboutViewFormData: FormDataTypes = {
     updates: "",
     projects: "",
     experience: "",
     skills: ""
 };
-const initialExperienceViewFormData = {
-    principal: "",
-    descricao: ""
+
+const initialExperienceViewFormData: FormDataTypes = {
+    cargo: "",
+    empresa: "",
+    local: "",
+    perfildeemprego: ""
 };
-const initialEducationViewFormData = {
-    principal: "",
-    descricao: ""
+
+const initialEducationViewFormData: FormDataTypes = {
+    curso: "",
+    ano: "",
+    faculdade: ""
 };
-const initialProjectsViewFormData = {
-    principal: "",
-    descricao: ""
-};
-const initialContactViewFormData = {
-    principal: "",
-    descricao: ""
+
+const initialProjectsViewFormData: FormDataTypes = {
+    nome: "",
+    tecnologias: "",
+    site: "",
+    github: ""
 };
 
 export default function Admin() {
@@ -41,7 +50,6 @@ export default function Admin() {
     const [ experienceViewFormData, setExperienceViewFormData ] = useState(initialExperienceViewFormData);
     const [ educationViewFormData, setEducationViewFormData ] = useState(initialEducationViewFormData);
     const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
-    const [ contactViewFormData, setContactViewFormData ] = useState(initialContactViewFormData);
 
     async function handleSaveData() {
         console.log("Click!");
@@ -107,11 +115,7 @@ export default function Admin() {
             id: "contact",
             label: "Contact",
             component: (
-                <AdminContactView 
-                    formData={contactViewFormData}
-                    setFormData={setContactViewFormData}
-                    handleSaveData={handleSaveData}
-                />
+                <AdminContactView />
             )
         }
     ];

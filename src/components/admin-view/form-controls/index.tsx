@@ -1,10 +1,11 @@
 import { Dispatch, SetStateAction } from "react";
-import { ControlsTypes } from "../home";
+import { ControlsItemType } from "../home";
+import { FormDataTypes } from "@/app/(private)/admin/page";
 
 interface DataTypes {
-    controls: ControlsTypes,
-    formData: { principal: string; descricao: string },
-    setFormData: Dispatch<SetStateAction<{ principal: string; descricao: string }>>,
+    controls: ControlsItemType[],
+    formData: FormDataTypes,
+    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
 }
 
 export default function FormControls({controls, formData, setFormData} : DataTypes) {

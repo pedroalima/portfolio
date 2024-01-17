@@ -1,10 +1,6 @@
 import { Dispatch, SetStateAction } from "react";
 import FormControls from "./form-controls";
-
-export type ControlsTypes = [
-    ControlsItemType,
-    ControlsItemType
-]
+import { FormDataTypes } from "@/app/(private)/admin/page";
 
 export interface ControlsItemType {
     name: string,
@@ -12,11 +8,11 @@ export interface ControlsItemType {
     label: string,
 }
 
-const controls: ControlsTypes = [
+const controls: ControlsItemType[] = [
     {
         name: "principal",
         type: "text",
-        label: "Menssagem Principal",
+        label: "Texto Principal",
     },
     {
         name: "descricao",
@@ -26,8 +22,8 @@ const controls: ControlsTypes = [
 ];
 
 interface DataTypes {
-    formData: { principal: string; descricao: string },
-    setFormData: Dispatch<SetStateAction<{ principal: string; descricao: string }>>,
+    formData: FormDataTypes,
+    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
     handleSaveData: () => void,
 }
 

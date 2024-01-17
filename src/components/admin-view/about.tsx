@@ -1,34 +1,23 @@
 import { Dispatch, SetStateAction } from "react";
 import FormControls from "./form-controls";
+import { ControlsItemType } from "./home";
+import { FormDataTypes } from "@/app/(private)/admin/page";
 
-type ControlsTypes = [
-    ControlsItemType,
-    ControlsItemType,
-    ControlsItemType,
-    ControlsItemType
-]
-
-interface ControlsItemType {
-    name: string,
-    type: string,
-    label: string,
-}
-
-const controls: ControlsTypes = [
+const controls: ControlsItemType[] = [
     {
-        name: "updates",
+        name: "sobre",
         type: "text",
-        label: "Texto de atualização",
+        label: "Sobre Min",
     },
     {
         name: "projects",
-        type: "number",
-        label: "Nº de projetos",
+        type: "text",
+        label: "Nº de Projetos",
     },
     {
         name: "experience",
-        type: "number",
-        label: "Tempo de experiência",
+        type: "text",
+        label: "Tempo de Experiência",
     },
     {
         name: "skills",
@@ -38,8 +27,8 @@ const controls: ControlsTypes = [
 ];
 
 interface DataTypes {
-    formData: { principal: string; descricao: string },
-    setFormData: Dispatch<SetStateAction<{ principal: string; descricao: string }>>,
+    formData: FormDataTypes,
+    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
     handleSaveData: () => void,
 }
 
