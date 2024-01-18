@@ -1,5 +1,4 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const ProjectSchema = new mongoose.Schema(
     {
@@ -13,4 +12,4 @@ const ProjectSchema = new mongoose.Schema(
 
 const Project = mongoose.models.Project || mongoose.model("Project", ProjectSchema);
 
-module.exports = { Project };
+export default Project;
