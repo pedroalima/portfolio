@@ -6,10 +6,15 @@ import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
 import { useState } from "react";
+// import { addData } from "@/services";
 
 export type FormDataTypes = {
     [key: string]: string
 }
+
+// interface DataMapTypes {
+//     [key: string]: FormDataTypes
+// }
 
 const initialHomeViewFormData: FormDataTypes = {
     principal: "",
@@ -50,10 +55,6 @@ export default function Admin() {
     const [ experienceViewFormData, setExperienceViewFormData ] = useState(initialExperienceViewFormData);
     const [ educationViewFormData, setEducationViewFormData ] = useState(initialEducationViewFormData);
     const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
-
-    async function handleSaveData() {
-        console.log("Click!");
-    }
 
     const menuItems = [
         {
@@ -119,6 +120,18 @@ export default function Admin() {
             )
         }
     ];
+
+    async function handleSaveData(currentTab: string) {
+        // const dataMap: DataMapTypes = {
+        //     home: homeViewFormData
+        // };
+
+        // const response = await addData(currentTab, dataMap[currentTab]);
+
+        // console.log(response);
+
+        console.log(currentTab);
+    }
 
     return (
         <div className="h-dvh">

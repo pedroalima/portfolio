@@ -24,13 +24,10 @@ const controls: ControlsItemType[] = [
 interface DataTypes {
     formData: FormDataTypes,
     setFormData: Dispatch<SetStateAction<FormDataTypes>>,
-    handleSaveData: () => void,
+    handleSaveData: (data: string) => void,
 }
 
 export default function AdminHomeView({formData, setFormData, handleSaveData} : DataTypes) {
-    
-
-    console.log(formData);
 
     return (
         <div className="min-h-dvh flex justify-center items-center">
@@ -42,7 +39,7 @@ export default function AdminHomeView({formData, setFormData, handleSaveData} : 
                 />
 
                 <button 
-                    onClick={handleSaveData}
+                    onClick={() => handleSaveData("home")}
                     className="bg-blue-500 self-center py-1 px-4 rounded-md text-white"
                 >Adicionar</button>
             </div>

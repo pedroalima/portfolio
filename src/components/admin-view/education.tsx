@@ -24,7 +24,7 @@ const controls: ControlsItemType[] = [
 interface DataTypes {
     formData: FormDataTypes,
     setFormData: Dispatch<SetStateAction<FormDataTypes>>,
-    handleSaveData: () => void,
+    handleSaveData: (data: string) => void,
 }
 
 export default function AdminEducationView({formData, setFormData, handleSaveData} : DataTypes) {
@@ -40,7 +40,7 @@ export default function AdminEducationView({formData, setFormData, handleSaveDat
                 />
 
                 <button 
-                    onClick={handleSaveData}
+                    onClick={() => handleSaveData("education")}
                     className="bg-blue-500 self-center py-1 px-4 rounded-md text-white"
                 >Adicionar</button>
             </div>
