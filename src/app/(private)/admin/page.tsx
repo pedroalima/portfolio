@@ -6,15 +6,15 @@ import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
 import { useState } from "react";
-// import { addData } from "@/services";
+import { addData } from "@/services";
 
 export type FormDataTypes = {
     [key: string]: string
 }
 
-// interface DataMapTypes {
-//     [key: string]: FormDataTypes
-// }
+interface DataMapTypes {
+    [key: string]: FormDataTypes
+}
 
 const initialHomeViewFormData: FormDataTypes = {
     principal: "",
@@ -122,15 +122,13 @@ export default function Admin() {
     ];
 
     async function handleSaveData(currentTab: string) {
-        // const dataMap: DataMapTypes = {
-        //     home: homeViewFormData
-        // };
+        const dataMap: DataMapTypes = {
+            home: homeViewFormData
+        };
 
-        // const response = await addData(currentTab, dataMap[currentTab]);
+        const response = await addData(currentTab, dataMap[currentTab]);
 
-        // console.log(response);
-
-        console.log(currentTab);
+        console.log(response);
     }
 
     return (

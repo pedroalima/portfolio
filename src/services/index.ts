@@ -16,7 +16,7 @@ export async function addData(currentTab : string, formData: FormDataTypes) {
    
         return res.json();
     } catch (error) {
-        console.log(error);
+        console.error("Error in addData:", error);
     }
 }
 
