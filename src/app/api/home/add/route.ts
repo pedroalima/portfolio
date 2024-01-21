@@ -1,11 +1,10 @@
 import connectToDatabase from "@/database";
 import Home from "@/models/Home";
-import { NextApiRequest } from "next";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-export async function POST(req: NextApiRequest) {
+export async function POST(req: NextRequest) {
     try {
         await connectToDatabase();
         const extractData = await req.json();
