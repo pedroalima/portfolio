@@ -5,7 +5,7 @@ import { FormDataTypes } from "@/app/(private)/admin/page";
 
 const controls: ControlsItemType[] = [
     {
-        name: "sobre",
+        name: "about",
         type: "text",
         label: "Sobre Min",
     },

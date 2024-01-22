@@ -22,7 +22,7 @@ const initialHomeViewFormData: FormDataTypes = {
 };
 
 const initialAboutViewFormData: FormDataTypes = {
-    updates: "",
+    about: "",
     projects: "",
     experience: "",
     skills: ""
