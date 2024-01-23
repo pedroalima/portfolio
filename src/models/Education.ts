@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const EducationSchema = new mongoose.Schema({
-    curso: String,
-    ano: String,
-    faculdade: String,
+    degree: String,
+    year: String,
+    college: String,
 }, { timestamps: true });
 
 const Education = mongoose.models.Education || mongoose.model("Education", EducationSchema);

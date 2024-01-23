@@ -5,17 +5,17 @@ import { FormDataTypes } from "@/app/(private)/admin/page";
 
 const controls: ControlsItemType[] = [
     {
-        name: "nome",
+        name: "name",
         type: "text",
         label: "Nome do Projeto",
     },
     {
-        name: "tecnologias",
+        name: "website",
         type: "text",
         label: "Tecnologias",
     },
     {
-        name: "site",
+        name: "technologies",
         type: "text",
         label: "Site",
     },

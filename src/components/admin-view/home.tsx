@@ -10,12 +10,12 @@ export interface ControlsItemType {
 
 const controls: ControlsItemType[] = [
     {
-        name: "principal",
+        name: "mainText",
         type: "text",
         label: "Texto Principal",
     },
     {
-        name: "descricao",
+        name: "description",
         type: "text",
         label: "Descrição",
     },

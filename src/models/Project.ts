@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
 
 const ProjectSchema = new mongoose.Schema({
-    nome: String,
-    tecnologias: String,
-    site: String,
+    name: String,
+    website: String,
+    technologies: String,
     github: String,
 },
 { timestamps: true });

@@ -1,5 +1,5 @@
 import connectToDatabase from "@/database";
-import About from "@/models/About";
+import Experience from "@/models/Experience";
 import { NextRequest, NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -8,7 +8,7 @@ export async function POST(req: NextRequest) {
     try {
         await connectToDatabase();
         const extractData = await req.json();
-        const saveData = await About.create(extractData);
+        const saveData = await Experience.create(extractData);
 
         if (saveData) {
             return NextResponse.json({
@@ -18,15 +18,16 @@ export async function POST(req: NextRequest) {
         } else {
             return NextResponse.json({
                 success: false,
-                message: "Something goes wrong! Please try again",
+                message: "Something is wrong! Please try again",
             });
         }
+
     } catch (error) {
         console.log(error);
 
         return NextResponse.json({
             success: false,
-            message: "Something goes wrong! Please try again",
+            message: "Something is wrong! Please try again",
         });
     }
 }

@@ -17,8 +17,8 @@ interface DataMapTypes {
 }
 
 const initialHomeViewFormData: FormDataTypes = {
-    principal: "",
-    descricao: ""
+    mainText: "",
+    description: ""
 };
 
 const initialAboutViewFormData: FormDataTypes = {
@@ -29,23 +29,24 @@ const initialAboutViewFormData: FormDataTypes = {
 };
 
 const initialExperienceViewFormData: FormDataTypes = {
-    cargo: "",
-    empresa: "",
-    local: "",
-    perfildeemprego: ""
+    position: "",
+    company: "",
+    duration: "",
+    location: "",
+    jobprofile: "",
 };
 
 const initialEducationViewFormData: FormDataTypes = {
-    curso: "",
-    ano: "",
-    faculdade: ""
+    degree: "",
+    year: "",
+    college: "",
 };
 
 const initialProjectsViewFormData: FormDataTypes = {
-    nome: "",
-    tecnologias: "",
-    site: "",
-    github: ""
+    name: "",
+    website: "",
+    technologies: "",
+    github: "",
 };
 
 export default function Admin() {
@@ -123,12 +124,16 @@ export default function Admin() {
 
     async function handleSaveData(currentTab: string) {
         const dataMap: DataMapTypes = {
-            home: homeViewFormData
+            home: homeViewFormData,
+            about: aboutViewFormData,
+            experience: experienceViewFormData,
+            education: educationViewFormData,
+            projects: projectsViewFormData
         };
 
         const response = await addData(currentTab, dataMap[currentTab]);
 
-        return response;
+        console.log(response);
     }
 
     return (

@@ -5,27 +5,27 @@ import { FormDataTypes } from "@/app/(private)/admin/page";
 
 const controls: ControlsItemType[] = [
     {
-        name: "cargo",
+        name: "position",
         type: "text",
         label: "Cargo",
     },
     {
-        name: "empresa",
+        name: "company",
         type: "text",
         label: "Empresa",
     },
     {
-        name: "duracao",
+        name: "duration",
         type: "text",
         label: "Duração",
     },
     {
-        name: "local",
+        name: "location",
         type: "text",
         label: "Local",
     },
     {
-        name: "perfildeemprego",
+        name: "jobprofile",
         type: "text",
         label: "Perfil de Emprego",
     },
@@ -38,9 +38,6 @@ interface DataTypes {
 }
 
 export default function AdminExperienceView({formData, setFormData, handleSaveData} : DataTypes) {
-    
-    console.log(formData);
-
     return (
         <div className="min-h-dvh flex justify-center items-center">
             <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">

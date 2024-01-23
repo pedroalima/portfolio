@@ -5,17 +5,17 @@ import { FormDataTypes } from "@/app/(private)/admin/page";
 
 const controls: ControlsItemType[] = [
     {
-        name: "curso",
+        name: "degree",
         type: "text",
         label: "Curso Superior",
     },
     {
-        name: "ano",
+        name: "year",
         type: "text",
         label: "Ano",
     },
     {
-        name: "faculdade",
+        name: "college",
         type: "text",
         label: "Faculdade",
     }
