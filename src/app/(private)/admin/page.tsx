@@ -133,7 +133,7 @@ export default function Admin() {
 
         const response = await addData(currentTab, dataMap[currentTab]);
 
-        console.log(response);
+        return response;
     }
 
     return (

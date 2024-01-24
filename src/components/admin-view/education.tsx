@@ -28,8 +28,6 @@ interface DataTypes {
 }
 
 export default function AdminEducationView({formData, setFormData, handleSaveData} : DataTypes) {
-    console.log(formData);
-
     return (
         <div className="min-h-dvh flex justify-center items-center">
             <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">

@@ -1,6 +1,11 @@
-
+"use client";
 
 export default function Login() {
+
+    const handleLogin = () => {
+        console.log("Click!");
+    };
+
     return (
         <div className="min-h-dvh flex justify-center items-center bg-gradient-to-r from-cyan-300 to-blue-600">
             <div className="border-b-2 pb-12 w-80 drop-shadow-lg">
@@ -24,7 +29,8 @@ export default function Login() {
                     />
                     <div className="flex flex-col gap-2">
                         <button 
-                            type="submit"
+                            onClick={handleLogin}
+                            type="button"
                             className="p-2 rounded-md bg-neutral-50 font-extralight w-full"
                         >Login</button>
                 
