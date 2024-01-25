@@ -1,20 +1,34 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
- 
-// This function can be marked `async` if using `await` inside
+
 export function middleware(request: NextRequest) {
+
+    const token = request.cookies.get("auth_token");
+
+    const adminRoute = new URL("/admin", request.url);
+    const loginRoute = new URL("/login", request.url);
+
+    if (!token) {
+        if (request.nextUrl.pathname == "/") {
+            return NextResponse.next();
+        }
+    
+        if (request.nextUrl.pathname == "/login") {
+            return NextResponse.next();
+        }
+    
+        return NextResponse.redirect(loginRoute);
+    }
+
     if (request.nextUrl.pathname == "/") {
-        return NextResponse.next();
+        return NextResponse.redirect(adminRoute);
     }
 
     if (request.nextUrl.pathname == "/login") {
-        return NextResponse.next();
+        return NextResponse.redirect(adminRoute);
     }
-
-    return NextResponse.redirect(new URL("/login", request.url));
 }
- 
-// See "Matching Paths" below to learn more
+
 export const config = {
     matcher: ["/", "/login", "/admin"],
 };

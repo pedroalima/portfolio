@@ -7,7 +7,7 @@ const controls: ControlsItemType[] = [
     {
         name: "about",
         type: "text",
-        label: "Sobre Min",
+        label: "Sobre",
     },
     {
         name: "projects",

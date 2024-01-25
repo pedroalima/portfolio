@@ -13,6 +13,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
+    "js-cookie": "^3.0.5",
     "mongoose": "^8.0.3",
     "next": "14.0.4",
     "nodemon": "^3.0.2",
@@ -22,6 +23,7 @@
     "zod": "^3.22.4"
   },
   "devDependencies": {
+    "@types/js-cookie": "^3.0.6",
     "@types/next": "^9.0.0",
     "@types/node": "^20",
     "@types/react": "^18",

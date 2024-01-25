@@ -1,9 +1,13 @@
 "use client";
+import Cookie from "js-cookie";
+import { useRouter } from "next/navigation";
 
 export default function Login() {
+    const route = useRouter();
 
     const handleLogin = () => {
-        console.log("Click!");
+        Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
+        route.push("/admin");
     };
 
     return (
