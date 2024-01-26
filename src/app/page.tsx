@@ -1,5 +1,11 @@
-import Footer from "@/components/app/footer";
-import Navbar from "@/components/app/navbar";
+import AboutClient from "@/components/client-view/about-client";
+import ContactClient from "@/components/client-view/contact-client";
+import EducationClient from "@/components/client-view/education-client";
+import ExperienceClient from "@/components/client-view/experience-client";
+import HomeClient from "@/components/client-view/home-client";
+import ProjectsClient from "@/components/client-view/projects-client";
+import Footer from "@/components/footer";
+import Navbar from "@/components/navbar";
 
 // async function getAllData(currentSection: string) {
 //     const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
@@ -13,24 +19,56 @@ import Navbar from "@/components/app/navbar";
 // }
 
 export default async function Home() {
+    const clientPages = [
+        {
+            id: "home",
+            component: (
+                <HomeClient />
+            )
+        },
+        {
+            id: "about",
+            component: (
+                <AboutClient />
+            )
+        },
+        {
+            id: "experience",
+            component: (
+                <ExperienceClient />
+            )
+        },
+        {
+            id: "education",
+            component: (
+                <EducationClient />
+            )
+        },
+        {
+            id: "projects",
+            component: (
+                <ProjectsClient />
+            )
+        },
+        {
+            id: "contact",
+            component: (
+                <ContactClient />
+            )
+        },
+    ];
+
     return (
-        <>
-            <div id="Home" className="h-dvh">
-                <Navbar />
+        <div className="bg-gray-50">
+            <Navbar />
             
-                <h1>Hello World 1</h1>
-                <div>
-
+            {clientPages.map((page) => (
+                <div id={page.id} key={page.id}>
+                    {page.component}
                 </div>
-            </div>
-            <div id="About" className="h-dvh">
-                <h1>Hello World 2</h1>
-            </div>
-            <div id="Products" className="h-dvh relative">
-                <h1>Hello World 3</h1>
+            ))}
 
-                <Footer />
-            </div>
-        </>
+            <Footer />
+        </div>
     );
 }

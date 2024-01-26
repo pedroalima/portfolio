@@ -184,15 +184,16 @@ export default function Admin() {
                     </div>
                 </nav>
             </header>
-            
-        
-            {menuItems && menuItems.map(
-                (item) => item.id === currentSelectedTab && (
-                    <main key={item.id} className="bg-gray-100">
-                        {item.component}
-                    </main>
-                )
-            )}
+
+            <main className="bg-gray-100">
+                {menuItems && menuItems.map(
+                    (item) => item.id === currentSelectedTab && (
+                        <div key={item.id}>
+                            {item.component}
+                        </div>
+                    )
+                )}
+            </main>
         </div>
     );
 }
