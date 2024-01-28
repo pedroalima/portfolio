@@ -5,8 +5,8 @@ import AdminContactView from "@/components/admin-view/contact";
 import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
-import { useState } from "react";
-import { addData } from "@/services";
+import { useEffect, useState } from "react";
+import { addData, getData } from "@/services";
 import Cookie from "js-cookie";
 import { useRouter } from "next/navigation";
 
@@ -59,6 +59,8 @@ export default function Admin() {
     const [ experienceViewFormData, setExperienceViewFormData ] = useState(initialExperienceViewFormData);
     const [ educationViewFormData, setEducationViewFormData ] = useState(initialEducationViewFormData);
     const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
+    
+    const [ allData, setAllData ] = useState({});
 
     const menuItems = [
         {
@@ -125,6 +127,25 @@ export default function Admin() {
         }
     ];
 
+    async function extractAllData () {
+        const response = await getData(currentSelectedTab);
+
+        if (currentSelectedTab === "home" && response && response.data && response.data.length) {
+            setHomeViewFormData(response && response.data[0]);
+        }
+
+        if (currentSelectedTab === "about" && response && response.data && response.data.length) {
+            setAboutViewFormData(response && response.data[0]);
+        }
+
+        if (response?.success) {
+            setAllData({
+                ...allData,
+                [currentSelectedTab]: response && response.data,
+            });
+        }
+    }
+
     async function handleSaveData(currentTab: string) {
         const dataMap: DataMapTypes = {
             home: homeViewFormData,
@@ -135,8 +156,24 @@ export default function Admin() {
         };
 
         const response = await addData(currentTab, dataMap[currentTab]);
+        console.log(response, "response");
 
-        return response;
+        if (response.success) {
+            resetFormData();
+            extractAllData();
+        }
+    }
+
+    useEffect(()=> {
+        extractAllData();
+    }, [currentSelectedTab]);
+
+    function resetFormData () {
+        setHomeViewFormData(initialHomeViewFormData);
+        setAboutViewFormData(initialAboutViewFormData);
+        setExperienceViewFormData(initialExperienceViewFormData);
+        setEducationViewFormData(initialEducationViewFormData);
+        setProjectsViewFormData(initialProjectsViewFormData);
     }
 
     const handleLogout = () => {
@@ -174,6 +211,7 @@ export default function Admin() {
                                         className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-white md:dark:text-white hover:text-blue-600"
                                         onClick={() => {
                                             setCurrentSelectedTab(item.id);
+                                            resetFormData();
                                         }}
                                     >
                                         {item.label}
