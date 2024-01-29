@@ -1,48 +1,22 @@
 "use client";
+import Cookie from "js-cookie";
 import AdminHomeView from "@/components/admin-view/home";
 import AdminAboutView from "@/components/admin-view/about";
 import AdminContactView from "@/components/admin-view/contact";
 import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
+import { useRouter } from "next/navigation";
+import { DataMapTypes } from "@/types";
 import { useEffect, useState } from "react";
 import { addData, getData, updateData } from "@/services";
-import Cookie from "js-cookie";
-import { useRouter } from "next/navigation";
-import { DataMapTypes, FormDataTypes } from "@/types";
-
-const initialHomeViewFormData: FormDataTypes = {
-    mainText: "",
-    description: ""
-};
-
-const initialAboutViewFormData: FormDataTypes = {
-    about: "",
-    projects: "",
-    experience: "",
-    skills: ""
-};
-
-const initialExperienceViewFormData: FormDataTypes = {
-    position: "",
-    company: "",
-    duration: "",
-    location: "",
-    jobprofile: "",
-};
-
-const initialEducationViewFormData: FormDataTypes = {
-    degree: "",
-    year: "",
-    college: "",
-};
-
-const initialProjectsViewFormData: FormDataTypes = {
-    name: "",
-    website: "",
-    technologies: "",
-    github: "",
-};
+import { 
+    initialAboutViewFormData, 
+    initialEducationViewFormData, 
+    initialExperienceViewFormData, 
+    initialHomeViewFormData, 
+    initialProjectsViewFormData 
+} from "@/mock-data/admin";
 
 export default function Admin() {
     const route = useRouter();
@@ -163,10 +137,6 @@ export default function Admin() {
         }
     }
 
-    useEffect(()=> {
-        extractAllData();
-    }, [currentSelectedTab]);
-
     function resetFormData () {
         setHomeViewFormData(initialHomeViewFormData);
         setAboutViewFormData(initialAboutViewFormData);
@@ -179,6 +149,10 @@ export default function Admin() {
         Cookie.remove("auth_token");
         route.push("/login");
     };
+
+    useEffect(()=> {
+        extractAllData();
+    }, [currentSelectedTab]);
 
     return (
         <div className="min-h-dvh">
