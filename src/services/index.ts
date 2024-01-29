@@ -1,4 +1,4 @@
-import { FormDataTypes } from "@/app/(private)/admin/page";
+import { FormDataTypes } from "@/types";
 
 export async function addData(currentTab : string, formData: FormDataTypes) {
     try {
@@ -33,5 +33,25 @@ export async function getData(currentTab : string) {
         return res.json();
     } catch (error) {
         console.log(error);
+    }
+}
+
+export async function updateData(currentTab : string, formData: FormDataTypes) {
+    try {
+        const res = await fetch(`/api/${currentTab}/update`, {
+            method: "PUT",
+            headers: {
+                "Content-Type" : "application/json"
+            },
+            body: JSON.stringify(formData)
+        });
+   
+        if (!res.ok) {
+            throw new Error(`Failed to fetch data from ${currentTab}`);
+        }
+   
+        return res.json();
+    } catch (error) {
+        console.error("Error in addData:", error);
     }
 }

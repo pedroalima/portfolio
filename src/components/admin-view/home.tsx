@@ -1,12 +1,5 @@
-import { Dispatch, SetStateAction } from "react";
 import FormControls from "./form-controls";
-import { FormDataTypes } from "@/app/(private)/admin/page";
-
-export interface ControlsItemType {
-    name: string,
-    type: string,
-    label: string,
-}
+import { ControlsItemType, DataTypes } from "@/types";
 
 const controls: ControlsItemType[] = [
     {
@@ -20,12 +13,6 @@ const controls: ControlsItemType[] = [
         label: "Descrição",
     },
 ];
-
-interface DataTypes {
-    formData: FormDataTypes,
-    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
-    handleSaveData: (data: string) => void,
-}
 
 export default function AdminHomeView({formData, setFormData, handleSaveData} : DataTypes) {
     return (

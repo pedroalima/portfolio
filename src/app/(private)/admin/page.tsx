@@ -6,17 +6,10 @@ import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
 import { useEffect, useState } from "react";
-import { addData, getData } from "@/services";
+import { addData, getData, updateData } from "@/services";
 import Cookie from "js-cookie";
 import { useRouter } from "next/navigation";
-
-export type FormDataTypes = {
-    [key: string]: string
-}
-
-interface DataMapTypes {
-    [key: string]: FormDataTypes
-}
+import { DataMapTypes, FormDataTypes } from "@/types";
 
 const initialHomeViewFormData: FormDataTypes = {
     mainText: "",
@@ -61,6 +54,7 @@ export default function Admin() {
     const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
     
     const [ allData, setAllData ] = useState({});
+    const [ isUpdate, setIsUpdate ] = useState(false);
 
     const menuItems = [
         {
@@ -132,10 +126,12 @@ export default function Admin() {
 
         if (currentSelectedTab === "home" && response && response.data && response.data.length) {
             setHomeViewFormData(response && response.data[0]);
+            setIsUpdate(true);
         }
 
         if (currentSelectedTab === "about" && response && response.data && response.data.length) {
             setAboutViewFormData(response && response.data[0]);
+            setIsUpdate(true);
         }
 
         if (response?.success) {
@@ -155,7 +151,10 @@ export default function Admin() {
             projects: projectsViewFormData
         };
 
-        const response = await addData(currentTab, dataMap[currentTab]);
+        const response = 
+            isUpdate 
+                ? await updateData(currentTab, dataMap[currentTab]) 
+                : await addData(currentTab, dataMap[currentTab]);
         console.log(response, "response");
 
         if (response.success) {
@@ -212,6 +211,7 @@ export default function Admin() {
                                         onClick={() => {
                                             setCurrentSelectedTab(item.id);
                                             resetFormData();
+                                            setIsUpdate(false);
                                         }}
                                     >
                                         {item.label}
