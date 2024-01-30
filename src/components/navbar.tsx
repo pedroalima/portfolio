@@ -40,7 +40,7 @@ export default function Navbar() {
     return (
         <header className="fixed top-0 w-full z-30">
             <nav>
-                <div className="max-w-screen-xl transition-all hover:shadow-lg opacity-20 hover:opacity-75 bg-gray-300 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
+                <div className="bg-white max-w-screen-xl transition-all hover:shadow-lg opacity-20 hover:opacity-95 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
                     <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-800"><strong className="text-cyan-400">Pedro</strong> Lima</span>
                     </a>
@@ -48,7 +48,7 @@ export default function Navbar() {
                         <button 
                             onClick={handleClick}
                             type="button" 
-                            className="text-gray-950 border-2 border-cyan-400 hover:text-gray-50 hover:bg-cyan-400 focus:ring-2 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+                            className="text-cyan-400 border-2 border-cyan-400 hover:text-gray-50 hover:bg-cyan-400 focus:ring-2 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
                         >Login</button>
                         <button data-collapse-toggle="navbar-cta" type="button" className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200" aria-controls="navbar-cta" aria-expanded="false">
                             <span className="sr-only">Open main menu</span>
