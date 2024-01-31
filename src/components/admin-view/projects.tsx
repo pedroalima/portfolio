@@ -8,12 +8,12 @@ const controls: ControlsItemType[] = [
         label: "Nome do Projeto",
     },
     {
-        name: "website",
+        name: "technologies",
         type: "text",
         label: "Tecnologias",
     },
     {
-        name: "technologies",
+        name: "website",
         type: "text",
         label: "Site",
     },
@@ -31,10 +31,10 @@ export default function AdminProjectsView({ data, formData, setFormData, handleS
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
                         <div key={index} className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
-                            <p>name: {item.name}</p>
-                            <p>website: {item.website}</p>
-                            <p>technologies: {item.technologies}</p>
-                            <p>github: {item.github}</p>
+                            <p>Nome: {item.name}</p>
+                            <p>Tecnologias: {item.technologies}</p>
+                            <p>Site: {item.website}</p>
+                            <p>Github: {item.github}</p>
                         </div>
                     ))
                     : null

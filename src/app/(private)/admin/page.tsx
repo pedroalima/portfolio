@@ -161,7 +161,7 @@ export default function Admin() {
         <div className="min-h-dvh">
             <header className="fixed top-0 w-full z-30">
                 <nav className="bg-white border-gray-200 dark:bg-gray-900">
-                    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+                    <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
                         <a href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
                             <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"><strong>Pedro</strong> Lima</span>
                         </a>
@@ -184,7 +184,7 @@ export default function Admin() {
                                     <button
                                         key={item.id}
                                         type="button"
-                                        className="block py-2 px-3 md:p-0 text-white bg-blue-700 rounded md:bg-transparent md:text-white md:dark:text-white hover:text-blue-600"
+                                        className={`block py-6 px-3 md:px-0 text-white hover:text-cyan-400 ${currentSelectedTab == item.id ? "border-b-4 border-cyan-400" : ""}`}
                                         onClick={() => {
                                             setCurrentSelectedTab(item.id);
                                             resetFormData();

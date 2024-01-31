@@ -40,7 +40,7 @@ export default function Navbar() {
     return (
         <header className="fixed top-0 w-full z-30">
             <nav>
-                <div className="bg-white max-w-screen-xl transition-all hover:shadow-lg opacity-20 hover:opacity-95 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
+                <div className="bg-white max-w-screen-xl transition-all hover:shadow-lg opacity-40 hover:opacity-100 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
                     <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-800"><strong className="text-cyan-400">Pedro</strong> Lima</span>
                     </a>

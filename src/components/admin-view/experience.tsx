@@ -36,11 +36,11 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
                         <div key={index} className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
-                            <p>Position: {item.position}</p>
-                            <p>Company: {item.company}</p>
-                            <p>Duration: {item.duration}</p>
-                            <p>Location: {item.location}</p>
-                            <p>Job Profile: {item.jobprofile}</p>
+                            <p>Cargo: {item.position}</p>
+                            <p>Empresa: {item.company}</p>
+                            <p>Duração: {item.duration}</p>
+                            <p>Local: {item.location}</p>
+                            <p>Perfil de Trabalho: {item.jobprofile}</p>
                         </div>
                     ))
                     : null
