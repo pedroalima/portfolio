@@ -35,7 +35,7 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
             {
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
+                        <div key={index} className="bg-white border-2 border-gray-300 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
                             <p>Cargo: {item.position}</p>
                             <p>Empresa: {item.company}</p>
                             <p>Duração: {item.duration}</p>

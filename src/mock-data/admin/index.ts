@@ -32,3 +32,8 @@ export const initialProjectsViewFormData: FormDataTypes = {
     technologies: "",
     github: "",
 };
+
+export const initialLoginViewFormData: FormDataTypes = {
+    username: "",
+    password: ""
+};
