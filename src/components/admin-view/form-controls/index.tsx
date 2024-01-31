@@ -1,6 +1,6 @@
 import { FormControlsDataTypes } from "@/types";
 
-export default function FormControls({controls, formData, setFormData} : FormControlsDataTypes) {
+export default function FormControls({ controls, formData, setFormData } : FormControlsDataTypes) {
     return (
         <>
             {controls.map(controlItem => (

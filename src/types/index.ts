@@ -1,14 +1,25 @@
 import { Dispatch, SetStateAction } from "react";
 
-export type FormDataTypes = {
-    [key: string]: string
+export interface FormDataTypes {
+    [key: string]: string | number
 }
 
 export interface DataMapTypes {
     [key: string]: FormDataTypes
 }
 
+export interface AllDataTypes {
+    [key: string]: FormDataTypes[]
+}
+
 export interface DataTypes {
+    formData: FormDataTypes,
+    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
+    handleSaveData: (data: string) => void,
+}
+
+export interface DataTypesAsync {
+    data: FormDataTypes[],
     formData: FormDataTypes,
     setFormData: Dispatch<SetStateAction<FormDataTypes>>,
     handleSaveData: (data: string) => void,

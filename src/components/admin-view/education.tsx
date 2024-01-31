@@ -1,5 +1,5 @@
 import FormControls from "./form-controls";
-import { DataTypes, ControlsItemType } from "@/types";
+import { ControlsItemType, DataTypesAsync, FormDataTypes } from "@/types";
 
 const controls: ControlsItemType[] = [
     {
@@ -19,9 +19,20 @@ const controls: ControlsItemType[] = [
     }
 ];
 
-export default function AdminEducationView({formData, setFormData, handleSaveData} : DataTypes) {
+export default function AdminEducationView({ data, formData, setFormData, handleSaveData} : DataTypesAsync) {
     return (
-        <div className="min-h-dvh flex justify-center items-center">
+        <div className="min-h-dvh py-14 mt-10 flex flex-col gap-4 justify-center items-center">
+            {
+                data && data.length
+                    ? data.map((item: FormDataTypes, index: number) => (
+                        <div key={index} className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+                            <p>Degree: {item.degree}</p>
+                            <p>Year: {item.year}</p>
+                            <p>College: {item.college}</p>
+                        </div>
+                    ))
+                    : null
+            }
             <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                 <FormControls
                     controls={controls}

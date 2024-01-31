@@ -7,7 +7,7 @@ import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
 import AdminProjectsView from "@/components/admin-view/projects";
 import { useRouter } from "next/navigation";
-import { DataMapTypes } from "@/types";
+import { AllDataTypes, DataMapTypes } from "@/types";
 import { useEffect, useState } from "react";
 import { addData, getData, updateData } from "@/services";
 import { 
@@ -27,7 +27,7 @@ export default function Admin() {
     const [ educationViewFormData, setEducationViewFormData ] = useState(initialEducationViewFormData);
     const [ projectsViewFormData, setProjectsViewFormData ] = useState(initialProjectsViewFormData);
     
-    const [ allData, setAllData ] = useState({});
+    const [ allData, setAllData ] = useState<AllDataTypes>({});
     const [ isUpdate, setIsUpdate ] = useState(false);
 
     const menuItems = [
@@ -61,6 +61,7 @@ export default function Admin() {
                     formData={experienceViewFormData}
                     setFormData={setExperienceViewFormData}
                     handleSaveData={handleSaveData}
+                    data={allData?.experience}
                 />
             )
         },
@@ -72,6 +73,7 @@ export default function Admin() {
                     formData={educationViewFormData}
                     setFormData={setEducationViewFormData}
                     handleSaveData={handleSaveData}
+                    data={allData?.education}
                 />
             )
         },
@@ -83,6 +85,7 @@ export default function Admin() {
                     formData={projectsViewFormData}
                     setFormData={setProjectsViewFormData}
                     handleSaveData={handleSaveData}
+                    data={allData?.projects}
                 />
             )
         },
