@@ -1,5 +1,6 @@
 "use client";
 import { initialLoginViewFormData } from "@/mock-data/admin";
+import { login } from "@/services";
 import { ControlsItemType } from "@/types";
 import Cookie from "js-cookie";
 import { useRouter } from "next/navigation";
@@ -23,12 +24,16 @@ export default function Login() {
     
     const [ loginFormData, setLoginFormData ] = useState(initialLoginViewFormData);
 
-    const handleLogin = () => {
-        Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
-        route.push("/admin");
-    };
+    async function handleLogin() {
+        const res = await login(loginFormData);
+        console.log(res, "Login");
+        
+        if (res?.success) {
+            Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
 
-    console.log(loginFormData);
+            route.push("/admin");
+        }
+    }
 
     return (
         <div className="min-h-dvh flex justify-center items-center bg-gradient-to-r from-cyan-300 to-blue-600">

@@ -55,3 +55,24 @@ export async function updateData(currentTab : string, formData: FormDataTypes) {
         console.error("Error in addData:", error);
     }
 }
+
+export async function login(formData: FormDataTypes) {
+    try {
+        const res = await fetch("/api/login", {
+            method: "POST",
+            headers: {
+                "Content-type": "application-json"
+            },
+            body: JSON.stringify(formData)
+        });
+
+        if (!res.ok) {
+            throw new Error("Failed to fetch data form login");
+        }
+
+        const result = await res.json();
+        return result;
+    } catch (error) {
+        console.log(error);
+    }
+}
