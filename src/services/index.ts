@@ -1,8 +1,10 @@
 import { FormDataTypes } from "@/types";
 
+const BaseURL = process.env.BASE_URL;
+
 export async function addData(currentTab : string, formData: FormDataTypes) {
     try {
-        const res = await fetch(`/api/${currentTab}/add`, {
+        const res = await fetch(`${BaseURL}/api/${currentTab}/add`, {
             method: "POST",
             headers: {
                 "Content-Type" : "application/json"
@@ -22,7 +24,7 @@ export async function addData(currentTab : string, formData: FormDataTypes) {
 
 export async function getData(currentTab : string) {
     try {
-        const res = await fetch(`/api/${currentTab}/get`, {
+        const res = await fetch(`${BaseURL}/api/${currentTab}/get`, {
             method: "GET"
         });
    
@@ -38,7 +40,7 @@ export async function getData(currentTab : string) {
 
 export async function updateData(currentTab : string, formData: FormDataTypes) {
     try {
-        const res = await fetch(`/api/${currentTab}/update`, {
+        const res = await fetch(`${BaseURL}/api/${currentTab}/update`, {
             method: "PUT",
             headers: {
                 "Content-Type" : "application/json"
@@ -58,7 +60,7 @@ export async function updateData(currentTab : string, formData: FormDataTypes) {
 
 export async function login(formData: FormDataTypes) {
     try {
-        const res = await fetch("/api/login", {
+        const res = await fetch(`${BaseURL}/api/login`, {
             method: "POST",
             headers: {
                 "Content-type": "application-json"
