@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 
 export interface FormDataTypes {
-    [key: string]: string | number
+    [key: string]: string
 }
 
 export interface DataMapTypes {
