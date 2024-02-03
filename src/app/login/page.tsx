@@ -28,15 +28,11 @@ export default function Login() {
         const res = await login(loginFormData);
         console.log(res, "Login");
         
-        // if (res?.success) {
-        //     Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
+        if (res?.success) {
+            Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
 
-        //     route.push("/admin");
-        // }
-
-        Cookie.set("auth_token", "1as51f6as51fsa561ga6s5g1");
-
-        route.push("/admin");
+            route.push("/admin");
+        }
     }
 
     return (

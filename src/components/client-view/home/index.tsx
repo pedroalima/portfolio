@@ -1,6 +1,6 @@
 
 
-export default function HomeClient() {
+export default function ClientHome() {
     return (
         <div className="min-h-dvh flex justify-center items-center">
             <div>

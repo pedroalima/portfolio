@@ -2,7 +2,7 @@ import AboutClient from "@/components/client-view/about-client";
 import ContactClient from "@/components/client-view/contact-client";
 import EducationClient from "@/components/client-view/education-client";
 import ExperienceClient from "@/components/client-view/experience-client";
-import HomeClient from "@/components/client-view/home-client";
+import ClientHome from "@/components/client-view/home";
 import ProjectsClient from "@/components/client-view/projects-client";
 import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
@@ -23,7 +23,7 @@ export default async function Home() {
         {
             id: "home",
             component: (
-                <HomeClient />
+                <ClientHome />
             )
         },
         {
