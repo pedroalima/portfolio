@@ -36,3 +36,8 @@ export interface ControlsItemType {
     type: string,
     label: string,
 }
+
+export interface ClientSectionDataTypes {
+    success: boolean,
+    data: FormDataTypes[]
+}

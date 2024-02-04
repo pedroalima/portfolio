@@ -1,74 +1,36 @@
-import AboutClient from "@/components/client-view/about-client";
-import ContactClient from "@/components/client-view/contact-client";
-import EducationClient from "@/components/client-view/education-client";
-import ExperienceClient from "@/components/client-view/experience-client";
 import ClientHome from "@/components/client-view/home";
-import ProjectsClient from "@/components/client-view/projects-client";
-import Footer from "@/components/footer";
-import Navbar from "@/components/navbar";
+import ClientAbout from "@/components/client-view/about";
+import ClientExperience from "@/components/client-view/experience";
+import ClientEducation from "@/components/client-view/education";
+import ClientProjects from "@/components/client-view/projects";
+import ClientContact from "@/components/client-view/contact";
 
-// async function getAllData(currentSection: string) {
-//     const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
-//         method: "GET",
-//         cache: "no-store"
-//     });
+async function getAllData(currentSection: string) {
+    const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
+        method: "GET",
+        cache: "no-store",
+    });
 
-//     const data = await res.json();
+    const data = await res.json();
 
-//     return data && data.data;
-// }
+    return data;
+}
 
 export default async function Home() {
-    const clientPages = [
-        {
-            id: "home",
-            component: (
-                <ClientHome />
-            )
-        },
-        {
-            id: "about",
-            component: (
-                <AboutClient />
-            )
-        },
-        {
-            id: "experience",
-            component: (
-                <ExperienceClient />
-            )
-        },
-        {
-            id: "education",
-            component: (
-                <EducationClient />
-            )
-        },
-        {
-            id: "projects",
-            component: (
-                <ProjectsClient />
-            )
-        },
-        {
-            id: "contact",
-            component: (
-                <ContactClient />
-            )
-        },
-    ];
+    const homeSectionData = await getAllData("home");
+    const aboutSectionData = await getAllData("about");
+    const experienceSectionData = await getAllData("experience");
+    const educationSectionData = await getAllData("education");
+    const projectsSectionData = await getAllData("projects");
 
     return (
         <div className="bg-gray-900">
-            <Navbar />
-            
-            {clientPages.map((page) => (
-                <div id={page.id} key={page.id}>
-                    {page.component}
-                </div>
-            ))}
-
-            <Footer />
+            <ClientHome data={homeSectionData} />
+            <ClientAbout data={aboutSectionData} />
+            <ClientExperience data={experienceSectionData} />
+            <ClientEducation data={educationSectionData} />
+            <ClientProjects data={projectsSectionData} />
+            <ClientContact />
         </div>
     );
 }
