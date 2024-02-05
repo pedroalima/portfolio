@@ -6,7 +6,7 @@ import ClientProjects from "@/components/client-view/projects";
 import ClientContact from "@/components/client-view/contact";
 
 async function getAllData(currentSection: string) {
-    const res = await fetch(`http://localhost:3000/api/${currentSection}/get`, {
+    const res = await fetch(`${process.env.BASE_URL}/api/${currentSection}/get`, {
         method: "GET",
         cache: "no-store",
     });
@@ -17,14 +17,15 @@ async function getAllData(currentSection: string) {
 }
 
 export default async function Home() {
+
     const homeSectionData = await getAllData("home");
     const aboutSectionData = await getAllData("about");
     const experienceSectionData = await getAllData("experience");
     const educationSectionData = await getAllData("education");
     const projectsSectionData = await getAllData("projects");
-
+    
     return (
-        <div className="bg-gray-900">
+        <div className="bg-gray-900 text-white">
             <ClientHome data={homeSectionData} />
             <ClientAbout data={aboutSectionData} />
             <ClientExperience data={experienceSectionData} />
