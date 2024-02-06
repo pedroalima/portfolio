@@ -1,34 +1,6 @@
 "use client";
+import { navItems } from "@/mock-data/admin";
 import { useRouter } from "next/navigation";
-
-const navItems = [
-    {
-        id: "Home",
-        label: "home"
-    },
-    {
-        id: "About",
-        label: "about"
-    },
-    {
-        id: "Experience",
-        label: "experience"
-    },
-    
-    {
-        id: "Education",
-        label: "education"
-    },
-    
-    {
-        id: "Projects",
-        label: "projects"
-    },
-    {
-        id: "Contact",
-        label: "contact"
-    }
-];
 
 export default function Navbar() {
     const route = useRouter();
@@ -63,9 +35,9 @@ export default function Navbar() {
                                 <button
                                     key={item.id}
                                     type="button"
-                                    className="block py-2 px-3 md:p-1 text-gray-950 bg-transparent hover:text-cyan-400 hover:border-b-2 hover:border-cyan-400"
+                                    className="block py-2 px-3 md:p-1 text-gray-950 bg-transparent hover:text-cyan-400 transition-all hover:border-b-2 hover:border-cyan-400"
                                 >
-                                    <a href={`#${item.label}`}>{item.id}</a>
+                                    <a href={`#${item.id}`}>{item.label}</a>
                                 </button>
                             ))}
                         </div>

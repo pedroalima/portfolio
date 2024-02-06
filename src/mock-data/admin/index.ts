@@ -37,3 +37,32 @@ export const initialLoginViewFormData: FormDataTypes = {
     username: "",
     password: ""
 };
+
+export const navItems = [
+    {
+        id: "home",
+        label: "Home"
+    },
+    {
+        id: "about",
+        label: "About"
+    },
+    {
+        id: "experience",
+        label: "Experience"
+    },
+    
+    {
+        id: "education",
+        label: "Education"
+    },
+    
+    {
+        id: "projects",
+        label: "Projects"
+    },
+    {
+        id: "contact",
+        label: "Contact"
+    }
+];
