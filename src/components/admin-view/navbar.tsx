@@ -1,14 +1,7 @@
-import { navItems } from "@/mock-data/admin";
 import Cookie from "js-cookie";
+import { NavbarMenuTypes } from "@/types";
 import { useRouter } from "next/navigation";
-import { Dispatch, SetStateAction } from "react";
-
-interface NavbarMenuTypes {
-    currentSelectedTab: string,
-    setCurrentSelectedTab: Dispatch<SetStateAction<string>>,
-    resetFormData: () => void,
-    setIsUpdate: Dispatch<SetStateAction<boolean>>
-}
+import { navItems } from "@/mock-data/admin";
 
 export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab, resetFormData, setIsUpdate } : NavbarMenuTypes) {
     

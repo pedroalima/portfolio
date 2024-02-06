@@ -1,8 +1,11 @@
 "use client";
 import { navItems } from "@/mock-data/admin";
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export default function Navbar() {
+    const [ active, setActive ] = useState("home");
+
     const route = useRouter();
 
     const handleClick = () => {
@@ -35,7 +38,8 @@ export default function Navbar() {
                                 <button
                                     key={item.id}
                                     type="button"
-                                    className="block py-2 px-3 md:p-1 text-gray-950 bg-transparent hover:text-cyan-400 transition-all hover:border-b-2 hover:border-cyan-400"
+                                    onClick={() => setActive(item.id)}
+                                    className={`block py-2 px-3 md:p-1 bg-transparent hover:text-cyan-400 transition-all hover:border-b-2 hover:border-cyan-400 ${active == item.id ? "font-bold text-cyan-400 border-b-2 border-cyan-400" : "text-gray-950"}`}
                                 >
                                     <a href={`#${item.id}`}>{item.label}</a>
                                 </button>

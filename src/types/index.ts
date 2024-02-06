@@ -41,3 +41,10 @@ export interface ClientSectionDataTypes {
     success: boolean,
     data: FormDataTypes[]
 }
+
+export interface NavbarMenuTypes {
+    currentSelectedTab: string,
+    setCurrentSelectedTab: Dispatch<SetStateAction<string>>,
+    resetFormData: () => void,
+    setIsUpdate: Dispatch<SetStateAction<boolean>>
+}
