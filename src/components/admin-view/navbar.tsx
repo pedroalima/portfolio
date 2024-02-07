@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { navItems } from "@/mock-data/admin";
 
 export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab, resetFormData, setIsUpdate } : NavbarMenuTypes) {
-    
     const route = useRouter();
 
     const handleLogout = () => {
