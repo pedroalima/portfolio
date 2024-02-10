@@ -8,14 +8,12 @@ import profile from "../../../../public/profile.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { useMemo } from "react";
 
-
-
 export default function ClientHome({ data } : { data: ClientSectionDataTypes}) {
 
     function variants() {
         return {
             offscreen: {
-                x: 550,
+                x: 200,
                 opacity: 0,
             },
             onscreen: ({ duration = 1.5 } = {}) => ({
