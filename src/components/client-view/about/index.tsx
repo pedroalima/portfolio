@@ -10,11 +10,11 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     function variants() {
         return {
             offscreen: {
-                x: 200,
+                y: 150,
                 opacity: 0,
             },
             onscreen: ({ duration = 1.5 } = {}) => ({
-                x: 0,
+                y: 0,
                 opacity: 1,
                 transition: {
                     type: "spring",
@@ -26,27 +26,37 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
 
     const setVariants = useMemo(() => variants(), []);
 
+    const aboutDataInfo = [
+        {
+            label: "Projetos",
+            value: data.data[0].projects || "0",
+        },
+        {
+            label: "Experiência",
+            value: data.data[0].experience || "0",
+        },
+    ];
+
     return (
         <div className="w-full py-40 overflow-hidden" id="about">
-            <AnimationWrapper>
-                {data.data.map((item, i) => (
-                    <motion.div 
-                        key={i} 
-                        className="flex justify-evenly"
-                        variants={setVariants}
-                    >
-                        <div>
-                            <h2 className="text-7xl font-semibold text-cyan-400">+{item.projects}</h2>
-                            <span className="text-2xl font-normal text-gray-500">Projetos</span>
-                        </div>
-                        <div className="border-r-4 border-cyan-400"></div>
-                        <div>
-                            <h2 className="text-7xl font-semibold text-cyan-400">+{item.experience}</h2>
-                            <span className="text-2xl font-normal text-gray-500">Expericência</span>
-                        </div>
-                    </motion.div>
-                ))}
-            </AnimationWrapper>
+            <div className="w-full flex">
+                <AnimationWrapper className="w-full flex justify-evenly divide-x-2 divide-cyan-400">
+                    {aboutDataInfo.map((item, i) => (
+                        <motion.div 
+                            key={i} 
+                            variants={setVariants}
+                            custom={{ duration: 1.5 + i}}
+                        >
+                            <div className="flex w-full mx-auto">
+                                <div className="flex flex-col">
+                                    <h2 className="text-7xl font-semibold text-cyan-400">+{item.value}</h2>
+                                    <span className="text-2xl font-normal text-gray-500">{item.label}</span>
+                                </div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </AnimationWrapper>
+            </div>
         </div>
     );
 }
