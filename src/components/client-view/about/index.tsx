@@ -37,13 +37,15 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
         },
     ];
 
+    const headingText = "Minhas Habilidades Consolidadas";
+
     return (
         <div className="w-full py-40 overflow-hidden" id="about">
             <div className="w-full flex">
                 <AnimationWrapper className="w-full flex justify-evenly divide-x-2 divide-cyan-400">
                     {aboutDataInfo.map((item, i) => (
-                        <motion.div 
-                            key={i} 
+                        <motion.div
+                            key={i}
                             variants={setVariants}
                             custom={{ duration: 1.5 + i}}
                         >
@@ -57,6 +59,27 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                     ))}
                 </AnimationWrapper>
             </div>
+            <AnimationWrapper className={"mt-20 pt-6"}>
+                <motion.div 
+                    variants={setVariants} 
+                    className="flex flex-col justify-center items-center"
+                >
+                    <h1 className="leading-[70px] mb-4 text-5xl font-medium">
+                        {headingText.split(" ").map((item, index) => (
+                            <span key={index} className={`${index === 1 ? "text-cyan-400" : "text-white"}`}>
+                                {item}{" "}
+                            </span>
+                        ))}
+                    </h1>
+                </motion.div>
+            </AnimationWrapper>
+            <AnimationWrapper className={"pt-6"}>
+                <div className="flex justify-center items-center gap-2">
+                    {data.data[0].skills.split(", ").map((item, i) => (
+                        <span key={i} className="px-4 py-2 rounded-md border-2 border-cyan-400">{item}</span>
+                    ))}
+                </div>
+            </AnimationWrapper>
         </div>
     );
 }
