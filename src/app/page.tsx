@@ -1,7 +1,6 @@
 import ClientHome from "@/components/client-view/home";
 import ClientAbout from "@/components/client-view/about";
-import ClientExperience from "@/components/client-view/experience";
-import ClientEducation from "@/components/client-view/education";
+import ClientExperience from "@/components/client-view/experience-education";
 import ClientProjects from "@/components/client-view/projects";
 import ClientContact from "@/components/client-view/contact";
 
@@ -28,8 +27,7 @@ export default async function Home() {
         <div className="bg-gray-900 text-white">
             <ClientHome data={homeSectionData} />
             <ClientAbout data={aboutSectionData} />
-            <ClientExperience data={experienceSectionData} />
-            <ClientEducation data={educationSectionData} />
+            <ClientExperience experience={experienceSectionData} education={educationSectionData}  />
             <ClientProjects data={projectsSectionData} />
             <ClientContact />
         </div>

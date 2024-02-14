@@ -1,5 +1,5 @@
 "use client";
-import { navItems } from "@/mock-data/admin";
+import { navItemsClient } from "@/mock-data/admin";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -34,7 +34,7 @@ export default function Navbar() {
                     </div>
                     <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
                         <div className="flex flex-col font-medium md:p-0 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0">
-                            {navItems.map((item) => (
+                            {navItemsClient.map((item) => (
                                 <button
                                     key={item.id}
                                     type="button"
