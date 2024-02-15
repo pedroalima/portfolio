@@ -1,25 +1,39 @@
+"use client";
 import { ClientSectionDataTypes } from "@/types";
+// import { useScroll } from "framer-motion";
 import Link from "next/link";
+import { useRef } from "react";
+import AnimationWrapper from "../animate-wrapper";
 
 export default function ClientProjects({ data } : { data: ClientSectionDataTypes}) {
     console.log(data);
 
+    const containerRef = useRef(null);
+    // const { scrollXProgress } = useScroll({ container: containerRef });
+
     return (
         <div className="min-h-dvh flex justify-center items-center px-12" id="projects">
-            <div id="controls-carousel" className="relative w-full" data-carousel="static">
-                <div className="relative h-56 overflow-hidden rounded-lg md:h-96">
-                    {/* <!-- Item 1 --> */}
+
+            <AnimationWrapper>
+                <ul className="project-wrapper" ref={containerRef}>
+                    {/* <!-- Items --> */}
                     {data.data.map((item, i) => (
-                        <div key={i} className="duration-700 ease-in-out w-1/4 rounded-lg px-8 pt-8 border-2 border-cyan-400">
-                            <h3 className="text-2xl">{item.name}</h3>
-                            <h3>{item.technologies}</h3>
-                            <div className="flex justify-evenly pt-8">
-                                <Link href={item.github} className="border-t-2 border-r-2 border-l-2 border-cyan-400 rounded-md p-1">GitHub</Link>
-                                <Link href={item.website} className="border-t-2 border-r-2 border-l-2 border-cyan-400 rounded-md p-1">Aplicação</Link>
+                        <li key={i} className="w-full flex items-stretch cursor-pointer">
+                            <div className="border-2 w-full relative border-cyan-400 transition-all rounded-lg flex flex-col">
+                                <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
+                                    <div className="flex flex-col m-4">
+                                        <h3 className="text-2xl">{item.name}</h3>
+                                        <p>{item.technologies}</p>
+                                        <div className="">
+                                            <Link href={item.github} className="">GitHub</Link>
+                                            <Link href={item.website} className="">Aplicação</Link>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 {/* <!-- Slider controls --> */}
                 <button type="button" className="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
                     <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
@@ -37,7 +51,7 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
                         <span className="sr-only">Next</span>
                     </span>
                 </button>
-            </div>
+            </AnimationWrapper>
         </div>
     );
 }

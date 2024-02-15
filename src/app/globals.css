@@ -8,3 +8,21 @@
     margin: 0;
     padding: 0;
 }
+
+.project-wrapper{
+    display: flex;
+    list-style: none;
+    height: 350px;
+    overflow-x: scroll;
+    padding: 20px 0;
+    flex: 0 0 600px;
+}
+
+.project-wrapper li {
+    flex: 0 0 300px;
+    margin: 0 20px 0 0;
+}
+
+.project-wrapper li:last-of-type {
+    margin: 0;
+}
