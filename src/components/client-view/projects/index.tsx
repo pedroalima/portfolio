@@ -6,19 +6,16 @@ import AnimationWrapper from "../animate-wrapper";
 import { useRouter } from "next/navigation";
 
 export default function ClientProjects({ data } : { data: ClientSectionDataTypes}) {
-    console.log(data);
-
     const router = useRouter();
 
     const containerRef = useRef(null);
-    // const { scrollXProgress } = useScroll({ container: containerRef });
 
     return (
-        <div className="min-h-dvh flex justify-center items-center px-12" id="projects">
+        <div className="min-h-dvh flex flex-col justify-around items-center px-12" id="projects">
+            <h1 className="text-5xl">Meus Projetos</h1>
 
             <AnimationWrapper>
                 <ul className="project-wrapper" ref={containerRef}>
-                    {/* <!-- Items --> */}
                     {data.data.map((item, i) => (
                         <li key={i} className="w-full flex items-stretch cursor-pointer">
                             <div className="border-2 w-full relative border-cyan-400 transition-all rounded-lg flex flex-col">

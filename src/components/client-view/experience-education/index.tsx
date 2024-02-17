@@ -1,11 +1,8 @@
 import { ClientSectionDataTypes } from "@/types";
 
 export default function ClientExperience({ experience, education } : { experience: ClientSectionDataTypes, education: ClientSectionDataTypes}) {
-    console.log(experience);
-    console.log(education);
-
     return (
-        <div className="min-h-dvh container mx-auto flex justify-around items-center" id="experience">
+        <div className="min-h-dvh mx-auto flex justify-around items-center px-12" id="experience">
             <div className="p-12 w-1/2">
                 <div className="border-2 border-cyan-400 rounded-lg p-8">
                     <div className="flex justify-between">

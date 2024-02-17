@@ -13,7 +13,7 @@ export default function Navbar() {
     };
 
     return (
-        <header className="fixed top-0 w-full z-30">
+        <header className="fixed top-0 w-full px-12 z-30">
             <nav>
                 <div className="bg-white max-w-screen-xl transition-all hover:shadow-lg opacity-40 hover:opacity-100 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
                     <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">

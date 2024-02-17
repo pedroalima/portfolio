@@ -39,7 +39,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const headingText = "Minhas Habilidades Consolidadas";
 
     return (
-        <div className="w-full py-40 overflow-hidden" id="about">
+        <div className="py-32 overflow-hidden px-12" id="about">
             <div className="w-full flex">
                 <AnimationWrapper className="w-full flex justify-evenly divide-x-2 divide-cyan-400">
                     {aboutDataInfo.map((item, i) => (
@@ -50,7 +50,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                         >
                             <div className="flex w-full mx-auto">
                                 <div className="flex flex-col">
-                                    <h2 className="text-7xl font-semibold text-cyan-400">+{item.value}</h2>
+                                    <h2 className="text-5xl font-semibold text-cyan-400">+{item.value}</h2>
                                     <span className="text-2xl font-normal text-gray-500">{item.label}</span>
                                 </div>
                             </div>
