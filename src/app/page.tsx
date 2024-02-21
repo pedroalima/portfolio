@@ -135,7 +135,6 @@ const mockProjects = {
 };
 
 export default async function Home() {
-
     // const homeSectionData = await getAllData("home");
     const homeSectionData = mockHome;
     // const aboutSectionData = await getAllData("about");
