@@ -3,17 +3,7 @@ import ClientAbout from "@/components/client-view/about";
 import ClientExperience from "@/components/client-view/experience-education";
 import ClientProjects from "@/components/client-view/projects";
 import ClientContact from "@/components/client-view/contact";
-
-// async function getAllData(currentSection: string) {
-//     const res = await fetch(`${process.env.BASE_URL}/api/${currentSection}/get`, {
-//         method: "GET",
-//         cache: "no-store",
-//     });
-
-//     const data = await res.json();
-
-//     return data;
-// }
+// import { getData } from "@/services";
 
 const mockHome = {
     success: true,
@@ -133,6 +123,40 @@ const mockProjects = {
         }
     ]
 };
+
+// const Home = ({ homeSectionData, aboutSectionData, educationSectionData, experienceSectionData, projectsSectionData }) => {
+//     return (
+//         <div className="bg-gray-900 text-white">
+//             <ClientHome data={homeSectionData} />
+//             <ClientAbout data={aboutSectionData} />
+//             <ClientExperience experience={experienceSectionData} education={educationSectionData} />
+//             <ClientProjects data={projectsSectionData} />
+//             <ClientContact />
+//         </div>
+//     );
+// };
+  
+// export async function getStaticProps() {
+//     // Fetch data asynchronously
+//     const homeSectionData = await getData("home");
+//     const aboutSectionData = await getData("about");
+//     const experienceSectionData = await getData("experience");
+//     const educationSectionData = await getData("education");
+//     const projectsSectionData = await getData("projects");
+  
+//     // Pass data to the page via props
+//     return {
+//         props: {
+//             homeSectionData,
+//             aboutSectionData,
+//             educationSectionData,
+//             experienceSectionData,
+//             projectsSectionData,
+//         },
+//     };
+// }
+  
+// export default Home;
 
 export default async function Home() {
     // const homeSectionData = await getAllData("home");

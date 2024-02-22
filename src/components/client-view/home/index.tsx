@@ -3,21 +3,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
-import { ClientSectionDataTypes } from "@/types";
 import AnimationWrapper from "../animate-wrapper";
 import profile from "../../../../public/profile.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
-// import { getStaticProps } from "next/dist/build/templates/pages";
+import { ClientSectionDataTypes } from "@/types";
+// import { getData } from "@/services";
 
-// export const getStaticProps = (async (context) => {
-//     const data = await fetch(`${process.env.BASE_URL}/api/home/get`);
-
-//     const result = await data.json();
-
-//     return (result);
-// }) satisfies GetStaticProps<{ result: FormDataTypes[] }>;
-
-export default function ClientHome({ data } : { data: ClientSectionDataTypes}) {
+export default function ClientHome({ data } : { data : ClientSectionDataTypes}) {
     
     function variants() {
         return {
@@ -84,3 +76,15 @@ export default function ClientHome({ data } : { data: ClientSectionDataTypes}) {
         </div>
     );
 }
+
+// export async function getStaticProps() {
+//     // Fetch data asynchronously
+//     const homeSectionData = await getData("home");
+
+//     // Pass data to the page via props
+//     return {
+//         props: {
+//             homeSectionData,
+//         },
+//     };
+// }
