@@ -1,4 +1,3 @@
-"use client";
 import Link from "next/link";
 import Image from "next/image";
 import { useMemo } from "react";
@@ -7,7 +6,6 @@ import AnimationWrapper from "../animate-wrapper";
 import profile from "../../../../public/profile.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { ClientSectionDataTypes } from "@/types";
-// import { getData } from "@/services";
 
 export default function ClientHome({ data } : { data : ClientSectionDataTypes}) {
     

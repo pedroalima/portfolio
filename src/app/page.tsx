@@ -1,19 +1,21 @@
+"use client";
 import ClientHome from "@/components/client-view/home";
 import ClientAbout from "@/components/client-view/about";
 import ClientExperience from "@/components/client-view/experience-education";
 import ClientProjects from "@/components/client-view/projects";
 import ClientContact from "@/components/client-view/contact";
-// import { getData } from "@/services";
+import { getData } from "@/services";
+import { useEffect, useState } from "react";
 
 const mockHome = {
     success: true,
     data: [
         {
-            _id: "65b694ed27565d7b3e172db2",
-            mainText: "Sou Desenvolvedor Front-end",
-            description: "Aprender é um cíclo contínuo, vamos lá, me traga sua dúvida!",
-            createdAt: "2024-01-28T17:54:53.353Z",
-            updatedAt: "2024-02-04T14:37:11.984Z"
+            _id: "",
+            mainText: "",
+            description: "",
+            createdAt: "",
+            updatedAt: ""
         }
     ]
 };
@@ -124,43 +126,10 @@ const mockProjects = {
     ]
 };
 
-// const Home = ({ homeSectionData, aboutSectionData, educationSectionData, experienceSectionData, projectsSectionData }) => {
-//     return (
-//         <div className="bg-gray-900 text-white">
-//             <ClientHome data={homeSectionData} />
-//             <ClientAbout data={aboutSectionData} />
-//             <ClientExperience experience={experienceSectionData} education={educationSectionData} />
-//             <ClientProjects data={projectsSectionData} />
-//             <ClientContact />
-//         </div>
-//     );
-// };
-  
-// export async function getStaticProps() {
-//     // Fetch data asynchronously
-//     const homeSectionData = await getData("home");
-//     const aboutSectionData = await getData("about");
-//     const experienceSectionData = await getData("experience");
-//     const educationSectionData = await getData("education");
-//     const projectsSectionData = await getData("projects");
-  
-//     // Pass data to the page via props
-//     return {
-//         props: {
-//             homeSectionData,
-//             aboutSectionData,
-//             educationSectionData,
-//             experienceSectionData,
-//             projectsSectionData,
-//         },
-//     };
-// }
-  
-// export default Home;
-
-export default async function Home() {
+export default function Home() {
+    const [homeSectionData, setHomeSectionData] = useState(mockHome);
     // const homeSectionData = await getAllData("home");
-    const homeSectionData = mockHome;
+    // const homeSectionData = mockHome;
     // const aboutSectionData = await getAllData("about");
     const aboutSectionData = mockAbout;
     // const experienceSectionData = await getAllData("experience");
@@ -169,6 +138,16 @@ export default async function Home() {
     const educationSectionData = mockEducation;
     // const projectsSectionData = await getAllData("projects");
     const projectsSectionData = mockProjects;
+
+    async function extractAllData() {
+        const response = await getData("home");
+
+        setHomeSectionData(response);
+    }
+
+    useEffect(() => {
+        extractAllData();
+    },[]);
     
     return (
         <div className="bg-gray-900 text-white">
