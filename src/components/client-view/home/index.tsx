@@ -74,15 +74,3 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
         </div>
     );
 }
-
-// export async function getStaticProps() {
-//     // Fetch data asynchronously
-//     const homeSectionData = await getData("home");
-
-//     // Pass data to the page via props
-//     return {
-//         props: {
-//             homeSectionData,
-//         },
-//     };
-// }

@@ -128,21 +128,23 @@ const mockProjects = {
 
 export default function Home() {
     const [homeSectionData, setHomeSectionData] = useState(mockHome);
-    // const homeSectionData = await getAllData("home");
-    // const homeSectionData = mockHome;
-    // const aboutSectionData = await getAllData("about");
-    const aboutSectionData = mockAbout;
-    // const experienceSectionData = await getAllData("experience");
-    const experienceSectionData = mockExperience;
-    // const educationSectionData = await getAllData("education");
-    const educationSectionData = mockEducation;
-    // const projectsSectionData = await getAllData("projects");
-    const projectsSectionData = mockProjects;
+    const [aboutSectionData, setAboutSectionData] = useState(mockAbout);
+    const [experienceSectionData, setExperienceSectionData] = useState(mockExperience);
+    const [educationSectionData, setEducationSectionData] = useState(mockEducation);
+    const [projectsSectionData, setProjectsSectionData] = useState(mockProjects);
 
     async function extractAllData() {
-        const response = await getData("home");
+        const homeData = await getData("home");
+        const aboutData = await getData("about");
+        const experienceData = await getData("experience");
+        const educationData = await getData("education");
+        const projectsData = await getData("projects");
 
-        setHomeSectionData(response);
+        setHomeSectionData(homeData);
+        setAboutSectionData(aboutData);
+        setExperienceSectionData(experienceData);
+        setEducationSectionData(educationData);
+        setProjectsSectionData(projectsData);
     }
 
     useEffect(() => {
