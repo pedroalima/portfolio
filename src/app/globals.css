@@ -18,44 +18,29 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(34, 211, 238, 1);
-    outline: 1px solid rgb(103, 122, 125);
-}
-
-.project-wrapper{
-    display: flex;
-    list-style: none;
-    height: 350px;
-    overflow-x: scroll;
-    padding: 20px 0;
-    flex: 0 0 600px;
-}
-
-.project-wrapper li {
-    flex: 0 0 300px;
-    margin: 0 20px 0 0;
-}
-
-.project-wrapper li:last-of-type {
-    margin: 0;
-}
-
-::-webkit-scrollbar {
-    height: 8px;
-    width: 8px;
-    background: #fff3;
-    -webkit-border-radius: 1ex;
-}
-  
-::-webkit-scrollbar-thumb {
-    background: rgba(34, 211, 238, 1);
-    -webkit-border-radius: 1ex;
-}
-
-::-webkit-scrollbar-corner {
-    background: #fff3;
+    background-color: rgba(58, 67, 68, 0.724);
 }
 
 .slick-slide > div {
     margin: 0 0.5rem;
+}
+
+.home-bg {
+    background-image: linear-gradient(0deg, rgb(17 24 39), rgb(50, 64, 93));
+    background-size: cover;
+}
+
+.about-bg {
+    background-image: linear-gradient(180deg, rgb(17 24 39), rgb(50, 64, 93));
+    background-size: cover;
+}
+
+.experience-bg {
+    background-image: linear-gradient(0deg, rgb(17 24 39), rgb(50, 64, 93)), url("/abstract-background-314.png");
+    background-size: cover;
+}
+
+.projects-bg {
+    background-image: linear-gradient(180deg, rgb(17 24 39), rgb(50, 64, 93));
+    background-size: cover;
 }

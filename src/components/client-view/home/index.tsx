@@ -4,7 +4,6 @@ import Image from "next/image";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import AnimationWrapper from "../animate-wrapper";
-import profile from "../../../../public/profile.png";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { ClientSectionDataTypes } from "@/types";
 
@@ -30,7 +29,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
     const setVariants = useMemo(() => variants(), []);
 
     return (
-        <div className="px-12" id="home">
+        <div className="home-bg px-12" id="home">
             <AnimationWrapper className="h-screen pt-36 flex justify-between items-center">
                 <motion.div 
                     className="w-1/2"
@@ -69,7 +68,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
                 </motion.div>
 
                 <motion.div className="w-1/2 flex justify-center">
-                    <Image src={profile} width={500} alt="Image profile" />
+                    <Image src="/45819442-featured_2.png" width={800} height={800} alt="Image profile" />
                 </motion.div>
             </AnimationWrapper>
         </div>

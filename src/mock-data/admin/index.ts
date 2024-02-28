@@ -84,8 +84,8 @@ export const navItemsClient = [
         id: "projects",
         label: "Projects"
     },
-    {
-        id: "contact",
-        label: "Contact"
-    }
+    // {
+    //     id: "contact",
+    //     label: "Contact"
+    // }
 ];

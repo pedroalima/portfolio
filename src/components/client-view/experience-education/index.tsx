@@ -2,8 +2,8 @@ import { ClientSectionDataTypes } from "@/types";
 
 export default function ClientExperience({ experience, education } : { experience: ClientSectionDataTypes, education: ClientSectionDataTypes}) {
     return (
-        <div className="min-h-dvh px-12" id="experience">
-            <h3 className="text-5xl text-center my-8">Experiência</h3>
+        <div className="experience-bg min-h-dvh px-12" id="experience">
+            <h3 className="text-5xl text-center py-8">Experiência</h3>
             <div className="flex justify-around items-start">
                 <div className="p-12 w-1/2 flex flex-col gap-20">
                     <h3 className="text-3xl">Prática</h3>
