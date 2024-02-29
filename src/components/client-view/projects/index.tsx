@@ -27,7 +27,7 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
             <div className="w-11/12 mx-auto my-10">
                 <Slider {...settings}>
                     {data.data.map((item, i) => (
-                        <div key={i} className="p-6 h-[250px] border-2 cursor-pointer relative border-cyan-400 hover:text-cyan-400 rounded-lg">
+                        <div key={i} className="container-bg shadow-md my-4 p-6 h-[250px] cursor-pointer relative rounded-lg">
                             <div className="h-full flex flex-col justify-start gap-10">
                                 <h3 className="text-3xl capitalize font-bold">{item.name}</h3>
                                 <p className="font-thin text-xl">{item.technologies}</p>

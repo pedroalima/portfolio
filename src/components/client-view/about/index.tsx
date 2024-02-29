@@ -36,12 +36,12 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
         },
     ];
 
-    const headingText = "Minhas Habilidades Consolidadas";
+    const headingText = "Habilidades Consolidadas";
 
     return (
         <div className="about-bg py-32 min-h-dvh overflow-hidden px-12" id="about">
             <div className="w-full flex">
-                <AnimationWrapper className="w-full flex justify-evenly divide-x-2 divide-cyan-400">
+                <AnimationWrapper className="w-full flex justify-evenly">
                     {aboutDataInfo.map((item, i) => (
                         <motion.div
                             key={i}
@@ -63,7 +63,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                     variants={setVariants} 
                     className="flex flex-col justify-center items-center"
                 >
-                    <h1 className="leading-[70px] mb-4 text-5xl font-medium">
+                    <h1 className="leading-[70px] mb-8 text-5xl font-medium">
                         {headingText.split(" ").map((item, index) => (
                             <span key={index} className={`${index === 1 ? "text-cyan-400" : "text-white"}`}>
                                 {item}{" "}

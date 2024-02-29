@@ -68,7 +68,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
                 </motion.div>
 
                 <motion.div className="w-1/2 flex justify-center">
-                    <Image src="/45819442-featured_2.png" width={800} height={800} alt="Image profile" />
+                    <Image src="/45819442-featured_2.png" priority width={700} height={700} alt="Image profile" />
                 </motion.div>
             </AnimationWrapper>
         </div>
