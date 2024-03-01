@@ -75,7 +75,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
             <AnimationWrapper className={"pt-6"}>
                 <div className="flex flex-wrap justify-center items-center gap-2">
                     {data.data[0].skills.split(", ").map((item, i) => (
-                        <span key={i} className="px-4 py-2 rounded-md border-2 border-cyan-400">{item}</span>
+                        <span key={i} className="px-4 py-2 rounded-md container-bg">{item}</span>
                     ))}
                 </div>
             </AnimationWrapper>

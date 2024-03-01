@@ -24,7 +24,7 @@ export default function ClientExperience({ experience, education } : { experienc
                 </div>
                 <div className="p-12 w-1/2 flex flex-col gap-20">
                     <h3 className="text-3xl">Teórica</h3>
-                    <div className="border-2 border-cyan-400 rounded-lg p-8">
+                    <div className="rounded-lg p-8 container-bg">
                         <div className="flex justify-between">
                             <span>{education.data[0].college}</span>
                             <span>{education.data[0].year}</span>

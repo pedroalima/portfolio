@@ -17,7 +17,10 @@ export default function Navbar() {
             <nav>
                 <div className="bg-white max-w-screen-xl transition-all hover:shadow-lg opacity-40 hover:opacity-100 rounded-xl flex flex-wrap items-center justify-between mx-auto py-1 px-4 m-6">
                     <a href="#home" className="flex items-center space-x-3 rtl:space-x-reverse">
-                        <span className="self-center text-2xl font-semibold whitespace-nowrap text-gray-800"><strong className="text-cyan-400">Pedro</strong> Lima</span>
+                        <span className="border-2 border-cyan-500 px-1">
+                            <strong className="text-cyan-400">P</strong>
+                            <strong className="text-emerald-400">L</strong>
+                        </span>
                     </a>
                     <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
                         <button 

@@ -20,7 +20,7 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
     return (
         <div className="projects-bg bg-gray-900 min-h-dvh flex flex-col justify-evenly items-center px-12" id="projects">
             <div className="text-center">
-                <h1 className="text-4xl font-semibold my-12">Meus Projetos</h1>
+                <h1 className="text-4xl font-semibold my-12">Projetos</h1>
                 <p className="font-thin text-xl">Tenha acesso a todos os meus projetos <a href="https://github.com/pedroalima?tab=repositories" className="font-thin text-cyan-400">aqui</a></p>
             </div>
             
