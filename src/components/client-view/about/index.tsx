@@ -39,9 +39,9 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const headingText = "Habilidades Consolidadas";
 
     return (
-        <div className="about-bg py-32 min-h-dvh overflow-hidden px-12" id="about">
-            <div className="w-full flex">
-                <AnimationWrapper className="w-full flex justify-evenly">
+        <div className="about-bg h-dvh overflow-hidden px-12" id="about">
+            <div className="w-full h-1/3">
+                <AnimationWrapper className="w-full h-full flex justify-evenly items-end">
                     {aboutDataInfo.map((item, i) => (
                         <motion.div
                             key={i}
@@ -51,34 +51,36 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                             <div className="flex w-full mx-auto">
                                 <div className="flex flex-col">
                                     <h2 className="text-5xl font-semibold text-cyan-400">+{item.value}</h2>
-                                    <span className="text-2xl font-normal text-gray-500">{item.label}</span>
+                                    <span className="text-xl font-normal text-gray-500">{item.label}</span>
                                 </div>
                             </div>
                         </motion.div>
                     ))}
                 </AnimationWrapper>
             </div>
-            <AnimationWrapper className={"mt-20 pt-6"}>
-                <motion.div 
-                    variants={setVariants} 
-                    className="flex flex-col justify-center items-center"
-                >
-                    <h1 className="leading-[70px] mb-8 text-5xl font-medium">
-                        {headingText.split(" ").map((item, index) => (
-                            <span key={index} className={`${index === 1 ? "text-cyan-400" : "text-white"}`}>
-                                {item}{" "}
-                            </span>
+            <div className="w-full h-2/3 flex justify-evenly items-center">
+                <AnimationWrapper>
+                    <motion.div 
+                        variants={setVariants} 
+                        className="flex flex-col justify-center items-center"
+                    >
+                        <h1 className="leading-[70px] text-4xl font-medium">
+                            {headingText.split(" ").map((item, index) => (
+                                <span key={index} className={`${index === 1 ? "text-cyan-400" : "text-white"}`}>
+                                    {item}{" "}
+                                </span>
+                            ))}
+                        </h1>
+                    </motion.div>
+                </AnimationWrapper>
+                <AnimationWrapper className="w-1/3">
+                    <div className="flex flex-wrap justify-center items-center gap-2">
+                        {data.data[0].skills.split(", ").map((item, i) => (
+                            <span key={i} className="px-4 py-2 text-base rounded-md container-bg">{item}</span>
                         ))}
-                    </h1>
-                </motion.div>
-            </AnimationWrapper>
-            <AnimationWrapper className={"pt-6"}>
-                <div className="flex flex-wrap justify-center items-center gap-2">
-                    {data.data[0].skills.split(", ").map((item, i) => (
-                        <span key={i} className="px-4 py-2 rounded-md container-bg">{item}</span>
-                    ))}
-                </div>
-            </AnimationWrapper>
+                    </div>
+                </AnimationWrapper>
+            </div>
         </div>
     );
 }

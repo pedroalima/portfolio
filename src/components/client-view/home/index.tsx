@@ -35,7 +35,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
                     className="w-1/2"
                     variants={setVariants}
                 >
-                    <h1 className="mb-4 text-3xl font-extrabold text-gray-900 md:text-5xl lg:text-6xl">
+                    <h1 className="mb-4 text-5xl font-extrabold text-gray-900">
                         {data.data[0].mainText
                             .split(" ")
                             .map((word, index) => (
@@ -43,7 +43,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
                                     key={index} 
                                     className={`${
                                         index === 1
-                                            ? "text-7xl text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
+                                            ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
                                             : "text-white" 
                                     }`}
                                 >
@@ -52,7 +52,7 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
                             ))
                         }
                     </h1>
-                    <p className="text-lg font-normal text-gray-500 lg:text-xl">{data.data[0].description}</p>
+                    <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
                     <div className="flex justify-around w-60 mt-16 ml-16">
                         <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
                             <Link href="https://github.com/pedroalima">
