@@ -151,11 +151,15 @@ export default function Home() {
     },[]);
     
     return (
-        <div className="bg-gray-900 text-white">
-            <ClientHome data={homeSectionData} />
-            <ClientAbout data={aboutSectionData} />
-            <ClientExperience experience={experienceSectionData} education={educationSectionData} />
-            <ClientProjects data={projectsSectionData} />
+        <div className="bg-gray-900 text-white flex justify-between">
+            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+                <ClientHome data={homeSectionData} />
+            </header>
+            <main className="pt-24 lg:w-1/2 lg:py-24">
+                <ClientAbout data={aboutSectionData} />
+                <ClientExperience experience={experienceSectionData} education={educationSectionData} />
+                <ClientProjects data={projectsSectionData} />
+            </main>
         </div>
     );
 }

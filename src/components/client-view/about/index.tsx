@@ -39,7 +39,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const headingText = "Habilidades Consolidadas";
 
     return (
-        <div className="about-bg h-dvh overflow-hidden px-12" id="about">
+        <div className="px-12" id="about">
             <div className="w-full h-1/3">
                 <AnimationWrapper className="w-full h-full flex justify-evenly items-end">
                     {aboutDataInfo.map((item, i) => (

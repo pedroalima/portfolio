@@ -25,26 +25,6 @@ body::-webkit-scrollbar-thumb {
     margin: 0 0.5rem;
 }
 
-.home-bg {
-    background-image: linear-gradient(0deg, rgb(17 24 39), rgb(50, 64, 93));
-    background-size: cover;
-}
-
-.about-bg {
-    background-image: linear-gradient(180deg, rgb(17 24 39), rgb(50, 64, 93));
-    background-size: cover;
-}
-
-.experience-bg {
-    background-image: linear-gradient(0deg, rgb(17 24 39), rgb(50, 64, 93)), url("/abstract-background-314.png");
-    background-size: cover;
-}
-
-.projects-bg {
-    background-image: linear-gradient(180deg, rgb(17 24 39), rgb(50, 64, 93));
-    background-size: cover;
-}
-
 .container-bg {
     background-color: rgba(205, 209, 209, 0.033);
     border: 1px solid rgba(205, 209, 209, 0.033);

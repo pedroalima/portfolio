@@ -1,6 +1,5 @@
 "use client";
 import Link from "next/link";
-import Image from "next/image";
 import { useMemo } from "react";
 import { motion } from "framer-motion";
 import AnimationWrapper from "../animate-wrapper";
@@ -29,48 +28,42 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
     const setVariants = useMemo(() => variants(), []);
 
     return (
-        <div className="home-bg px-12" id="home">
-            <AnimationWrapper className="h-screen pt-36 flex justify-between items-center">
-                <motion.div 
-                    className="w-1/2"
-                    variants={setVariants}
-                >
-                    <h1 className="mb-4 text-5xl font-extrabold text-gray-900">
-                        {data.data[0].mainText
-                            .split(" ")
-                            .map((word, index) => (
-                                <span 
-                                    key={index} 
-                                    className={`${
-                                        index === 1
-                                            ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
-                                            : "text-white" 
-                                    }`}
-                                >
-                                    {word}{" "}
-                                </span>
-                            ))
-                        }
-                    </h1>
-                    <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
-                    <div className="flex justify-around w-60 mt-16 ml-16">
-                        <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
-                            <Link href="https://github.com/pedroalima">
-                                <FaGithub color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
-                            </Link>
-                        </motion.div>
-                        <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
-                            <Link href="https://www.linkedin.com/in/pedroalima6/">
-                                <FaLinkedinIn color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
-                            </Link>
-                        </motion.div>
-                    </div>
-                </motion.div>
-
-                <motion.div className="w-1/2 flex justify-center">
-                    <Image src="/45819442-featured_2.png" priority width={700} height={700} alt="Image profile" />
-                </motion.div>
-            </AnimationWrapper>
-        </div>
+        <AnimationWrapper className="flex justify-between items-center">
+            <motion.div 
+                className=""
+                variants={setVariants}
+            >
+                <h1 className="mb-4 text-5xl font-extrabold text-gray-900">
+                    {data.data[0].mainText
+                        .split(" ")
+                        .map((word, index) => (
+                            <span 
+                                key={index} 
+                                className={`${
+                                    index === 1
+                                        ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
+                                        : "text-white" 
+                                }`}
+                            >
+                                {word}{" "}
+                            </span>
+                        ))
+                    }
+                </h1>
+                <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
+                <div className="flex justify-around w-60 mt-16 ml-16">
+                    <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
+                        <Link href="https://github.com/pedroalima">
+                            <FaGithub color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
+                        </Link>
+                    </motion.div>
+                    <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
+                        <Link href="https://www.linkedin.com/in/pedroalima6/">
+                            <FaLinkedinIn color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
+                        </Link>
+                    </motion.div>
+                </div>
+            </motion.div>
+        </AnimationWrapper>
     );
 }
