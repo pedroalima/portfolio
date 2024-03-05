@@ -28,30 +28,33 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
     const setVariants = useMemo(() => variants(), []);
 
     return (
-        <AnimationWrapper className="flex justify-between items-center">
+        <AnimationWrapper className="h-full">
             <motion.div 
-                className=""
+                className="h-full flex flex-col justify-evenly"
                 variants={setVariants}
             >
-                <h1 className="mb-4 text-5xl font-extrabold text-gray-900">
-                    {data.data[0].mainText
-                        .split(" ")
-                        .map((word, index) => (
-                            <span 
-                                key={index} 
-                                className={`${
-                                    index === 1
-                                        ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
-                                        : "text-white" 
-                                }`}
-                            >
-                                {word}{" "}
-                            </span>
-                        ))
-                    }
-                </h1>
-                <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
-                <div className="flex justify-around w-60 mt-16 ml-16">
+                <div>
+                    <h1 className="mb-4 text-5xl font-extrabold text-gray-900 w-2/3">
+                        {data.data[0].mainText
+                            .split(" ")
+                            .map((word, index) => (
+                                <span 
+                                    key={index} 
+                                    className={`${
+                                        index === 1
+                                            ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
+                                            : "text-white" 
+                                    }`}
+                                >
+                                    {word}{" "}
+                                </span>
+                            ))
+                        }
+                    </h1>
+                    <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
+                </div>
+
+                <div className="flex justify-around w-60">
                     <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
                         <Link href="https://github.com/pedroalima">
                             <FaGithub color="rgba(34, 211, 238, 1)" className="w-6 h-6" />

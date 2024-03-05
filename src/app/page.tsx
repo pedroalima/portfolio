@@ -151,11 +151,11 @@ export default function Home() {
     },[]);
     
     return (
-        <div className="bg-gray-900 text-white flex justify-between">
-            <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+        <div className="text-white flex justify-between gap-4 mx-20">
+            <header className="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
-            <main className="pt-24 lg:w-1/2 lg:py-24">
+            <main className="lg:pt-24 lg:w-1/2 lg:py-24 lg:flex lg:flex-col lg: gap-16">
                 <ClientAbout data={aboutSectionData} />
                 <ClientExperience experience={experienceSectionData} education={educationSectionData} />
                 <ClientProjects data={projectsSectionData} />
