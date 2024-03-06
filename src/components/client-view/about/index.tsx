@@ -39,9 +39,9 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const headingText = "Habilidades Consolidadas";
 
     return (
-        <div className="px-12" id="about">
-            <div className="w-full h-1/3">
-                <AnimationWrapper className="w-full h-full flex justify-evenly items-end">
+        <div id="about">
+            <div>
+                <AnimationWrapper className="w-full h-full py-8 flex justify-evenly items-center">
                     {aboutDataInfo.map((item, i) => (
                         <motion.div
                             key={i}
@@ -58,11 +58,10 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                     ))}
                 </AnimationWrapper>
             </div>
-            <div className="w-full h-2/3 flex justify-evenly items-center">
+            <div className="w-full h-full py-8 flex flex-col justify-evenly items-center">
                 <AnimationWrapper>
                     <motion.div 
                         variants={setVariants} 
-                        className="flex flex-col justify-center items-center"
                     >
                         <h1 className="leading-[70px] text-4xl font-medium">
                             {headingText.split(" ").map((item, index) => (
@@ -73,8 +72,8 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                         </h1>
                     </motion.div>
                 </AnimationWrapper>
-                <AnimationWrapper className="w-1/3">
-                    <div className="flex flex-wrap justify-center items-center gap-2">
+                <AnimationWrapper>
+                    <div className="flex justify-center flex-wrap gap-2">
                         {data.data[0].skills.split(", ").map((item, i) => (
                             <span key={i} className="px-4 py-2 text-base rounded-md container-bg">{item}</span>
                         ))}
