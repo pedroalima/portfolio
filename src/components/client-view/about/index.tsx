@@ -39,9 +39,9 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const headingText = "Habilidades Consolidadas";
 
     return (
-        <div id="about">
+        <section className="px-6 py-8" id="about">
             <div>
-                <AnimationWrapper className="w-full h-full py-8 flex justify-evenly items-center">
+                <AnimationWrapper className="w-full h-full  flex justify-evenly items-center">
                     {aboutDataInfo.map((item, i) => (
                         <motion.div
                             key={i}
@@ -80,6 +80,6 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                     </div>
                 </AnimationWrapper>
             </div>
-        </div>
+        </section>
     );
 }

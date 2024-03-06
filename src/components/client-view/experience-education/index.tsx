@@ -2,34 +2,36 @@ import { ClientSectionDataTypes } from "@/types";
 
 export default function ClientExperience({ experience, education } : { experience: ClientSectionDataTypes, education: ClientSectionDataTypes}) {
     return (
-        <div className="px-12" id="experience">
-            <div className="py-10">
-                <h3 className="text-4xl font-semibold text-center py-8">Experiência</h3>
-            </div>
-        
-            <div className="flex justify-around items-start">
+        <section className="py-8 p-6" id="experience">
+            <div className="flex flex-col justify-around items-start gap-10">
 
-                <div className="p-8 w-1/2 flex flex-col gap-20">
-                    <div className="rounded-lg px-6 py-4 container-bg flex w-full items-start">
-                        <header className="text-xs mt-1 uppercase font-semibold text-slate-500 w-3/12">{experience.data[0].duration}</header>
-                        
-                        <div className="w-9/12">
-                            <h3 className="text-lg">{experience.data[0].position} &#183; {experience.data[0].company}</h3>
-                            <p className="text-sm text-slate-500">{experience.data[0].location}</p>
-                            <p className="text-sm font-normal text-gray-400">{experience.data[0].jobprofile}</p>
+                <div className="flex flex-col justify-around items-start gap-5">
+                    {experience.data && experience.data.map((item, i) => (
+                        <div key={i} className="rounded-lg px-6 py-4 container-bg w-full flex justify-between items-center">
+                            <h3 className="text-xs uppercase font-semibold text-slate-500">{experience.data[0].duration}</h3>
+                                
+                            <div className="w-9/12">
+                                <h4 className="text-base">{item.position} &#183; {item.company}</h4>
+                                <p className="text-sm text-slate-500">{item.location}</p>
+                                <p className="text-sm font-normal text-gray-400">{item.jobprofile}</p>
+                            </div>
                         </div>
-                    </div>
+                    ))}
                 </div>
-                <div className="p-8 w-1/2 flex flex-col gap-20">
-                    <div className="rounded-lg px-6 py-4 container-bg">
-                        <div className="flex justify-between">
-                            <span>{education.data[0].college}</span>
-                            <span>{education.data[0].year}</span>
+                        
+                <div className="flex flex-col justify-around items-start gap-5 w-full">
+                    {education.data && education.data.map((item, i) => (
+                        <div key={i} className="rounded-lg px-6 py-4 container-bg w-full flex justify-between items-center">
+                            <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
+                            
+                            <div className="w-9/12">
+                                <h4 className="text-base">{item.degree}</h4>
+                                <p className="text-sm text-slate-500">{item.college}</p>
+                            </div>
                         </div>
-                        <h3 className="text-2xl">{education.data[0].degree}</h3>
-                    </div>
+                    ))}
                 </div>
             </div>
-        </div>
+        </section>
     );
 }

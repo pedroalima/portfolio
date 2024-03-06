@@ -13,14 +13,13 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
         dots: true,
         infinite: false,
         speed: 500,
-        slidesToShow: 3,
+        slidesToShow: 2,
         slidesToScroll: 1,
     };
 
     return (
-        <div className="bg-gray-900 flex flex-col justify-evenly items-center px-12" id="projects">
+        <div className="bg-gray-900 flex flex-col justify-evenly items-center pt-8 px-6" id="projects">
             <div className="text-center">
-                <h1 className="text-4xl font-semibold my-12">Projetos</h1>
                 <p className="font-thin text-xl">Tenha acesso a todos os meus projetos <a href="https://github.com/pedroalima?tab=repositories" className="font-thin text-cyan-400">aqui</a></p>
             </div>
             
