@@ -28,29 +28,36 @@ export default function ClientHome({ data } : { data : ClientSectionDataTypes}) 
     const setVariants = useMemo(() => variants(), []);
 
     return (
-        <AnimationWrapper className="h-full">
+    // <section className="h-full px-6">
+    //     <div className="h-full flex flex-col justify-between">
+    //         <div>
+    //             <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400">Pedro Lima</h1>
+    //             <p className="text-xl font-normal text-gray-100 my-4">{data.data[0].mainText}</p>
+    //             <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
+    //         </div>
+
+        //         <div className="flex justify-around w-60">
+        //             <div>
+        //                 <Link href="https://github.com/pedroalima">
+        //                     <FaGithub color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
+        //                 </Link>
+        //             </div>
+        //             <div>
+        //                 <Link href="https://www.linkedin.com/in/pedroalima6/">
+        //                     <FaLinkedinIn color="rgba(34, 211, 238, 1)" className="w-6 h-6" />
+        //                 </Link>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </section>
+        <AnimationWrapper className="h-full px-6">
             <motion.div 
-                className="h-full flex flex-col justify-evenly"
+                className="h-full flex flex-col justify-between"
                 variants={setVariants}
             >
                 <div>
-                    <h1 className="mb-4 text-5xl font-extrabold text-gray-900 w-2/3">
-                        {data.data[0].mainText
-                            .split(" ")
-                            .map((word, index) => (
-                                <span 
-                                    key={index} 
-                                    className={`${
-                                        index === 1
-                                            ? "text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400"
-                                            : "text-white" 
-                                    }`}
-                                >
-                                    {word}{" "}
-                                </span>
-                            ))
-                        }
-                    </h1>
+                    <h1 className="text-5xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r to-emerald-600 from-cyan-400">Pedro Lima</h1>
+                    <p className="text-xl font-normal text-gray-100 my-4">{data.data[0].mainText}</p>
                     <p className="text-base font-normal text-gray-500">{data.data[0].description}</p>
                 </div>
 
