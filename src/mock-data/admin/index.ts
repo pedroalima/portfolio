@@ -69,10 +69,6 @@ export const navItems = [
 
 export const navItemsClient = [
     {
-        id: "home",
-        label: "Home"
-    },
-    {
         id: "about",
         label: "About"
     },

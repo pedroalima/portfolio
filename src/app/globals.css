@@ -38,3 +38,11 @@ body::-webkit-scrollbar-thumb {
     background-image: url("/Criador-de-logos-crie-logos-fantásticos-instantaneamente-2024-.png");
     background-size: cover;
 }
+
+.contact-icons {
+    color: rgba(34, 211, 238, 1);
+}
+
+.contact-icons:hover {
+    color: rgb(2, 164, 192);
+}
