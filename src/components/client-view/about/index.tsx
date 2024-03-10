@@ -1,10 +1,10 @@
 "use client";
-import { ClientSectionDataTypes } from "@/types";
+import { FormDataTypes } from "@/types";
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 import AnimationWrapper from "../animate-wrapper";
 
-export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) {
+export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
 
     function variants() {
         return {
@@ -28,11 +28,11 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
     const aboutDataInfo = [
         {
             label: "Projetos",
-            value: data.data[0].projects || "0",
+            value: data[0].projects || "0",
         },
         {
             label: "Experiência",
-            value: data.data[0].experience || "0",
+            value: data[0].experience || "0",
         },
     ];
 
@@ -74,7 +74,7 @@ export default function ClientAbout({ data } : { data: ClientSectionDataTypes}) 
                 </AnimationWrapper>
                 <AnimationWrapper>
                     <div className="flex justify-center flex-wrap gap-2">
-                        {data.data[0].skills.split(", ").map((item, i) => (
+                        {data[0].skills.split(", ").map((item, i) => (
                             <span key={i} className="px-4 py-2 text-base rounded-md container-bg">{item}</span>
                         ))}
                     </div>
