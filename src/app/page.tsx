@@ -74,57 +74,6 @@ const mockEducation = {
     ]
 };
 
-const mockProjects = {
-    "success":true,
-    "data":[
-        {
-            _id:"65ba978e326af45d76c392c6",
-            name:"Safeway",
-            technologies:"Typescript, Next e Tailwindcss",
-            website:"htps://safeway-two.vercel.app/",
-            github:"https://github.com/pedroalima/safeway",
-            createdAt:"2024-01-31T18:55:10.684Z",
-            updatedAt:"2024-01-31T18:55:10.684Z",
-        },
-        {
-            _id:"65ce640bbbe78b75f5695d70",
-            name:"News X",
-            technologies:"TypeScript, React, Material-UI (MUI), Styled Components, Node e MySQL",
-            website:"https://newsx-five.vercel.app/",
-            github:"https://github.com/pedroalima/newsx",
-            createdAt:"2024-02-15T19:20:43.487Z",
-            updatedAt:"2024-02-15T19:20:43.487Z",
-        },
-        {
-            _id:"65ce646ebbe78b75f5695d73",
-            name:"Store X",
-            technologies:"TypeScript, React, Material-UI (MUI) e Styled Components",
-            website:"https://storex-tau.vercel.app/",
-            github:"https://github.com/pedroalima/storex",
-            createdAt:"2024-02-15T19:22:22.072Z",
-            updatedAt:"2024-02-15T19:22:22.072Z",
-        },
-        {
-            _id:"65ce7503bbe78b75f5695dbc",
-            name:"Teste 1",
-            technologies:"Teste 1, Teste 1, Teste 1",
-            website:"https://storex-tau.vercel.app/",
-            github:"https://github.com/pedroalima/storex",
-            createdAt:"2024-02-15T20:33:07.587Z",
-            updatedAt:"2024-02-15T20:33:07.587Z",
-        },
-        {
-            _id:"65ce751dbbe78b75f5695dbf",
-            name:"Teste 2",
-            technologies:"Teste 2Teste 2Teste 2",
-            website:"https://storex-tau.vercel.app/",
-            github:"https://github.com/pedroalima/storex",
-            createdAt:"2024-02-15T20:33:33.457Z",
-            updatedAt:"2024-02-15T20:33:33.457Z",
-        }
-    ]
-};
-
 export default function Home() {
     const [homeSectionData, setHomeSectionData] = useState(mockHome);
     const [aboutSectionData, setAboutSectionData] = useState(mockAbout);
