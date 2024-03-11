@@ -155,7 +155,7 @@ export default function Home() {
             <header className="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
-            <main className="lg:pt-24 lg:w-1/2 lg:py-24 lg:flex lg:flex-col lg: gap-16">
+            <main className="lg:w-1/2 lg:flex lg:flex-col gap-36">
                 <ClientAbout data={aboutSectionData} />
                 <ClientExperience experience={experienceSectionData} education={educationSectionData} />
                 <ClientProjects data={projectsSectionData} />

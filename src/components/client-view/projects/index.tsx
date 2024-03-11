@@ -19,7 +19,7 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
     };
 
     return (
-        <div className="bg-gray-900 flex flex-col justify-evenly items-center px-6" id="projects">
+        <section className="bg-gray-900 flex flex-col justify-evenly items-center px-6 pb-24" id="projects">
             <div className="w-11/12 mx-auto my-10">
                 <Slider {...settings}>
                     {data.data.map((item, i) => (
@@ -47,6 +47,6 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
             <div className="text-center mt-6">
                 <p className="text-slate-500 text-sm">Tenha acesso a todos os meus projetos <a href="https://github.com/pedroalima?tab=repositories" className="text-cyan-400">aqui</a></p>
             </div>
-        </div>
+        </section>
     );
 }
