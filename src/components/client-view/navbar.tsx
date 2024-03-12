@@ -1,5 +1,6 @@
 "use client";
 import { navItemsClient } from "@/mock-data/admin";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Navbar() {
@@ -33,9 +34,10 @@ export default function Navbar() {
                     {navItemsClient.map((item) => (
                         <li
                             key={item.id}
-                            className={`block py-2 px-3 md:p-1 bg-transparent hover:text-cyan-400 transition-all border-b-2 border-gray-900 hover:border-b-2 hover:border-cyan-400 ${activeSection == item.id ? "font-bold text-cyan-400 border-b-2 border-cyan-400" : "text-gray-500"}`}
+                            className={`flex items-center gap-3 py-2 px-3 md:p-1 bg-transparent hover:text-cyan-400 transition-all border-b-2 border-gray-900 hover:border-b-2 ${activeSection == item.id ? "font-bold text-cyan-400 border-b-2 border-cyan-400" : "text-gray-500"}`}
                         >
-                            <a href={`#${item.id}`}>{item.label}</a>
+                            <div className={`border-1 border-white transition-all rounded-md h-1 ${activeSection == item.id ? "bg-cyan-400 w-20": "bg-gray-500 w-10"}`}></div>
+                            <Link href={`#${item.id}`}>{item.label}</Link>
                         </li>
                     ))}
                 </ul>
