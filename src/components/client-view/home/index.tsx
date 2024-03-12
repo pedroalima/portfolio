@@ -8,8 +8,6 @@ import { FormDataTypes } from "@/types";
 import Navbar from "../navbar";
 
 export default function ClientHome({ data } : { data : FormDataTypes[]}) {
-    console.log(data, "ClientHomeView");
-    
     function variants() {
         return {
             offscreen: {
