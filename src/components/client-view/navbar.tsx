@@ -1,5 +1,5 @@
 "use client";
-import { navItemsClient } from "@/mock-data/admin";
+import { navItemsClient } from "@/mock-data/";
 import Link from "next/link";
 import { useEffect, useState } from "react";
 

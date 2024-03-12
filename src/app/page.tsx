@@ -7,7 +7,7 @@ import { getData } from "@/services";
 import { useEffect, useState } from "react";
 
 const mockHome = {
-    success: true,
+    success: false,
     data: [
         {
             _id: "",
@@ -20,22 +20,22 @@ const mockHome = {
 };
 
 const mockAbout ={
-    success: true,
+    success: false,
     data: [
         {
-            _id:"65b69b682622e85f51718202",
-            about:"test 3",
-            projects:"35",
-            experience:"1 ano",
-            skills:"TypeScript, React, Node, C#, JavaScript, TailwindCSS, CSS, HTML",
-            createdAt:"2024-01-28T18:22:32.497Z",
-            updatedAt:"2024-02-13T23:01:19.161Z",
+            _id:"",
+            about:"",
+            projects:"",
+            experience:"",
+            skills:"",
+            createdAt:"",
+            updatedAt:"",
         }
     ]
 };
 
 const mockExperience = {
-    "success":true,
+    "success":false,
     "data":[
         {
             _id:"65ba98db326af45d76c392d3",
@@ -61,7 +61,7 @@ const mockExperience = {
 };
 
 const mockEducation = {
-    success:true,
+    success:false,
     data:[
         {
             _id:"65ba8eab326af45d76c3928b",
@@ -75,7 +75,7 @@ const mockEducation = {
 };
 
 const mockProjects = {
-    "success":true,
+    "success":false,
     "data":[
         {
             _id:"65ba978e326af45d76c392c6",

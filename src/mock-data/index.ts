@@ -70,15 +70,15 @@ export const navItems = [
 export const navItemsClient = [
     {
         id: "about",
-        label: "About"
+        label: "Sobre"
     },
     {
         id: "experience",
-        label: "Experience"
+        label: "Experiência"
     },
     {
         id: "projects",
-        label: "Projects"
+        label: "Projetos"
     },
     // {
     //     id: "contact",

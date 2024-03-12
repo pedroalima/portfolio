@@ -1,7 +1,7 @@
 import Cookie from "js-cookie";
 import { NavbarMenuTypes } from "@/types";
 import { useRouter } from "next/navigation";
-import { navItems } from "@/mock-data/admin";
+import { navItems } from "@/mock-data/";
 
 export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab, resetFormData, setIsUpdate } : NavbarMenuTypes) {
     const route = useRouter();

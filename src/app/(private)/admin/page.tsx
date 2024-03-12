@@ -14,7 +14,7 @@ import {
     initialExperienceViewFormData, 
     initialHomeViewFormData, 
     initialProjectsViewFormData 
-} from "@/mock-data/admin";
+} from "@/mock-data/";
 import NavbarAdmin from "@/components/admin-view/navbar";
 
 export default function Admin() {

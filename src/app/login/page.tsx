@@ -1,5 +1,5 @@
 "use client";
-import { initialLoginViewFormData } from "@/mock-data/admin";
+import { initialLoginViewFormData } from "@/mock-data/";
 import { login } from "@/services";
 import { ControlsItemType } from "@/types";
 import Cookie from "js-cookie";
