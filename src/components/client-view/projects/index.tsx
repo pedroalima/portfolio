@@ -1,12 +1,12 @@
 "use client";
-import { ClientSectionDataTypes } from "@/types";
+import { FormDataTypes } from "@/types";
 import { useRouter } from "next/navigation";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
 
-export default function ClientProjects({ data } : { data: ClientSectionDataTypes}) {
+export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
     const router = useRouter();
 
     const settings = {
@@ -22,7 +22,7 @@ export default function ClientProjects({ data } : { data: ClientSectionDataTypes
         <section className="bg-gray-900 flex flex-col justify-evenly items-center px-6 pb-24" id="projects">
             <div className="w-11/12 mx-auto my-10">
                 <Slider {...settings}>
-                    {data.data.map((item, i) => (
+                    {data.map((item, i) => (
                         <div key={i} className="container-bg shadow-md my-4 px-6 py-4 h-[350px] flex flex-col justify-between cursor-pointer rounded-lg">
                             <div className="h-full flex flex-col justify-between">
                                 <div className="rounded-lg self-center overflow-hidden">
