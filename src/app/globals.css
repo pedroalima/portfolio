@@ -10,7 +10,7 @@
 }
 
 body {
-    background-color: rgb(17, 24, 39);
+    background-image: linear-gradient(130deg, rgb(17, 24, 39), rgb(47, 83, 166)) ;
 }
 
 body::-webkit-scrollbar {
@@ -37,12 +37,4 @@ body::-webkit-scrollbar-thumb {
 .icon-logo {
     background-image: url("/Criador-de-logos-crie-logos-fantásticos-instantaneamente-2024-.png");
     background-size: cover;
-}
-
-.contact-icons {
-    color: rgba(34, 211, 238, 1);
-}
-
-.contact-icons:hover {
-    color: rgb(2, 164, 192);
 }

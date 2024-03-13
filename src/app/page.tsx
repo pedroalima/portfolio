@@ -26,7 +26,7 @@ export default async function Home() {
             <header className="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
-            <main className="lg:w-1/2 lg:flex lg:flex-col gap-36">
+            <main className="lg:w-1/2 lg:flex lg:flex-col gap-28">
                 <ClientAbout data={aboutSectionData} />
                 <ClientExperience experience={experienceSectionData} education={educationSectionData} />
                 <ClientProjects data={projectsSectionData} />

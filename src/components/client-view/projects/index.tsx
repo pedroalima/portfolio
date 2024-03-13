@@ -19,7 +19,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
     };
 
     return (
-        <section className="bg-gray-900 flex flex-col justify-evenly items-center px-6 pb-24" id="projects">
+        <section className=" flex flex-col justify-evenly items-center px-6 pb-24" id="projects">
             <div className="w-11/12 mx-auto my-10">
                 <Slider {...settings}>
                     {data.map((item, i) => (
@@ -35,8 +35,8 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                                 </div>
 
                                 <div className="flex justify-between">
-                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-cyan-500 hover:bg-cyan-600 transition-all outline-none rounded-lg">GitHub</button>
-                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-cyan-500 hover:bg-cyan-600 transition-all outline-none rounded-lg">Aplicação</button>
+                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 transition-all outline-none rounded-lg">GitHub</button>
+                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 transition-all outline-none rounded-lg">Aplicação</button>
                                 </div>
                             </div>
                         </div>

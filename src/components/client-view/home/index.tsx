@@ -41,15 +41,15 @@ export default function ClientHome({ data } : { data : FormDataTypes[]}) {
 
                 <Navbar />
 
-                <div className="flex justify-around w-60">
+                <div className="flex gap-10">
                     <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
                         <Link href="https://github.com/pedroalima">
-                            <FaGithub className="w-6 h-6 contact-icons" />
+                            <FaGithub className="w-4 h-4 contact-icons text-gray-200 hover:text-cyan-400" />
                         </Link>
                     </motion.div>
                     <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
                         <Link href="https://www.linkedin.com/in/pedroalima6/">
-                            <FaLinkedinIn className="w-6 h-6 contact-icons" />
+                            <FaLinkedinIn className="w-4 h-4 text-gray-200 hover:text-cyan-400" />
                         </Link>
                     </motion.div>
                 </div>
