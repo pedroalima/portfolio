@@ -8,7 +8,7 @@ export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab,
 
     const handleLogout = () => {
         Cookie.remove("auth_token");
-        route.push("/login");
+        route.push("/");
     };
 
     return (

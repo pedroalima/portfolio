@@ -36,10 +36,11 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
         },
     ];
 
-    const headingText = "Habilidades Consolidadas";
-
     return (
-        <section className="px-6 pb-24 pt-24" id="about">
+        <section className="px-6 pt-24 flex flex-col gap-16" id="about">
+            <div>
+                <p>{data[0].about}</p>
+            </div>
             <div>
                 <AnimationWrapper className="w-full h-full flex justify-evenly items-center">
                     {aboutDataInfo.map((item, i) => (
@@ -58,20 +59,7 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
                     ))}
                 </AnimationWrapper>
             </div>
-            <div className="w-full h-full flex flex-col justify-evenly items-center">
-                <AnimationWrapper>
-                    <motion.div 
-                        variants={setVariants} 
-                    >
-                        <h1 className="leading-[70px] text-4xl font-medium">
-                            {headingText.split(" ").map((item, index) => (
-                                <span key={index} className={`${index === 1 ? "text-cyan-400" : "text-white"}`}>
-                                    {item}{" "}
-                                </span>
-                            ))}
-                        </h1>
-                    </motion.div>
-                </AnimationWrapper>
+            <div className="w-full flex flex-col justify-evenly items-center">
                 <AnimationWrapper>
                     <div className="flex justify-center flex-wrap gap-2">
                         {data[0].skills.split(", ").map((item, i) => (

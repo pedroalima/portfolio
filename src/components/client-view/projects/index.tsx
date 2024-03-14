@@ -25,7 +25,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                     {data.map((item, i) => (
                         <div key={i} className="container-bg shadow-md my-4 px-6 py-4 h-[350px] flex flex-col justify-between cursor-pointer rounded-lg">
                             <div className="h-full flex flex-col justify-between">
-                                <div className="rounded-lg self-center overflow-hidden">
+                                <div className="rounded-lg self-center overflow-hidden border-2 border-gray-700">
                                     <Image src="/profile-original.jpg" width={500} height={160} alt=""  />
                                 </div>
 
@@ -35,8 +35,8 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                                 </div>
 
                                 <div className="flex justify-between">
-                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 transition-all outline-none rounded-lg">GitHub</button>
-                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 transition-all outline-none rounded-lg">Aplicação</button>
+                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 rounded-lg">GitHub</button>
+                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 rounded-lg">Aplicação</button>
                                 </div>
                             </div>
                         </div>
