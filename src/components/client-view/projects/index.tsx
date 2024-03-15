@@ -35,8 +35,8 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                                 </div>
 
                                 <div className="flex justify-between">
-                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 rounded-lg">GitHub</button>
-                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest bg-gray-500 hover:bg-cyan-500 rounded-lg">Aplicação</button>
+                                    <button onClick={() => router.push(item.github)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest container-bg hover:bg-cyan-500 rounded-lg">GitHub</button>
+                                    <button onClick={() => router.push(item.website)} className="px-2 py-1 text-white font-semibold text-sm tracking-widest container-bg hover:bg-cyan-500 rounded-lg">Aplicação</button>
                                 </div>
                             </div>
                         </div>
