@@ -39,7 +39,7 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
     return (
         <section className="px-6 pt-24 flex flex-col gap-16" id="about">
             <div>
-                <p>{data[0].about}</p>
+                <p className="text-gray-400 text-wrap">{data[0].about}</p>
             </div>
             <div>
                 <AnimationWrapper className="w-full h-full flex justify-evenly items-center">
@@ -63,7 +63,7 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
                 <AnimationWrapper>
                     <div className="flex justify-center flex-wrap gap-2">
                         {data[0].skills.split(", ").map((item, i) => (
-                            <span key={i} className="px-4 py-2 text-base rounded-md container-bg">{item}</span>
+                            <span key={i} className="px-4 py-2 shadow-md text-base rounded-md container-bg">{item}</span>
                         ))}
                     </div>
                 </AnimationWrapper>
