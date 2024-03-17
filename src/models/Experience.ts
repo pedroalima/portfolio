@@ -6,6 +6,7 @@ const ExperienceSchema = new mongoose.Schema({
     duration: String,
     location: String,
     jobprofile: String,
+    skills: String
 }, { timestamps: true });
 
 const Experience = mongoose.models.Experience || mongoose.model("Experience", ExperienceSchema);

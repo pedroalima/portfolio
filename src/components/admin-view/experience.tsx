@@ -27,6 +27,11 @@ const controls: ControlsItemType[] = [
         type: "text",
         label: "Perfil de Emprego",
     },
+    {
+        name: "skills",
+        type: "text",
+        label: "Habilidades",
+    },
 ];
 
 export default function AdminExperienceView({ data, formData, setFormData, handleSaveData } : DataTypesAsync) {
@@ -41,6 +46,7 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
                             <p>Duração: {item.duration}</p>
                             <p>Local: {item.location}</p>
                             <p>Perfil de Trabalho: {item.jobprofile}</p>
+                            <p>Habilidades: {item.skills}</p>
                         </div>
                     ))
                     : null

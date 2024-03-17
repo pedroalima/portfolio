@@ -7,13 +7,23 @@ export default function ClientExperience({ experience, education } : { experienc
 
                 <div className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="group cursor-pointer rounded-lg px-6 py-4 shadow-md container-bg w-full flex justify-between items-center">
-                            <h3 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h3>
+                        <div key={i} className="group cursor-pointer rounded-lg px-6 py-4 hover:shadow-md hover:bg-gray-600/5 border-[1px] border-transparent hover:border-[1px] hover:border-gray-800 w-full flex justify-between items-start">
+                            <div className="p-1">
+                                <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
+                            </div>
                                 
                             <div className="w-9/12">
-                                <h4 className="text-base font-semibold group-hover:text-cyan-500">{item.position} &#183; {item.company}</h4>
+                                <h4 className="text-base p-0 m-0 font-semibold group-hover:text-cyan-500">{item.position} &#183; {item.company}</h4>
                                 <p className="text-sm text-slate-500">{item.location}</p>
-                                <p className="text-sm font-normal text-gray-400">{item.jobprofile}</p>
+                                <p className="text-sm font-normal mt-2 text-gray-400">{item.jobprofile}</p>
+
+                                <div className="mt-2 flex flex-wrap gap-2">
+                                    {item.skills.split(",").map((item, i) => (
+                                        <div key={i} className="bg-cyan-500/[0.1] shadow-md rounded-2xl px-3 py-1 flex justify-center items-center">
+                                            <span  className="text-xs text-cyan-500 font-semibold">{item}</span>
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}

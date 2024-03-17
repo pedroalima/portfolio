@@ -18,6 +18,7 @@ export const initialExperienceViewFormData: FormDataTypes = {
     duration: "",
     location: "",
     jobprofile: "",
+    skills:""
 };
 
 export const initialEducationViewFormData: FormDataTypes = {
@@ -61,10 +62,10 @@ export const navItems = [
         id: "projects",
         label: "Projects"
     },
-    {
-        id: "contact",
-        label: "Contact"
-    }
+    // {
+    //     id: "contact",
+    //     label: "Contact"
+    // }
 ];
 
 export const navItemsClient = [
