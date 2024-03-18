@@ -36,10 +36,10 @@ export default function Login() {
     }
 
     return (
-        <div className="min-h-dvh flex justify-center items-center bg-gradient-to-r from-cyan-300 to-blue-600">
+        <div className="min-h-dvh flex justify-center items-center bg[rgb(20, 29, 47)]">
             <div className="border-b-2 pb-12 w-80 drop-shadow-lg">
-                <div className="backdrop-blur-sm bg-white/30 min-h-96 px-10 py-8 rounded-2xl flex flex-col justify-between text-zinc-500 shadow-lg">
-                    <h1 className="text-center text-4xl font-bold">Sign In</h1>
+                <div className="backdrop-blur-sm bg-white/5 border border-white/10 min-h-96 px-10 py-8 rounded-2xl flex flex-col justify-between text-zinc-500 shadow-lg">
+                    <h1 className="text-center text-4xl font-bold text-white">Sign In</h1>
 
                     {controls.map(controlItem => (
                         <input 
@@ -65,11 +65,6 @@ export default function Login() {
                             type="button"
                             className="p-2 rounded-md bg-neutral-50 font-extralight w-full"
                         >Login</button>
-                
-                        <div className="flex gap-2">    
-                            <input type="checkbox" name="remember" id="remember" />
-                            <label htmlFor="remember" className="font-extralight text-sm">Remember me</label>
-                        </div>
                     </div>
                 </div>
             </div>

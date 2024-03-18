@@ -14,7 +14,7 @@ body {
 }
 
 body::-webkit-scrollbar {
-    width: 5px;
+    width: 8px;
 }
 
 body::-webkit-scrollbar-track {
@@ -22,7 +22,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background-color: rgba(58, 67, 68, 0.724);
+    background-color: rgba(85, 95, 96, 0.724);
 }
 
 .slick-slide > div {
@@ -30,7 +30,7 @@ body::-webkit-scrollbar-thumb {
 }
 
 .container-bg {
-    background-color: rgba(205, 209, 209, 0.033);
+    background-color: rgba(76, 84, 94, 0.07);
     border: 1px solid rgba(205, 209, 209, 0.033);
 }
 
