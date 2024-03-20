@@ -37,7 +37,7 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
     ];
 
     return (
-        <section className="px-6 pt-24 flex flex-col gap-16" id="about">
+        <section className="pt-24 flex flex-col gap-16" id="about">
             <div>
                 <p className="text-gray-400 text-wrap">{data[0].about}</p>
             </div>

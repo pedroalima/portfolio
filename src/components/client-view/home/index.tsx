@@ -28,7 +28,7 @@ export default function ClientHome({ data } : { data : FormDataTypes[]}) {
     const setVariants = useMemo(() => variants(), []);
 
     return (
-        <AnimationWrapper className="h-full px-6">
+        <AnimationWrapper className="h-full">
             <motion.div 
                 className="h-full flex flex-col justify-between"
                 variants={setVariants}

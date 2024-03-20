@@ -19,14 +19,14 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
     };
 
     return (
-        <section className=" flex flex-col justify-evenly items-center px-6 pb-24" id="projects">
+        <section className="flex flex-col justify-evenly items-center pb-24" id="projects">
             <div className="w-11/12 mx-auto my-10">
                 <Slider {...settings}>
                     {data.map((item, i) => (
                         <div key={i} className="container-bg shadow-md my-4 px-6 py-4 h-[350px] flex flex-col justify-between cursor-pointer rounded-lg">
                             <div className="h-full flex flex-col justify-between">
-                                <div className="rounded-lg self-center overflow-hidden border-2 border-gray-700">
-                                    <Image src="/profile-original.jpg" width={500} height={160} alt=""  />
+                                <div className="rounded-lg self-center overflow-hidden border-2 border-gray-700 w-48 h-28">
+                                    <Image src={`/${item.name && item.name.split(" ").join("")}.png`} width="720" height="128" className="w-full h-full" alt=""  />
                                 </div>
 
                                 <div className="h-1/3">

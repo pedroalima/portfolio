@@ -22,11 +22,11 @@ export default async function Home() {
     const projectsSectionData = await extractAllData("projects");
     
     return (
-        <div className="text-white flex justify-between gap-4 mx-28">
+        <div className="text-white flex justify-between gap-4 mx-32">
             <header className="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
-            <main className="lg:w-1/2 lg:flex lg:flex-col gap-28">
+            <main className="lg:w-1/2 lg:flex lg:flex-col gap-24">
                 <ClientAbout data={aboutSectionData} />
                 <ClientExperience experience={experienceSectionData} education={educationSectionData} />
                 <ClientProjects data={projectsSectionData} />
