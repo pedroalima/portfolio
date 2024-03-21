@@ -10,12 +10,14 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
 
     return (
         <section className="flex flex-col justify-evenly items-center pb-24" id="projects">
-            <ul className="">
+            <ul className="flex flex-col gap-5">
                 {data.map((item, i) => (
-                    <li key={i} className="container-bg shadow-md my-4 px-3 py-4 flex items-start cursor-pointer rounded-lg">
-                        <Image src={`/${item.name.split(" ").join("")}.png`} width="120" height="48" className="rounded border-2 border-slate-200/10 transition group-hover:border-slate-200/30 sm:col-span-2 sm:translate-y-1" alt=""  />
+                    <li key={i} className="container-bg px-6 py-4 rounded-lg shadow-md flex items-start gap-4">
+                        <div className="relative w-1/4 h-20">
+                            <Image src={`/${item.name.split(" ").join("")}.png`} priority fill={true} className="absolute object-cover rounded-md border-2 border-slate-200/10 transition" alt="" />
+                        </div>
                 
-                        <div className="flex flex-col gap-5 px-6">
+                        <div className="w-2/4">
                             <div className="">
                                 <h3 className="text-base capitalize text-white">{item.name}</h3>
                                 <p className="text-sm text-gray-400">{item.technologies}</p>
