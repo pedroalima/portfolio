@@ -14,10 +14,10 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
     return (
         <section className="flex flex-col justify-evenly items-center pt-8 pb-24" id="projects">
             <ul className="flex flex-col gap-5">
-                {data.map((item, i) => (
+                {data && data.map((item, i) => (
                     <li key={i} className="container-bg px-6 py-4 rounded-lg shadow-md flex items-start gap-4">
                         <div className="relative w-1/4 h-20 cursor-pointer" onClick={() => router.push(item.website)}>
-                            <Image src={`/${item.name.split(" ").join("")}.png`} priority fill={true} className="absolute object-cover rounded-md border-2 border-slate-200/10 transition hover:border-slate-100/30" alt="" />
+                            <Image src={`/${item.name.split(" ").join("").toLowerCase()}.png`} priority fill={true} className="absolute object-cover rounded-md border-2 border-slate-200/10 transition hover:border-slate-100/30" alt="" />
                         </div>
                 
                         <div className="w-3/4 flex flex-col">
@@ -40,7 +40,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
             </ul>
 
             <div className="text-center mt-6">
-                <p className="text-slate-500 text-sm">Tenha acesso a todos os meus projetos <a href="https://github.com/pedroalima?tab=repositories" className="text-cyan-400">aqui</a></p>
+                <p className="text-slate-500 text-sm">Tenha acesso a todos os meus projetos <Link href="https://github.com/pedroalima?tab=repositories" className="text-cyan-400">aqui</Link></p>
             </div>
         </section>
     );
