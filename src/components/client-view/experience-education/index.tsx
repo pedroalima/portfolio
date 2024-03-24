@@ -15,9 +15,9 @@ export default function ClientExperience({ experience, education } : { experienc
                             <div className="w-9/12">
                                 <h4 className="text-base p-0 m-0 font-semibold group-hover:text-cyan-500">{item.position} &#183; {item.company}</h4>
                                 <p className="text-sm text-slate-500">{item.location}</p>
-                                <p className="text-sm font-normal mt-2 text-gray-400">{item.jobprofile}</p>
+                                <p className="text-sm font-normal my-2 text-gray-400">{item.jobprofile}</p>
 
-                                <div className="mt-2 flex flex-wrap gap-2">
+                                <div className="mt-3 flex flex-wrap gap-2">
                                     {item.skills.split(",").map((item, i) => (
                                         <div key={i} className="bg-cyan-500/[0.1] shadow-md rounded-2xl px-3 py-1 flex justify-center items-center">
                                             <span  className="text-xs text-cyan-500 font-semibold">{item}</span>

@@ -41,7 +41,7 @@ export default function ClientHome({ data } : { data : FormDataTypes[]}) {
 
                 <Navbar />
 
-                <div className="flex gap-10">
+                <div className="flex gap-10 mx-3">
                     <motion.div  animate={{ scale: 1.5}} whileHover={{ scale: 2 }}>
                         <Link href="https://github.com/pedroalima">
                             <FaGithub className="w-4 h-4 contact-icons text-gray-200 hover:text-cyan-400" />
