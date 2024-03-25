@@ -2,6 +2,7 @@ import ClientHome from "@/components/client-view/home";
 import ClientAbout from "@/components/client-view/about";
 import ClientExperience from "@/components/client-view/experience-education";
 import ClientProjects from "@/components/client-view/projects";
+import Footer from "@/components/client-view/footer";
 
 async function extractAllData(currentSection: string) {
     const res = await fetch(`${process.env.BASE_URL}/api/${currentSection}/get`, {
@@ -30,6 +31,7 @@ export default async function Home() {
                 <ClientAbout data={aboutSectionData} />
                 <ClientExperience experience={experienceSectionData} education={educationSectionData} />
                 <ClientProjects data={projectsSectionData} />
+                <Footer />
             </main>
         </div>
     );
