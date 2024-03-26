@@ -2,7 +2,7 @@ import { FormDataTypes } from "@/types";
 
 export default function ClientExperience({ experience, education } : { experience: FormDataTypes[], education: FormDataTypes[]}) {
     return (
-        <section className="py-10" id="experience">
+        <section className="pt-10 pb-5" id="experience">
             <div className="flex flex-col justify-around items-start gap-10">
 
                 <div className="flex flex-col justify-around items-start gap-5">

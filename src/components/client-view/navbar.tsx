@@ -37,7 +37,7 @@ export default function Navbar() {
                             className={`flex items-center gap-3 py-2 px-3 md:p-1 bg-transparent hover:text-white transition-all ${activeSection == item.id ? "font-bold text-white" : "text-gray-500"}`}
                         >
                             <div className={`border-1 border-white transition-all rounded-md h-[1px] ${activeSection == item.id ? "bg-white w-20": "bg-gray-500 w-10"}`}></div>
-                            <Link href={`#${item.id}`} className="uppercase text-sm font-semibold tracking-[0.15rem]">{item.label}</Link>
+                            <Link href={`#${item.id}`} className="uppercase text-xs font-semibold tracking-[0.15rem]">{item.label}</Link>
                         </li>
                     ))}
                 </ul>
