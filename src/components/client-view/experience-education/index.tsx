@@ -7,13 +7,13 @@ export default function ClientExperience({ experience, education } : { experienc
 
                 <div className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="group cursor-pointer rounded-lg px-6 py-4 shadow-md container-bg w-full flex justify-between items-start">
+                        <div key={i} className="rounded-lg px-6 py-4 shadow-md container-bg w-full flex justify-between items-start opacity-80 hover:opacity-100 hover:bg-gray-500/10">
                             <div className="p-1">
                                 <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
                             </div>
                                 
                             <div className="w-9/12">
-                                <h4 className="text-base p-0 m-0 font-semibold group-hover:text-cyan-500">{item.position} &#183; {item.company}</h4>
+                                <h4 className="text-base p-0 m-0 font-semibold">{item.position} &#183; {item.company}</h4>
                                 <p className="text-sm text-slate-500">{item.location}</p>
                                 <p className="text-sm font-normal my-2 text-gray-400">{item.jobprofile}</p>
 
