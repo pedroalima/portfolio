@@ -15,7 +15,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
         <section className="flex flex-col justify-evenly items-center pt-8 pb-10" id="projects">
             <ul className="flex flex-col gap-5">
                 {data && data.map((item, i) => (
-                    <li key={i} className="container-bg px-6 py-4 rounded-lg shadow-md flex items-start gap-4">
+                    <li key={i} className="container-bg px-6 py-4 rounded-lg shadow-md flex items-start gap-4 opacity-80 hover:opacity-100 hover:bg-gray-500/10">
                         <div className="relative w-1/4 h-20 cursor-pointer" onClick={() => router.push(item.website)}>
                             <Image src={`/${item.name.split(" ").join("").toLowerCase()}.png`} priority fill={true} className="absolute object-cover rounded-md border-2 border-slate-200/10 transition hover:border-slate-100/30" alt="" />
                         </div>
