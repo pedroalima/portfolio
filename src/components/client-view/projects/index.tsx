@@ -40,7 +40,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
             </ul>
 
             <div className="text-center mt-6">
-                <p className="text-slate-500 text-sm">Tenha acesso a todos os projetos <Link href="https://github.com/pedroalima?tab=repositories" className="text-cyan-400">aqui</Link></p>
+                <p className="text-slate-500 text-sm">Tenha acesso a todos os projetos <Link href="https://github.com/pedroalima?tab=repositories" className="text-gray-200">aqui</Link></p>
             </div>
         </section>
     );
