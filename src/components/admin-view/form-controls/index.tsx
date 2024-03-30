@@ -7,7 +7,7 @@ export default function FormControls({ controls, formData, setFormData } : FormC
                 <div key={controlItem.name}>
                     <label 
                         htmlFor={controlItem.name}
-                        className="block mb-2 text-sm font-medium text-gray-900"
+                        className="block mb-2 text-sm font-medium"
                     >{controlItem.label}</label>
                     <input 
                         type={controlItem.type}

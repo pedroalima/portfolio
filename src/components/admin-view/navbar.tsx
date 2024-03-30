@@ -13,7 +13,7 @@ export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab,
     };
 
     return (
-        <header className="fixed top-0 w-full z-30 bg-gray-950">
+        <header className="fixed top-0 w-full z-30 container-bg">
             <nav>
                 <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
                     <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">

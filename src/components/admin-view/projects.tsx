@@ -30,7 +30,7 @@ export default function AdminProjectsView({ data, formData, setFormData, handleS
             {
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-white border-2 border-gray-300 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+                        <div key={index} className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                             <p>Nome: {item.name}</p>
                             <p>Tecnologias: {item.technologies}</p>
                             <p>Site: {item.website}</p>
@@ -39,7 +39,7 @@ export default function AdminProjectsView({ data, formData, setFormData, handleS
                     ))
                     : null
             }
-            <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}

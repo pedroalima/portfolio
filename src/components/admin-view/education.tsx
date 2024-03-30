@@ -21,11 +21,11 @@ const controls: ControlsItemType[] = [
 
 export default function AdminEducationView({ data, formData, setFormData, handleSaveData} : DataTypesAsync) {
     return (
-        <div className="min-h-dvh py-14 mt-10 flex flex-col gap-4 justify-center items-center">
+        <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-white border-2 border-gray-300 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+                        <div key={index} className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                             <p>Graduação: {item.degree}</p>
                             <p>Ano: {item.year}</p>
                             <p>Faculdade: {item.college}</p>
@@ -33,7 +33,7 @@ export default function AdminEducationView({ data, formData, setFormData, handle
                     ))
                     : null
             }
-            <div className="bg-white rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}

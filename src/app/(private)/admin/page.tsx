@@ -154,10 +154,10 @@ export default function Admin() {
         <div className="min-h-dvh">
             <NavbarAdmin currentSelectedTab={currentSelectedTab} setCurrentSelectedTab={setCurrentSelectedTab} resetFormData={resetFormData} setIsUpdate={setIsUpdate} />
 
-            <main className="bg-gray-100">
+            <main>
                 {menuItems && menuItems.map(
                     (item) => item.id === currentSelectedTab && (
-                        <div key={item.id}>
+                        <div className="text-white min-h-dvh flex justify-center items-center" key={item.id}>
                             {item.component}
                         </div>
                     )
