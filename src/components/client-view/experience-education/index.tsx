@@ -7,12 +7,12 @@ export default function ClientExperience({ experience, education } : { experienc
 
                 <div className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="rounded-lg px-6 py-4 shadow-md container-bg w-full flex justify-between items-start opacity-80 hover:opacity-100 hover:bg-gray-500/10">
-                            <div className="p-1">
+                        <div key={i} className="rounded-lg px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-start gap-4 opacity-60 hover:opacity-100">
+                            <div className="p-1 w-1/4">
                                 <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
                             </div>
                                 
-                            <div className="w-9/12">
+                            <div className="w-3/4">
                                 <h4 className="text-base p-0 m-0 font-semibold">{item.position} &#183; {item.company}</h4>
                                 <p className="text-sm text-slate-500">{item.location}</p>
                                 <p className="text-sm font-normal my-2 text-gray-400">{item.jobprofile}</p>
@@ -31,10 +31,12 @@ export default function ClientExperience({ experience, education } : { experienc
                         
                 <div className="flex flex-col justify-around items-start gap-5 w-full">
                     {education && education.map((item, i) => (
-                        <div key={i} className="rounded-lg cursor-pointer px-6 py-4 shadow-md container-bg w-full flex justify-between items-center opacity-80 hover:opacity-100 hover:bg-gray-500/10">
-                            <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
+                        <div key={i} className="rounded-lg cursor-pointer px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-center gap-4 opacity-60 hover:opacity-100">
+                            <div className="w-1/4">
+                                <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
+                            </div>
                             
-                            <div className="w-9/12">
+                            <div className="w-3/4">
                                 <h4 className="text-base font-semibold">{item.degree}</h4>
                                 <p className="text-sm text-slate-500">{item.college}</p>
                             </div>

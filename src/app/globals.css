@@ -29,7 +29,16 @@ body::-webkit-scrollbar-thumb {
     margin: 0 0.5rem;
 }
 
+.tags-bg {
+    background-color: rgba(76, 84, 94, 0.07);
+    border: 1px solid rgba(205, 209, 209, 0.033);
+}
+
 .container-bg {
+    border: 1px solid rgba(0, 0, 0, 0);
+}
+
+.container-bg:hover {
     background-color: rgba(76, 84, 94, 0.07);
     border: 1px solid rgba(205, 209, 209, 0.033);
 }
