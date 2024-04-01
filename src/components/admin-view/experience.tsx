@@ -40,7 +40,7 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
             {
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
+                        <div key={index} className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
                             <p>Cargo: {item.position}</p>
                             <p>Empresa: {item.company}</p>
                             <p>Duração: {item.duration}</p>
@@ -51,7 +51,7 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
                     ))
                     : null
             }
-            <div className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}

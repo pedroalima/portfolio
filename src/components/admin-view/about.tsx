@@ -26,7 +26,7 @@ const controls: ControlsItemType[] = [
 
 export default function AdminAboutView({formData, setFormData, handleSaveData} : DataTypes) {
     return (
-        <div className="container-bg rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+        <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
             <FormControls
                 controls={controls}
                 formData={formData}
