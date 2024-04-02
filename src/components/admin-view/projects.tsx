@@ -26,7 +26,7 @@ const controls: ControlsItemType[] = [
 
 export default function AdminProjectsView({ data, formData, setFormData, handleSaveData} : DataTypesAsync) {
     return (
-        <div className="min-h-dvh py-14 mt-10 flex flex-col gap-4 justify-center items-center">
+        <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
                     ? data.map((item: FormDataTypes, index: number) => (

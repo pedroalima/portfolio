@@ -101,26 +101,18 @@ O objeto "matcher" será responsável por definir quais rotas serão impactadas 
 
 > Para saber mais consulte a [documentação!](https://nextjs.org/docs/app/building-your-application/routing/middleware)
 
-</br>
+</br> -->
 
 ## 💻 Rodando o projeto
 
-![#](./public/mobile.gif)
+![#]()
 
-### Veja uma breve demonstração do sistema de rotas privadas [clicando aqui](https://drive.google.com/file/d/1UXNEAALbqShYOaO_wtxYMYjgMb9aVReU/view?usp=sharing)
+### Acesse a aplicação via web [aqui!](https://portifolio-pedroalima.vercel.app/)
 
-### Acesse a aplicação via web [aqui!](https://safeway-two.vercel.app/)
+#### Ou instale na sua máquina. Para conferir a versão final, é só realizar os seguintes passos:
 
-### Ou instale na sua máquina
-
-Para conferir a versão final é só realizar os seguintes passos:
-
-#### 1 - Clonando o Projeto:
-Navegue até o diretório onde deseja clonar o projeto.
-
-Abra o terminal com o GitBash.
-
-Execute o comando:
+### 1 - Clonando o Projeto:
+Navegue até o diretório onde deseja clonar o projeto. Abra o terminal com o GitBash e execute o comando:
 
 ```bash
 git clone URL_DO_REPOSITORIO
@@ -128,9 +120,7 @@ git clone URL_DO_REPOSITORIO
 Substitua URL_DO_REPOSITORIO pela URL do repositório deste projeto.
 
 #### 2 - Instalando Dependências:
-Navegue até o diretório "safeway".
-
-Execute o comando:
+Navegue até a pasta clonada do projeto e execute o comando no terminal:
 
 ```bash
 npm install
@@ -141,16 +131,14 @@ yarn install
 ```
 
 #### 3 - Executando o Projeto:
-Ainda no diretório "safeway".
-
-Execute o comando:
+Ainda na pasta do projeto, execute o comando no terminal:
 
 ```bash
 npm run dev
 ```
 Isso iniciará o servidor de desenvolvimento Next.
 
-</br> -->
+</br>
 
 ## Autor
 
