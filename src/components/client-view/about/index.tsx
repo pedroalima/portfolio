@@ -37,11 +37,13 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
     ];
 
     return (
-        <section className="pt-24 flex flex-col gap-16" id="about">
+        <section className="pt-24 flex flex-col gap-6" id="about">
             <div>
-                <p className="text-gray-400 text-wrap">{data[0].about}</p>
+                {data[0].about.split("/n").map((item, i) => (
+                    <p key={i} className="text-gray-400 leading-[1.625rem] mb-4">{item}</p>
+                ))}
             </div>
-            <div>
+            <div className="mb-4">
                 <AnimationWrapper className="w-full h-full flex justify-evenly items-center">
                     {aboutDataInfo.map((item, i) => (
                         <motion.div
