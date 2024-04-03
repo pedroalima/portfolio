@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-
 export default function Footer() {
     return (
         <footer className="w-full px-8 h-32 flex flex-col justify-between items-center mb-24">

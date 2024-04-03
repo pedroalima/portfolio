@@ -33,31 +33,33 @@ Os usuários têm a capacidade de:
 
 > OBS - A rota privada do dashboard só poderá ser acessada se o usuário possuir o token, o qual é obtido ao clicar no botão 'Entrar' no formulário de login. Da mesma forma, a rota pública raiz, onde se encontra o formulário de login, só poderá ser acessada se o usuário não possuir o token. Para excluir o token, é necessário clicar no botão 'Sair' na barra de navegação do dashboard (na versão mobile, o botão está no menu).
 
-</br>
+</br> -->
 
 ## Minha caminhada
 
-- [x] Preparativos da pagina HTML e CSS para mobile
-- [x] Barra de navegação
-- [x] Layout versão mobile
-- [x] Layout versão desktop
-- [x] Menus de nagavegação
-- [x] Elementos JavaScript
-- [x] Estados de foco
+- [x] Protótipo do design
+- [x] Estrutura de rotas front-end
+- [x] Estrutura de rotas back-end
+- [x] Modelo de objetos
+- [x] Conexão e seviços da API
+- [x] Controle de rota público/privada
+- [x] Aplicação do design
 
 </br>
 
 ## 🔧 Propriedades e Tecnologias
 
 - TypeScript
-- Next 
+- Next
 - TailwindCSS
 - CSS
-- ESLint
+- Mongoose
+- MongoDB
+- Figma
 
 </br>
 
-## 🧠 Meu aprendizado
+<!-- ## 🧠 Meu aprendizado
 
 O Next.js, oferece uma poderosa funcionalidade de sistema de rotas privadas através do uso de middlewares. Este recurso permite criar aplicações web seguras e controlar o acesso a determinadas rotas com facilidade. Ao implementar middlewares específicos, é possível adicionar camadas adicionais de autenticação, autorização e lógica personalizada às rotas privadas, garantindo que apenas usuários autorizados tenham acesso a determinados recursos.
 
