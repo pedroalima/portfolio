@@ -1,14 +1,14 @@
 # Portifólio
 
-<!-- Um protótipo inicial de uma plataforma SaaS que dispõe de um sistema de rotas privadas, com versões otimizadas para mobile e desktop.
+Uma aplicação de página única (SPA) do meu próprio portifólio de projetos.
 
-O projeto é de minha autoria e foi inspirado em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, Next, TailwindCSS e CSS.
+A página web é de minha autoria e foi inspirado em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, Next, MongoDB, TailwindCSS e CSS.
 
 ## Índice
 
 - [Visão geral](#visao-geral)
-  - [O Desafio](#o-desafio)
   - [Screenshot](#screenshot)
+  - [Objetivos](#objetivos)
 - [Minha caminhada](#minha-caminhada)
   - [Propriedades](#propriedades)
   - [O que aprendi](#o-que-aprendi)
@@ -19,11 +19,11 @@ O projeto é de minha autoria e foi inspirado em outras aplicações já existen
 
 ## Screenshots
 
-![#](./public/section-desktop.png)
+![#](./public/desktop-view.png)
 
 </br>
 
-## 🎯 Objetivos
+<!-- ## Objetivos 🎯
 
 O principal objetivo deste projeto foi elaborar um sistema de rotas privadas utilizando o framework Next. Secundariamente, busquei familiarizar-me com o framework de estilos Tailwind CSS.
 
@@ -47,7 +47,7 @@ Os usuários têm a capacidade de:
 
 </br>
 
-## 🔧 Propriedades e Tecnologias
+## Propriedades e Tecnologias 🔧
 
 - TypeScript
 - Next
@@ -59,7 +59,7 @@ Os usuários têm a capacidade de:
 
 </br>
 
-<!-- ## 🧠 Meu aprendizado
+<!-- ## Meu aprendizado 🧠
 
 O Next.js, oferece uma poderosa funcionalidade de sistema de rotas privadas através do uso de middlewares. Este recurso permite criar aplicações web seguras e controlar o acesso a determinadas rotas com facilidade. Ao implementar middlewares específicos, é possível adicionar camadas adicionais de autenticação, autorização e lógica personalizada às rotas privadas, garantindo que apenas usuários autorizados tenham acesso a determinados recursos.
 
@@ -105,7 +105,7 @@ O objeto "matcher" será responsável por definir quais rotas serão impactadas 
 
 </br> -->
 
-## 💻 Rodando o projeto
+## Rodando o projeto 💻
 
 ![#]()
 
