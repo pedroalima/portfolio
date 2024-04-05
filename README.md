@@ -1,8 +1,8 @@
-# Portifólio
+# Portfólio
 
-Uma aplicação de página única (SPA) do meu próprio portifólio de projetos.
+Uma aplicação de página única (SPA) do meu próprio portfólio de projetos.
 
-A página web é de minha autoria e foi inspirado em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, Next, MongoDB, TailwindCSS e CSS.
+A página web é de minha autoria e foi inspirada em outras aplicações já existentes, adaptando seus designs e recursos. A aplicação foi desenvolvida utilizando tecnologias como TypeScript, Next.js, MongoDB, TailwindCSS e CSS.
 
 ## Índice
 
@@ -23,17 +23,17 @@ A página web é de minha autoria e foi inspirado em outras aplicações já exi
 
 </br>
 
-<!-- ## Objetivos 🎯
+## Objetivos 🎯
 
-O principal objetivo deste projeto foi elaborar um sistema de rotas privadas utilizando o framework Next. Secundariamente, busquei familiarizar-me com o framework de estilos Tailwind CSS.
+O principal objetivo deste projeto foi elaborar uma SPA com uma página administrativa, conectada a uma API.
 
 Os usuários têm a capacidade de:
-- Visualizar a aplicação de maneira independente, seja em dispositivos mobile ou desktop.
-- Navegar entre as páginas de login e dashboard, testando o sistema de rotas privadas. 
+- Como cliente, é possível visualizar a pagina e navegar entre as opções do menu.
+- Como administrador, estão disponíveis, além da página inicial, outras duas: a de login e a de administração. A primeira destina-se ao processo de autenticação e a segunda permite a edição das informações exibidas na página inicial.
 
-> OBS - A rota privada do dashboard só poderá ser acessada se o usuário possuir o token, o qual é obtido ao clicar no botão 'Entrar' no formulário de login. Da mesma forma, a rota pública raiz, onde se encontra o formulário de login, só poderá ser acessada se o usuário não possuir o token. Para excluir o token, é necessário clicar no botão 'Sair' na barra de navegação do dashboard (na versão mobile, o botão está no menu).
+> OBS - Apenas o criador do projeto tem acesso à página administrativa.
 
-</br> -->
+</br>
 
 ## Minha caminhada
 
