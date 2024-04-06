@@ -7,10 +7,10 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 ## Índice
 
 - [Visão geral](#visao-geral)
-  - [Screenshot](#screenshot)
-  - [Objetivos](#objetivos)
-- [Minha caminhada](#minha-caminhada)
-  - [Propriedades](#propriedades)
+  - [Screenshots](#screenshots)
+  - [Objetivos](#objetivos-🎯)
+- [Minha caminhada](#minha-caminhada-🐾)
+  - [Propriedades e Tecnologias](#propriedades-e-tecnologias-🔧)
   - [O que aprendi](#o-que-aprendi)
   - [Recursos](#recursos)
 - [Autor](#autor)
@@ -35,7 +35,7 @@ Os usuários têm a capacidade de:
 
 </br>
 
-## Minha caminhada
+## Minha caminhada 🐾
 
 - [x] Protótipo do design
 - [x] Estrutura de rotas front-end
@@ -107,7 +107,7 @@ O objeto "matcher" será responsável por definir quais rotas serão impactadas 
 
 ## Rodando o projeto 💻
 
-![#]()
+![#](./public/desktop.gif)
 
 ### Acesse a aplicação via web [aqui!](https://portifolio-pedroalima.vercel.app/)
 
