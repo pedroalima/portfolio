@@ -6,13 +6,12 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 
 ## Índice
 
-- [Visão geral](#visao-geral)
-  - [Screenshots](#screenshots)
-  - [Objetivos](#objetivos-🎯)
-- [Minha caminhada](#minha-caminhada-🐾)
-  - [Propriedades e Tecnologias](#propriedades-e-tecnologias-🔧)
+- [Screenshots](#screenshots)
+- [Objetivos](#objetivos)
+- [Minha caminhada](#minha-caminhada)
+  - [Propriedades e Tecnologias](#propriedades-e-tecnologias)
   - [O que aprendi](#o-que-aprendi)
-  - [Recursos](#recursos)
+- [Rodando o projeto](#rodando-o-projeto)
 - [Autor](#autor)
 
 </br>
@@ -23,9 +22,9 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 
 </br>
 
-## Objetivos 🎯
+## Objetivos
 
-O principal objetivo deste projeto foi elaborar uma SPA com uma página administrativa, conectada a uma API.
+O principal objetivo deste projeto foi elaborar uma SPA do meu portfólio com uma página administrativa, conectado a uma API.
 
 Os usuários têm a capacidade de:
 - Como cliente, é possível visualizar a pagina e navegar entre as opções do menu.
@@ -35,7 +34,7 @@ Os usuários têm a capacidade de:
 
 </br>
 
-## Minha caminhada 🐾
+## Minha caminhada
 
 - [x] Protótipo do design
 - [x] Estrutura de rotas front-end
@@ -47,24 +46,24 @@ Os usuários têm a capacidade de:
 
 </br>
 
-## Propriedades e Tecnologias 🔧
+## Propriedades e Tecnologias
 
 - TypeScript
-- Next
-- TailwindCSS
-- CSS
+- Next.js
 - Mongoose
 - MongoDB
+- CSS
+- TailwindCSS
+- Framer Motion
 - Figma
 
 </br>
 
-<!-- ## Meu aprendizado 🧠
+## Meu aprendizado
 
-O Next.js, oferece uma poderosa funcionalidade de sistema de rotas privadas através do uso de middlewares. Este recurso permite criar aplicações web seguras e controlar o acesso a determinadas rotas com facilidade. Ao implementar middlewares específicos, é possível adicionar camadas adicionais de autenticação, autorização e lógica personalizada às rotas privadas, garantindo que apenas usuários autorizados tenham acesso a determinados recursos.
+Ao me deparar com o banco de dados do MongoDB pela primeira vez, tive como aprendizado o aspecto de modelagem de objetos que é elaborado pelo Mongoose.
 
-Conforme a documentação recomenda, é necessário criar o arquivo middleware.js/ts na raiz do seu projeto.
-
+<!--  
 ```tsx
 import { NextResponse } from "next/server";
 import { NextRequest } from "next/server";
@@ -103,9 +102,10 @@ O objeto "matcher" será responsável por definir quais rotas serão impactadas 
 
 > Para saber mais consulte a [documentação!](https://nextjs.org/docs/app/building-your-application/routing/middleware)
 
-</br> -->
+</br>
+-->
 
-## Rodando o projeto 💻
+## Rodando o projeto
 
 ![#](./public/desktop.gif)
 
