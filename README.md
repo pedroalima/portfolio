@@ -39,9 +39,9 @@ Os usuários têm a capacidade de:
 - [x] Protótipo do design
 - [x] Estrutura de rotas front-end
 - [x] Estrutura de rotas back-end
-- [x] Modelo de objetos
 - [x] Conexão e seviços da API
-- [x] Controle de rota público/privada
+- [x] Modelo de objetos
+- [x] Controle de rotas público/privada
 - [x] Aplicação do design
 
 </br>
@@ -63,47 +63,59 @@ Os usuários têm a capacidade de:
 
 Ao me deparar com o banco de dados do MongoDB pela primeira vez, tive como aprendizado o aspecto de modelagem de objetos que é elaborado pelo Mongoose.
 
-<!--  
-```tsx
-import { NextResponse } from "next/server";
-import { NextRequest } from "next/server";
- 
-export function middleware(request: NextRequest) {
-  // Busca e pega o valor do token
-  const token = request.cookies.get("auth_user")?.value;
-  // Se o token não existir
-  if (!token) {
-    // E se o usuário estiver na rota "/"
-    if (request.nextUrl.pathname == "/") {
-      // Prossiga sem encaminhar
-      return NextResponse.next();
-    }
-    // Encaminha o usuário para a rota "/"
-    return NextResponse.redirect(new URL("/", request.url));
-  }
-  //Se o token existir e o usuário quiser acessar a rota "/"
-  if (request.nextUrl.pathname == "/") {
-    // Encaminhe o usuário para a rota "dashboard"
-    return NextResponse.redirect(new URL("/dashboard", request.url));
-  }
-}
+Logo após realizar a conexão com o banco de dados, precisamos criar um esquema para cada objeto:
 
-export const config = {
-  // Rotas afetadas
-  matcher: ["/", "/dashboard/:path*"]
-};
+```tsx
+import mongoose from "mongoose";
+
+const HomeSchema = new mongoose.Schema({
+    mainText: String,
+    description: String,
+},
+{ timestamps: true });
+
+const Home = mongoose.models.Home || mongoose.model("Home", HomeSchema);
+
+export default Home;
 ```
 
-O arquivo é composto pela função middleware e um objeto de configuração chamado "matcher".
+Ao definir cada esquema é necessário criar e exportar cada modelo. Desse modo, tudo está pronto para ser aplicado em cada rota.
 
-A função middleware recebe o parâmetro "request", que nos concede acesso aos cookies e componentes da URL da web. Isso nos permite instanciar o token para trabalhar com condições baseadas nele. Outro elemento crucial é o "NextResponse", o qual precisamos importar de "next/server". Ele nos possibilita direcionar as rotas para onde o usuário será encaminhado.
+```tsx
+import connectToDatabase from "@/database";
+import Home from "@/models/Home";
+import { NextRequest, NextResponse } from "next/server";
 
-O objeto "matcher" será responsável por definir quais rotas serão impactadas pela função middleware.
+export const dynamic = "force-dynamic";
 
-> Para saber mais consulte a [documentação!](https://nextjs.org/docs/app/building-your-application/routing/middleware)
+export async function POST(req: NextRequest) {
+    try {
+        await connectToDatabase();
+        const extractData = await req.json();
+        const saveData = await Home.create(extractData);
 
+        if (saveData) {
+            return NextResponse.json({
+                success: true,
+                message: "Data saved successfully",
+            });
+        } else {
+            return NextResponse.json({
+                success: false,
+                message: "Something goes wrong! Please try again",
+            });
+        }
+    } catch (error) {
+        console.log(error);
+
+        return NextResponse.json({
+            success: false,
+            message: "Something goes wrong! Please try again",
+        });
+    }
+}
+```
 </br>
--->
 
 ## Rodando o projeto
 
