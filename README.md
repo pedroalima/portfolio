@@ -10,7 +10,7 @@ A página web é de minha autoria e foi inspirada em outras aplicações já exi
 - [Objetivos](#objetivos)
 - [Minha caminhada](#minha-caminhada)
   - [Propriedades e Tecnologias](#propriedades-e-tecnologias)
-  - [O que aprendi](#o-que-aprendi)
+  - [Meu aprendizado](#meu-aprendizado)
 - [Rodando o projeto](#rodando-o-projeto)
 - [Autor](#autor)
 
@@ -30,7 +30,7 @@ Os usuários têm a capacidade de:
 - Como cliente, é possível visualizar a pagina e navegar entre as opções do menu.
 - Como administrador, estão disponíveis, além da página inicial, outras duas: a de login e a de administração. A primeira destina-se ao processo de autenticação e a segunda permite a edição das informações exibidas na página inicial.
 
-> OBS - Apenas o criador do projeto tem acesso à página administrativa.
+> OBS - Apenas o criador do projeto possui acesso à página administrativa.
 
 </br>
 
@@ -61,9 +61,9 @@ Os usuários têm a capacidade de:
 
 ## Meu aprendizado
 
-Ao me deparar com o banco de dados do MongoDB pela primeira vez, tive como aprendizado o aspecto de modelagem de objetos que é elaborado pelo Mongoose.
+Ao me deparar com o banco de dados MongoDB pela primeira vez, aprendi sobre o aspecto de modelagem de objetos elaborado pelo Mongoose.
 
-Logo após realizar a conexão com o banco de dados, precisamos criar um esquema para cada objeto:
+Após estabelecer a conexão com o banco de dados, é necessário criar um esquema para cada objeto:
 
 ```tsx
 import mongoose from "mongoose";
@@ -79,7 +79,7 @@ const Home = mongoose.models.Home || mongoose.model("Home", HomeSchema);
 export default Home;
 ```
 
-Ao definir cada esquema é necessário criar e exportar cada modelo. Desse modo, tudo está pronto para ser aplicado em cada rota.
+Ao definir cada esquema, é necessário criar e exportar o modelo correspondente. Dessa forma, tudo está pronto para ser aplicado em cada rota.
 
 ```tsx
 import connectToDatabase from "@/database";
