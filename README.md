@@ -28,7 +28,7 @@ O principal objetivo deste projeto foi elaborar uma SPA do meu portfólio com um
 
 Os usuários têm a capacidade de:
 - Como cliente, é possível visualizar a pagina e navegar entre as opções do menu.
-- Como administrador, estão disponíveis, além da página inicial, outras duas: a de login e a de administração. A primeira destina-se ao processo de autenticação e a segunda permite a edição das informações exibidas na página inicial.
+- Como administrador, estão disponíveis, além da página inicial, outras duas: a de login e a administrativa. A primeira destina-se ao processo de autenticação e a segunda permite a edição das informações exibidas na página inicial.
 
 > OBS - Apenas o criador do projeto possui acesso à página administrativa.
 
@@ -115,6 +115,8 @@ export async function POST(req: NextRequest) {
     }
 }
 ```
+
+Veja mais detalhes na documentação oficial [aqui](https://mongoosejs.com/docs/guide.html)
 </br>
 
 ## Rodando o projeto

@@ -7,7 +7,7 @@ export default function ClientExperience({ experience, education } : { experienc
 
                 <div className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="rounded-lg px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-start gap-4 opacity-60 hover:opacity-100">
+                        <div key={i} className="transition-all rounded-lg px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-start gap-4 opacity-60 hover:opacity-100">
                             <div className="p-1 w-1/4">
                                 <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
                             </div>
@@ -31,7 +31,7 @@ export default function ClientExperience({ experience, education } : { experienc
                         
                 <div className="flex flex-col justify-around items-start gap-5 w-full">
                     {education && education.map((item, i) => (
-                        <div key={i} className="rounded-lg px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-center gap-4 opacity-60 hover:opacity-100">
+                        <div key={i} className="transition-all rounded-lg px-6 py-4 hover:shadow-md container-bg w-full flex justify-between items-center gap-4 opacity-60 hover:opacity-100">
                             <div className="w-1/4">
                                 <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
                             </div>

@@ -39,7 +39,7 @@ export default function Login() {
         <div className="min-h-dvh flex justify-center items-center bg[rgb(20, 29, 47)]">
             <div className="border-b-2 pb-12 w-80 drop-shadow-lg">
                 <div className="backdrop-blur-sm bg-white/5 border border-white/10 min-h-96 px-10 py-8 rounded-2xl flex flex-col justify-between text-zinc-500 shadow-lg">
-                    <h1 className="text-center text-4xl font-bold text-white">Sign In</h1>
+                    <h1 className="text-center text-4xl font-bold text-white">Login</h1>
 
                     {controls.map(controlItem => (
                         <input 
