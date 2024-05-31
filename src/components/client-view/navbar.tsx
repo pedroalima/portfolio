@@ -30,7 +30,7 @@ export default function Navbar() {
     return (
         <header>
             <nav>
-                <ul className="flex flex-col items-start gap-3">
+                <ul className="hidden lg:flex lg:flex-col lg:items-start lg:gap-3">
                     {navItemsClient.map((item) => (
                         <li
                             key={item.id}

@@ -1,8 +1,8 @@
-import Cookie from "js-cookie";
-import { NavbarMenuTypes } from "@/types";
-import { useRouter } from "next/navigation";
 import { navItems } from "@/mock-data/";
+import { NavbarMenuTypes } from "@/types";
+import Cookie from "js-cookie";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab, resetFormData, setIsUpdate } : NavbarMenuTypes) {
     const route = useRouter();
@@ -24,7 +24,7 @@ export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab,
                         <button 
                             onClick={handleLogout}
                             type="button" 
-                            className="text-white focus:ring-4 focus:outline-none  font-medium rounded-lg text-sm px-4 py-2 text-center bg-red-600 hover:bg-red-700 focus:ring-red-800"
+                            className="text-white focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-4 py-2 text-center bg-red-600 hover:bg-red-700 focus:ring-red-800"
                         >Logout</button>
                     </div>
 

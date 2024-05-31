@@ -1,8 +1,8 @@
-import ClientHome from "@/components/client-view/home";
 import ClientAbout from "@/components/client-view/about";
 import ClientExperience from "@/components/client-view/experience-education";
-import ClientProjects from "@/components/client-view/projects";
 import Footer from "@/components/client-view/footer";
+import ClientHome from "@/components/client-view/home";
+import ClientProjects from "@/components/client-view/projects";
 
 async function extractAllData(currentSection: string) {
     const res = await fetch(`${process.env.BASE_URL}/api/${currentSection}/get`, {
@@ -23,8 +23,8 @@ export default async function Home() {
     const projectsSectionData = await extractAllData("projects");
     
     return (
-        <div className="text-white flex justify-between gap-4 mx-32">
-            <header className="lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
+        <div className="text-white flex flex-col lg:flex-row lg:justify-between lg:gap-4 px-6 py-12 lg:mx-32">
+            <header className="static lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
             <main className="lg:w-1/2 lg:flex lg:flex-col gap-24">
