@@ -1,8 +1,10 @@
 import { FormDataTypes } from "@/types";
+import { SectionTitle } from "../section-title";
 
 export default function ClientExperience({ experience, education } : { experience: FormDataTypes[], education: FormDataTypes[]}) {
     return (
         <section className="pt-10 pb-5" id="experience">
+            <SectionTitle text="Experiências" />
             <div className="flex flex-col justify-around items-start gap-10">
 
                 <div className="flex flex-col justify-around items-start gap-5">

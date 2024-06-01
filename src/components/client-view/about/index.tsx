@@ -3,6 +3,7 @@ import { FormDataTypes } from "@/types";
 import { motion } from "framer-motion";
 import { useMemo } from "react";
 import AnimationWrapper from "../animate-wrapper";
+import { SectionTitle } from "../section-title";
 
 export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
 
@@ -38,9 +39,7 @@ export default function ClientAbout({ data } : { data: FormDataTypes[]}) {
 
     return (
         <section className="pt-24 flex flex-col gap-6" id="about">
-            <div className="fixed lg:hidden">
-                <h3>About</h3>
-            </div>
+            <SectionTitle text="Sobre" />
             <div>
                 {data[0].about.split("/n").map((item, i) => (
                     <p key={i} className="text-gray-400 leading-[1.625rem] mb-4">{item}</p>
