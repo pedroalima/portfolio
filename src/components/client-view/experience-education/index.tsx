@@ -8,7 +8,7 @@ export default function ClientExperience({ experience, education } : { experienc
             <div className="flex flex-col justify-around items-start gap-10 pt-4 lg:pt-0">
                 <div className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="lg:transition-all rounded-lg px-4 lg:px-6 py-4 border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:hover:bg-slate-800/30 shadow-md lg:hover:shadow-md w-full flex flex-col lg:flex-row justify-between items-start gap-2 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
+                        <div key={i} className="lg:transition-all rounded-lg px-4 lg:px-6 py-4 border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:bg-slate-800/0 lg:hover:bg-slate-800/30 shadow-md lg:shadow-none lg:hover:shadow-md w-full flex flex-col lg:flex-row justify-between items-start gap-2 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
                             <div className="lg:p-1 lg:w-1/4">
                                 <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
                             </div>
@@ -29,9 +29,9 @@ export default function ClientExperience({ experience, education } : { experienc
                         </div>
                     ))}
                 </div>
-                <div className="flex flex-col justify-around items-start gap-1 lg:gap-5 w-full">
+                <div className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
                     {education && education.map((item, i) => (
-                        <div key={i} className="lg:transition-all rounded-lg lg:px-6 py-2 lg:py-4 lg:hover:shadow-md container-bg w-full flex flex-col lg:flex-row justify-between lg:items-center gap-1 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
+                        <div key={i} className="lg:transition-all rounded-lg px-4 lg:px-6 py-2 lg:py-4 border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:bg-slate-800/0 lg:hover:bg-slate-800/30 shadow-md lg:shadow-none lg:hover:shadow-md w-full flex flex-col lg:flex-row justify-between lg:items-center gap-1 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
                             <div className="lg:w-1/4">
                                 <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
                             </div>
