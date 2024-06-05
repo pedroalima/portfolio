@@ -7,6 +7,7 @@ import { GoArrowUpRight } from "react-icons/go";
 import { IoIosArrowRoundForward } from "react-icons/io";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
+import Container from "../container";
 import { SectionTitle } from "../section-title";
 
 export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
@@ -18,7 +19,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
             <div className="flex flex-col justify-evenly items-center pt-8 pb-10">
                 <ul className="flex flex-col gap-5">
                     {data && data.map((item, i) => (
-                        <li key={i} className="transition-all px-4 lg:px-6 py-4 rounded-lg border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:bg-slate-800/0 lg:hover:bg-slate-800/30 shadow-md lg:shadow-none lg:hover:shadow-md flex flex-col lg:flex-row lg:items-start gap-4">
+                        <Container key={i} className="px-4 lg:px-6 py-4 flex flex-col lg:flex-row lg:items-start gap-4">
                             <div className="relative lg:w-1/4 h-20 cursor-pointer" onClick={() => router.push(item.website)}>
                                 <Image src={`/${item.name.split(" ").join("").toLowerCase()}.png`} priority fill={true} sizes="100%" className="absolute object-cover rounded-md border-2 border-slate-200/10 transition hover:border-slate-100/30" alt="" />
                             </div>
@@ -38,7 +39,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                                     <Link href={item.github} className="px-4 py-1 text-white hover:text-cyan-500 font-semibold text-xs relative">Mais Detalhes <IoIosArrowRoundForward size={25} className="absolute transition-all -right-2 group-hover:-right-3 top-[2px]" /></Link>
                                 </div>
                             </div>
-                        </li>
+                        </Container>
                     ))}
                 </ul>
                 <div className="text-center mt-6">

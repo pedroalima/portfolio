@@ -1,4 +1,5 @@
 import { FormDataTypes } from "@/types";
+import Container from "../container";
 import { SectionTitle } from "../section-title";
 
 export default function ClientExperience({ experience, education } : { experience: FormDataTypes[], education: FormDataTypes[]}) {
@@ -6,9 +7,9 @@ export default function ClientExperience({ experience, education } : { experienc
         <section className="pt-10 pb-5" id="experience">
             <SectionTitle text="Experiências" />
             <div className="flex flex-col justify-around items-start gap-10 pt-4 lg:pt-0">
-                <div className="flex flex-col justify-around items-start gap-5">
+                <ul className="flex flex-col justify-around items-start gap-5">
                     {experience && experience.map((item, i) => (
-                        <div key={i} className="lg:transition-all rounded-lg px-4 lg:px-6 py-4 border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:bg-slate-800/0 lg:hover:bg-slate-800/30 shadow-md lg:shadow-none lg:hover:shadow-md w-full flex flex-col lg:flex-row justify-between items-start gap-2 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
+                        <Container key={i} className="px-4 lg:px-6 py-4 flex flex-col lg:flex-row justify-between items-start gap-2 lg:gap-4">
                             <div className="lg:p-1 lg:w-1/4">
                                 <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
                             </div>
@@ -26,12 +27,12 @@ export default function ClientExperience({ experience, education } : { experienc
                                     ))}
                                 </div>
                             </div>
-                        </div>
+                        </Container>
                     ))}
-                </div>
-                <div className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
+                </ul>
+                <ul className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
                     {education && education.map((item, i) => (
-                        <div key={i} className="lg:transition-all rounded-lg px-4 lg:px-6 py-2 lg:py-4 border-[1px] border-slate-500/5 lg:border-black/0 lg:hover:border-slate-500/5 bg-slate-800/30 lg:bg-slate-800/0 lg:hover:bg-slate-800/30 shadow-md lg:shadow-none lg:hover:shadow-md w-full flex flex-col lg:flex-row justify-between lg:items-center gap-1 lg:gap-4 lg:opacity-60 lg:hover:opacity-100">
+                        <Container key={i} className="px-4 lg:px-6 py-2 lg:py-4 flex flex-col lg:flex-row justify-between lg:items-center gap-1 lg:gap-4">
                             <div className="lg:w-1/4">
                                 <h3 className="text-xs uppercase font-semibold text-slate-500">{item.year}</h3>
                             </div>
@@ -40,9 +41,9 @@ export default function ClientExperience({ experience, education } : { experienc
                                 <h4 className="text-base font-semibold">{item.degree}</h4>
                                 <p className="text-sm text-slate-500">{item.college}</p>
                             </div>
-                        </div>
+                        </Container>
                     ))}
-                </div>
+                </ul>
             </div>
         </section>
     );
