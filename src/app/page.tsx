@@ -23,7 +23,7 @@ export default async function Home() {
     const projectsSectionData = await extractAllData("projects");
     
     return (
-        <div className="text-white flex flex-col lg:flex-row lg:justify-between lg:gap-4 px-6 py-12 lg:p-0 lg:mx-32">
+        <>
             <header className="static lg:sticky lg:top-0 lg:max-h-screen lg:w-1/2 lg:flex lg:flex-col lg:justify-between lg:py-24">
                 <ClientHome data={homeSectionData} />
             </header>
@@ -33,6 +33,6 @@ export default async function Home() {
                 <ClientProjects data={projectsSectionData} />
                 <Footer />
             </main>
-        </div>
+        </>
     );
 }
