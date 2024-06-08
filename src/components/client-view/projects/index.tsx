@@ -35,7 +35,7 @@ export default function ClientProjects({ data } : { data: FormDataTypes[]}) {
                                     <p className="text-sm text-gray-400 mt-3">{item.technologies}</p>
                                 </div>
 
-                                <div className="flex self-end group">
+                                <div className="flex self-end mt-3 lg:mt-0 group">
                                     <Link href={item.github} className="px-4 py-1 text-white hover:text-cyan-500 font-semibold text-xs relative">Mais Detalhes <IoIosArrowRoundForward size={25} className="absolute transition-all -right-2 group-hover:-right-3 top-[2px]" /></Link>
                                 </div>
                             </div>
