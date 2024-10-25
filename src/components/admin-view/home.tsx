@@ -1,5 +1,5 @@
-import FormControls from "./form-controls";
 import { ControlsItemType, DataTypes } from "@/types";
+import FormControls from "./form-controls";
 
 const controls: ControlsItemType[] = [
     {
@@ -16,7 +16,7 @@ const controls: ControlsItemType[] = [
 
 export default function AdminHomeView({formData, setFormData, handleSaveData} : DataTypes) {
     return (
-        <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+        <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-full flex flex-col justify-center items-center gap-4">
             <FormControls
                 controls={controls}
                 formData={formData}
