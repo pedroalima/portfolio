@@ -1,5 +1,6 @@
+import { ControlsItemType, DataTypesAsync } from "@/types";
+import ExperienceBox from "../client-view/experience-education/experience-box";
 import FormControls from "./form-controls";
-import { ControlsItemType, DataTypesAsync, FormDataTypes } from "@/types";
 
 const controls: ControlsItemType[] = [
     {
@@ -24,12 +25,12 @@ const controls: ControlsItemType[] = [
     },
     {
         name: "jobprofile",
-        type: "text",
-        label: "Perfil de Emprego",
+        type: "textarea",
+        label: "Perfil de Trabalho",
     },
     {
         name: "skills",
-        type: "text",
+        type: "textarea",
         label: "Habilidades",
     },
 ];
@@ -39,19 +40,15 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
-                    ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-2">
-                            <p>Cargo: {item.position}</p>
-                            <p>Empresa: {item.company}</p>
-                            <p>Duração: {item.duration}</p>
-                            <p>Local: {item.location}</p>
-                            <p>Perfil de Trabalho: {item.jobprofile}</p>
-                            <p>Habilidades: {item.skills}</p>
-                        </div>
-                    ))
+                    ? (
+                        <ul className="flex flex-col justify-around items-start gap-5">
+                            <ExperienceBox experience={data} />
+                        </ul>
+                    )
+                
                     : null
             }
-            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl mt-8 py-10 px-8 w-full flex flex-col items-center gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}

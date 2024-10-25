@@ -1,21 +1,21 @@
 "use client";
-import AdminHomeView from "@/components/admin-view/home";
 import AdminAboutView from "@/components/admin-view/about";
 import AdminContactView from "@/components/admin-view/contact";
 import AdminEducationView from "@/components/admin-view/education";
 import AdminExperienceView from "@/components/admin-view/experience";
+import AdminHomeView from "@/components/admin-view/home";
+import NavbarAdmin from "@/components/admin-view/navbar";
 import AdminProjectsView from "@/components/admin-view/projects";
+import {
+    initialAboutViewFormData,
+    initialEducationViewFormData,
+    initialExperienceViewFormData,
+    initialHomeViewFormData,
+    initialProjectsViewFormData
+} from "@/mock-data/";
+import { addData, getData, updateData } from "@/services";
 import { AllDataTypes, DataMapTypes } from "@/types";
 import { useEffect, useState } from "react";
-import { addData, getData, updateData } from "@/services";
-import { 
-    initialAboutViewFormData, 
-    initialEducationViewFormData, 
-    initialExperienceViewFormData, 
-    initialHomeViewFormData, 
-    initialProjectsViewFormData 
-} from "@/mock-data/";
-import NavbarAdmin from "@/components/admin-view/navbar";
 
 export default function Admin() {
     const [ currentSelectedTab, setCurrentSelectedTab ] = useState("home");
@@ -151,13 +151,13 @@ export default function Admin() {
     }, [currentSelectedTab]);
 
     return (
-        <div className="min-h-dvh">
+        <div className="min-h-dvh min-w-full">
             <NavbarAdmin currentSelectedTab={currentSelectedTab} setCurrentSelectedTab={setCurrentSelectedTab} resetFormData={resetFormData} setIsUpdate={setIsUpdate} />
 
-            <main>
+            <main className="flex justify-center items-center mt-10 md:mt-12">
                 {menuItems && menuItems.map(
                     (item) => item.id === currentSelectedTab && (
-                        <div className="text-white min-h-dvh flex justify-center items-center" key={item.id}>
+                        <div className="text-white min-h-dvh w-full md:w-[80%] flex justify-center items-center" key={item.id}>
                             {item.component}
                         </div>
                     )

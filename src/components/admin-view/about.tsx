@@ -1,10 +1,10 @@
+import { ControlsItemType, DataTypes } from "@/types";
 import FormControls from "./form-controls";
-import { DataTypes, ControlsItemType } from "@/types";
 
 const controls: ControlsItemType[] = [
     {
         name: "about",
-        type: "text",
+        type: "textarea",
         label: "Sobre",
     },
     {
@@ -19,14 +19,14 @@ const controls: ControlsItemType[] = [
     },
     {
         name: "skills",
-        type: "text",
+        type: "textarea",
         label: "Skills",
     },
 ];
 
 export default function AdminAboutView({formData, setFormData, handleSaveData} : DataTypes) {
     return (
-        <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+        <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-full flex flex-col items-center gap-4">
             <FormControls
                 controls={controls}
                 formData={formData}

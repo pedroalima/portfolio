@@ -1,5 +1,6 @@
+import { ControlsItemType, DataTypesAsync } from "@/types";
+import EducationBox from "../client-view/experience-education/education-box ";
 import FormControls from "./form-controls";
-import { ControlsItemType, DataTypesAsync, FormDataTypes } from "@/types";
 
 const controls: ControlsItemType[] = [
     {
@@ -24,16 +25,14 @@ export default function AdminEducationView({ data, formData, setFormData, handle
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
-                    ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
-                            <p>Graduação: {item.degree}</p>
-                            <p>Ano: {item.year}</p>
-                            <p>Faculdade: {item.college}</p>
-                        </div>
-                    ))
+                    ? (
+                        <ul className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
+                            <EducationBox education={data} />
+                        </ul>
+                    )
                     : null
             }
-            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl mt-8 py-10 px-8 w-full flex flex-col items-center gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}

@@ -15,8 +15,8 @@ export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab,
     return (
         <header className="fixed mo:absolute top-0 left-0 w-full z-30 bg-gray-800/50 border-b border-gray-500/50">
             <nav>
-                <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto px-4">
-                    <Link href="#" className="flex items-center space-x-3 rtl:space-x-reverse">
+                <div className="max-w-screen-xl flex flex-col md:flex-row md:flex-wrap items-center justify-between mx-auto px-4 pb-4 md:pb-0 gap-3">
+                    <Link href="#" className="hidden md:flex items-center space-x-3 rtl:space-x-reverse">
                         <span className="self-center text-2xl font-semibold whitespace-nowrap text-white"><strong>Pedro</strong> Lima</span>
                     </Link>
 
@@ -29,7 +29,7 @@ export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab,
                     </div>
 
                     <div className="flex w-auto order-1" id="navbar-cta">
-                        <div className="p-0 rounded-lg space-x-8 rtl:space-x-reverse flex mt-0 border-0">
+                        <div className="p-0 rounded-lg md:space-x-8 rtl:space-x-reverse flex mt-0 border-0">
                             {navItems.map((item) => (
                                 <button
                                     key={item.id}

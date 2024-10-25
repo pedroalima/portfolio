@@ -1,4 +1,5 @@
-import { ControlsItemType, DataTypesAsync, FormDataTypes } from "@/types";
+import { ControlsItemType, DataTypesAsync } from "@/types";
+import ProjectBox from "../client-view/projects/project-box";
 import FormControls from "./form-controls";
 
 const controls: ControlsItemType[] = [
@@ -9,7 +10,7 @@ const controls: ControlsItemType[] = [
     },
     {
         name: "technologies",
-        type: "text",
+        type: "textarea",
         label: "Tecnologias",
     },
     {
@@ -29,17 +30,14 @@ export default function AdminProjectsView({ data, formData, setFormData, handleS
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
-                    ? data.map((item: FormDataTypes, index: number) => (
-                        <div key={index} className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
-                            <p>Nome: {item.name}</p>
-                            <p>Tecnologias: {item.technologies}</p>
-                            <p>Site: {item.website}</p>
-                            <p>Github: {item.github}</p>
-                        </div>
-                    ))
+                    ? (
+                        <ul className="flex flex-col gap-5">
+                            <ProjectBox data={data} />
+                        </ul>
+                    )
                     : null
             }
-            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-10 px-8 w-1/2 flex flex-col items-stretch gap-4">
+            <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl mt-8 py-10 px-8 w-full flex flex-col items-center gap-4">
                 <FormControls
                     controls={controls}
                     formData={formData}
