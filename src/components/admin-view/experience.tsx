@@ -42,10 +42,9 @@ export default function AdminExperienceView({ data, formData, setFormData, handl
                 data && data.length
                     ? (
                         <ul className="flex flex-col justify-around items-start gap-5">
-                            <ExperienceBox experience={data} />
+                            <ExperienceBox experience={data} setFormData={setFormData} />
                         </ul>
                     )
-                
                     : null
             }
             <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl mt-8 py-10 px-8 w-full flex flex-col items-center gap-4">
