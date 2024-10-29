@@ -1,5 +1,5 @@
 import { ControlsItemType, DataTypesAsync } from "@/types";
-import ExperienceBox from "../client-view/experience-education/experience-box";
+import ExperienceBox from "./experience-box";
 import FormControls from "./form-controls";
 
 const controls: ControlsItemType[] = [
