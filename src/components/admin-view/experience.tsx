@@ -35,14 +35,14 @@ const controls: ControlsItemType[] = [
     },
 ];
 
-export default function AdminExperienceView({ data, formData, setFormData, handleSaveData } : DataTypesAsync) {
+export default function AdminExperienceView({ data, formData, setFormData, handleSaveData, setIsUpdate } : DataTypesAsync) {
     return (
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
                     ? (
                         <ul className="flex flex-col justify-around items-start gap-5">
-                            <ExperienceBox experience={data} setFormData={setFormData} />
+                            <ExperienceBox experience={data} setFormData={setFormData} setIsUpdate={setIsUpdate!} />
                         </ul>
                     )
                     : null

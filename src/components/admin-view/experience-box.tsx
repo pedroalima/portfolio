@@ -5,17 +5,18 @@ import Container from "../client-view/container";
 
 interface ExperienceBox {
     experience: FormDataTypes[], 
-    setFormData: Dispatch<SetStateAction<FormDataTypes>>
+    setFormData: Dispatch<SetStateAction<FormDataTypes>>,
+    setIsUpdate: Dispatch<SetStateAction<boolean>>
 }
 
-export default function ExperienceBox({ experience, setFormData } : ExperienceBox) {
+export default function ExperienceBox({ experience, setFormData, setIsUpdate } : ExperienceBox) {
     async function getExperience(index:number) {
         const response = getData("experience");
 
         const data = await response;
         if (data && data.data) {
-            console.log(data.data);
             setFormData(data.data[index]);
+            setIsUpdate(true);
         }
     }
 
@@ -25,7 +26,10 @@ export default function ExperienceBox({ experience, setFormData } : ExperienceBo
                 <Container key={i} className="relative px-4 lg:px-6 py-4 flex flex-col lg:flex-row justify-between items-start gap-2 lg:gap-4">
                     <div className="lg:p-1 lg:w-1/4">
                         <h4 className="text-xs uppercase font-semibold text-slate-500">{item.duration}</h4>
-                        <button onClick={() => getExperience(i)}>editar</button>
+                        <button 
+                            onClick={() => getExperience(i)}
+                            className="absolute top-4 right-6 px-3 py-1 rounded-md border border-white text-sm"
+                        >Editar</button>
                     </div>
                                 
                     <div className="lg:w-3/4">

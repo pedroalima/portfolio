@@ -23,6 +23,7 @@ export interface DataTypesAsync {
     formData: FormDataTypes,
     setFormData: Dispatch<SetStateAction<FormDataTypes>>,
     handleSaveData: (data: string) => void,
+    setIsUpdate?: Dispatch<SetStateAction<boolean>>
 }
 
 export interface FormControlsDataTypes {

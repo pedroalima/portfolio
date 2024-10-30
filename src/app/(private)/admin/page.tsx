@@ -59,6 +59,7 @@ export default function Admin() {
                     formData={experienceViewFormData}
                     setFormData={setExperienceViewFormData}
                     handleSaveData={handleSaveData}
+                    setIsUpdate={setIsUpdate}
                     data={allData?.experience}
                 />
             )
