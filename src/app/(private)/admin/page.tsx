@@ -72,6 +72,7 @@ export default function Admin() {
                     formData={educationViewFormData}
                     setFormData={setEducationViewFormData}
                     handleSaveData={handleSaveData}
+                    setIsUpdate={setIsUpdate}
                     data={allData?.education}
                 />
             )
@@ -84,6 +85,7 @@ export default function Admin() {
                     formData={projectsViewFormData}
                     setFormData={setProjectsViewFormData}
                     handleSaveData={handleSaveData}
+                    setIsUpdate={setIsUpdate}
                     data={allData?.projects}
                 />
             )

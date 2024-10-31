@@ -1,5 +1,5 @@
 import { ControlsItemType, DataTypesAsync } from "@/types";
-import EducationBox from "../client-view/experience-education/education-box ";
+import EducationBox from "./education-box";
 import FormControls from "./form-controls";
 
 const controls: ControlsItemType[] = [
@@ -20,14 +20,14 @@ const controls: ControlsItemType[] = [
     }
 ];
 
-export default function AdminEducationView({ data, formData, setFormData, handleSaveData} : DataTypesAsync) {
+export default function AdminEducationView({ data, formData, setFormData, handleSaveData, setIsUpdate } : DataTypesAsync) {
     return (
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
                     ? (
                         <ul className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
-                            <EducationBox education={data} />
+                            <EducationBox education={data} setFormData={setFormData} setIsUpdate={setIsUpdate!} />
                         </ul>
                     )
                     : null

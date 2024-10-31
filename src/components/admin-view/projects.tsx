@@ -1,6 +1,6 @@
 import { ControlsItemType, DataTypesAsync } from "@/types";
-import ProjectBox from "../client-view/projects/project-box";
 import FormControls from "./form-controls";
+import ProjectBox from "./project-box";
 
 const controls: ControlsItemType[] = [
     {
@@ -25,14 +25,14 @@ const controls: ControlsItemType[] = [
     }
 ];
 
-export default function AdminProjectsView({ data, formData, setFormData, handleSaveData} : DataTypesAsync) {
+export default function AdminProjectsView({ data, formData, setFormData, handleSaveData, setIsUpdate} : DataTypesAsync) {
     return (
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
                 data && data.length
                     ? (
                         <ul className="flex flex-col gap-5">
-                            <ProjectBox data={data} />
+                            <ProjectBox projects={data} setFormData={setFormData} setIsUpdate={setIsUpdate!} />
                         </ul>
                     )
                     : null
