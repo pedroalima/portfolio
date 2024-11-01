@@ -1,5 +1,5 @@
 "use client";
-import { FormDataTypes } from "@/types";
+import { FormDataTypes } from "@/context/AdminContext";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useMemo } from "react";

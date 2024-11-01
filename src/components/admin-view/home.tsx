@@ -1,4 +1,6 @@
-import { ControlsItemType, DataTypes } from "@/types";
+import { AdminContext } from "@/context/AdminContext";
+import { ControlsItemType } from "@/types";
+import { useContext } from "react";
 import FormControls from "./form-controls";
 
 const controls: ControlsItemType[] = [
@@ -14,13 +16,15 @@ const controls: ControlsItemType[] = [
     },
 ];
 
-export default function AdminHomeView({formData, setFormData, handleSaveData} : DataTypes) {
+export default function AdminHomeView() {
+    const { homeViewFormData, setHomeViewFormData, handleSaveData } = useContext(AdminContext);
+
     return (
         <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl py-8 md:py-10 px-6 md:px-8 w-full flex flex-col justify-center items-center gap-4">
             <FormControls
                 controls={controls}
-                formData={formData}
-                setFormData={setFormData}
+                formData={homeViewFormData}
+                setFormData={setHomeViewFormData}
             />
 
             <button 

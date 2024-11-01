@@ -1,9 +1,9 @@
 "use client";
-import { FormDataTypes } from "@/types";
 import Link from "next/link";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 
+import { FormDataTypes } from "@/context/AdminContext";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { GoArrowUpRight } from "react-icons/go";

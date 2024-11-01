@@ -1,5 +1,5 @@
+import { FormDataTypes } from "@/context/AdminContext";
 import { getData } from "@/services";
-import { FormDataTypes } from "@/types";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

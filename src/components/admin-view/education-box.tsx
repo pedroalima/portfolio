@@ -1,5 +1,5 @@
+import { FormDataTypes } from "@/context/AdminContext";
 import { getData } from "@/services";
-import { FormDataTypes } from "@/types";
 import { Dispatch, SetStateAction } from "react";
 import Container from "../client-view/container";
 

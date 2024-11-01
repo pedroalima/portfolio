@@ -1,10 +1,13 @@
+import { AdminContext } from "@/context/AdminContext";
 import { navItems } from "@/mock-data/";
-import { NavbarMenuTypes } from "@/types";
 import Cookie from "js-cookie";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import { useContext } from "react";
 
-export default function NavbarAdmin({ currentSelectedTab, setCurrentSelectedTab, resetFormData, setIsUpdate } : NavbarMenuTypes) {
+export default function NavbarAdmin() {
+    const { currentSelectedTab, setCurrentSelectedTab, setIsUpdate, resetFormData } = useContext(AdminContext);
+
     const route = useRouter();
 
     const handleLogout = () => {

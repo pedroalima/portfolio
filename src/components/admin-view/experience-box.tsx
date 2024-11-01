@@ -1,5 +1,5 @@
+import { FormDataTypes } from "@/context/AdminContext";
 import { getData } from "@/services";
-import { FormDataTypes } from "@/types";
 import { Dispatch, SetStateAction } from "react";
 import Container from "../client-view/container";
 
@@ -38,9 +38,9 @@ export default function ExperienceBox({ experience, setFormData, setIsUpdate } :
                         <p className="text-sm font-normal leading-normal my-2 text-gray-400">{item.jobprofile}</p>
 
                         <div className="mt-3 flex flex-wrap gap-2">
-                            {item.skills.split(",").map((item, i: number) => (
+                            {item.skills.split(",").map((skill: string, i: number) => (
                                 <div key={i} className="bg-cyan-500/[0.1] shadow-md rounded-2xl px-3 py-1 flex justify-center items-center">
-                                    <span  className="text-xs text-cyan-500 font-semibold">{item}</span>
+                                    <span  className="text-xs text-cyan-500 font-semibold">{skill}</span>
                                 </div>
                             ))}
                         </div>

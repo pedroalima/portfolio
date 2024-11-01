@@ -1,3 +1,4 @@
+import { AdminProvider } from "@/context/AdminContext";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
@@ -17,9 +18,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children } : { children: React.ReactNode}) {
     return (
         <html lang="en">
-            <body className={`${inter.className} text-white flex flex-col lg:flex-row lg:justify-between lg:gap-4 px-6 py-12 lg:p-0 lg:mx-32`}>
-                {children}
-            </body>
+            <AdminProvider>
+                <body className={`${inter.className} text-white flex flex-col lg:flex-row lg:justify-between lg:gap-4 px-6 py-12 lg:p-0 lg:mx-32`}>
+                    {children}
+                </body>
+            </AdminProvider>
         </html>
     );
 }

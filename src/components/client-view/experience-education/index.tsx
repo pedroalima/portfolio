@@ -1,4 +1,4 @@
-import { FormDataTypes } from "@/types";
+import { FormDataTypes } from "@/context/AdminContext";
 import Container from "../container";
 import { SectionTitle } from "../section-title";
 

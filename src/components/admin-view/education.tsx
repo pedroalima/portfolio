@@ -1,4 +1,6 @@
-import { ControlsItemType, DataTypesAsync } from "@/types";
+import { AdminContext } from "@/context/AdminContext";
+import { ControlsItemType } from "@/types";
+import { useContext } from "react";
 import EducationBox from "./education-box";
 import FormControls from "./form-controls";
 
@@ -20,14 +22,16 @@ const controls: ControlsItemType[] = [
     }
 ];
 
-export default function AdminEducationView({ data, formData, setFormData, handleSaveData, setIsUpdate } : DataTypesAsync) {
+export default function AdminEducationView() {
+    const {educationViewFormData, setEducationViewFormData, setIsUpdate, allData, handleSaveData } = useContext(AdminContext);
+    
     return (
         <div className="min-h-dvh w-full py-14 mt-10 flex flex-col gap-4 justify-center items-center">
             {
-                data && data.length
+                allData?.education && allData?.education.length
                     ? (
                         <ul className="flex flex-col justify-around items-start gap-3 lg:gap-5 w-full">
-                            <EducationBox education={data} setFormData={setFormData} setIsUpdate={setIsUpdate!} />
+                            <EducationBox education={allData?.education} setFormData={setEducationViewFormData} setIsUpdate={setIsUpdate!} />
                         </ul>
                     )
                     : null
@@ -35,8 +39,8 @@ export default function AdminEducationView({ data, formData, setFormData, handle
             <div className="bg-gray-800/50 border border-gray-500/50 rounded-md shadow-xl mt-8 py-10 px-8 w-full flex flex-col items-center gap-4">
                 <FormControls
                     controls={controls}
-                    formData={formData}
-                    setFormData={setFormData}
+                    formData={educationViewFormData}
+                    setFormData={setEducationViewFormData}
                 />
 
                 <button 

@@ -1,16 +1,5 @@
+import { FormDataTypes } from "@/context/AdminContext";
 import { Dispatch, SetStateAction } from "react";
-
-export interface FormDataTypes {
-    [key: string]: string
-}
-
-export interface DataMapTypes {
-    [key: string]: FormDataTypes
-}
-
-export interface AllDataTypes {
-    [key: string]: FormDataTypes[]
-}
 
 export interface DataTypes {
     formData: FormDataTypes,

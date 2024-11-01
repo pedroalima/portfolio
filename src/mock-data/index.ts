@@ -1,4 +1,4 @@
-import { FormDataTypes } from "@/types";
+import { FormDataTypes } from "@/context/AdminContext";
 
 export const initialHomeViewFormData: FormDataTypes = {
     mainText: "",
