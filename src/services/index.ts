@@ -1,4 +1,4 @@
-import { FormDataTypes } from "@/types";
+import { FormDataTypes } from "@/context/AdminContext";
 
 export async function addData(currentTab : string, formData: FormDataTypes) {
     try {
