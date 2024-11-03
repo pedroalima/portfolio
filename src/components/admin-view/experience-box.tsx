@@ -1,5 +1,5 @@
 import { FormDataTypes } from "@/context/AdminContext";
-import { deleteData, getData } from "@/services";
+import { getData } from "@/services";
 import { Dispatch, SetStateAction } from "react";
 import Container from "../client-view/container";
 
@@ -20,19 +20,6 @@ export default function ExperienceBox({ experience, setFormData, setIsUpdate } :
         }
     }
 
-    async function deleteExperience(id: string) {
-        try {
-            const response = await deleteData("experience", { id });
-
-            if(response) {
-                console.log("Deletado com sucesso");
-            }
-        } catch (error) {
-            console.error("Erro ao deletar experiência: ",error);
-        }
-        
-    }
-
     return (
         <>
             {experience && experience.map((item, i) => (
@@ -43,10 +30,6 @@ export default function ExperienceBox({ experience, setFormData, setIsUpdate } :
                             onClick={() => getExperience(i)}
                             className="absolute top-4 right-6 px-3 py-1 rounded-md border border-white text-sm"
                         >Editar</button>
-                        <button 
-                            onClick={() => deleteExperience(item.id)}
-                            className="absolute bottom-4 left-6 px-3 py-1 rounded-md border border-white text-sm"
-                        >Delete</button>
                     </div>
                                 
                     <div className="lg:w-3/4">

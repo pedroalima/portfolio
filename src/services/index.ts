@@ -56,26 +56,6 @@ export async function updateData(currentTab : string, formData: FormDataTypes) {
     }
 }
 
-export async function deleteData(currentTab : string, formData: FormDataTypes) {
-    try {
-        const res = await fetch(`/api/${currentTab}/delete`, {
-            method: "DELETE",
-            headers: {
-                "Content-Type" : "application/json",
-            },
-            body: JSON.stringify(formData),
-        });
-   
-        if (!res.ok) {
-            throw new Error(`Failed to fetch data from ${currentTab}`);
-        }
-   
-        return res.json();
-    } catch (error) {
-        console.error("Error in deleteData:", error);
-    }
-}
-
 export async function login(formData: FormDataTypes) {
     try {
         const res = await fetch("/api/login", {
